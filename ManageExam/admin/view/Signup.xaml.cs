@@ -23,5 +23,30 @@ namespace ManageExam.admin.view
         {
             InitializeComponent();
         }
+
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+                DragMove();
+        }
+
+        private void screenMinimize_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+        private void screenClose_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void toLoginTab_Click(object sender, RoutedEventArgs e)
+        {
+            //LoginWindow loginWindowInstance = new LoginWindow();
+
+            //loginWindowInstance.Owner = this;
+
+            //loginWindowInstance.ShowDialog();
+        }
     }
 }

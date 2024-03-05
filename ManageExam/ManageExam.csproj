@@ -67,11 +67,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="admin\view\mUser\viewuser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="admin\view\Signup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="admin\view\viewExam\viewImgExam.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="laucher.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -88,6 +96,9 @@
     <Compile Include="admin\view\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
+    <Compile Include="admin\view\mUser\viewuser.xaml.cs">
+      <DependentUpon>viewuser.xaml</DependentUpon>
+    </Compile>
     <Compile Include="admin\view\Signup.xaml.cs">
       <DependentUpon>Signup.xaml</DependentUpon>
     </Compile>
@@ -97,6 +108,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="laucher.xaml.cs">
+      <DependentUpon>laucher.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
