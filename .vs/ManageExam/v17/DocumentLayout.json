@@ -3,6 +3,34 @@
   "WorkspaceRootPath": "F:\\CSHAP_CNdotNET\\Project\\ManageExam\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|f:\\cshap_cndotnet\\project\\manageexam\\manageexam\\admin\\view\\dialog\\selectaddexam.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|solutionrelative:manageexam\\admin\\view\\dialog\\selectaddexam.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|f:\\cshap_cndotnet\\project\\manageexam\\manageexam\\admin\\view\\home.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|solutionrelative:manageexam\\admin\\view\\home.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|f:\\cshap_cndotnet\\project\\manageexam\\manageexam\\admin\\view\\viewexam\\viewimgexam.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|solutionrelative:manageexam\\admin\\view\\viewexam\\viewimgexam.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|f:\\cshap_cndotnet\\project\\manageexam\\manageexam\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|solutionrelative:manageexam\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|f:\\cshap_cndotnet\\project\\manageexam\\manageexam\\admin\\view\\signup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|solutionrelative:manageexam\\admin\\view\\signup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|f:\\cshap_cndotnet\\project\\manageexam\\manageexam\\admin\\view\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|solutionrelative:manageexam\\admin\\view\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|f:\\cshap_cndotnet\\project\\manageexam\\manageexam\\admin\\view\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|solutionrelative:manageexam\\admin\\view\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|f:\\cshap_cndotnet\\project\\manageexam\\manageexam\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|solutionrelative:manageexam\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
@@ -18,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,7 +54,92 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "App.xaml",
+              "DocumentMoniker": "F:\\CSHAP_CNdotNET\\Project\\ManageExam\\ManageExam\\App.xaml",
+              "RelativeDocumentMoniker": "ManageExam\\App.xaml",
+              "ToolTip": "F:\\CSHAP_CNdotNET\\Project\\ManageExam\\ManageExam\\App.xaml",
+              "RelativeToolTip": "ManageExam\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-03-04T15:04:52.427Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "selectAddExam.xaml",
+              "DocumentMoniker": "F:\\CSHAP_CNdotNET\\Project\\ManageExam\\ManageExam\\admin\\view\\diaLog\\selectAddExam.xaml",
+              "RelativeDocumentMoniker": "ManageExam\\admin\\view\\diaLog\\selectAddExam.xaml",
+              "ToolTip": "F:\\CSHAP_CNdotNET\\Project\\ManageExam\\ManageExam\\admin\\view\\diaLog\\selectAddExam.xaml",
+              "RelativeToolTip": "ManageExam\\admin\\view\\diaLog\\selectAddExam.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-03-04T15:04:19.163Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "viewImgExam.xaml",
+              "DocumentMoniker": "F:\\CSHAP_CNdotNET\\Project\\ManageExam\\ManageExam\\admin\\view\\viewExam\\viewImgExam.xaml",
+              "RelativeDocumentMoniker": "ManageExam\\admin\\view\\viewExam\\viewImgExam.xaml",
+              "ToolTip": "F:\\CSHAP_CNdotNET\\Project\\ManageExam\\ManageExam\\admin\\view\\viewExam\\viewImgExam.xaml",
+              "RelativeToolTip": "ManageExam\\admin\\view\\viewExam\\viewImgExam.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-03-04T15:03:20.038Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Home.xaml",
+              "DocumentMoniker": "F:\\CSHAP_CNdotNET\\Project\\ManageExam\\ManageExam\\admin\\view\\Home.xaml",
+              "RelativeDocumentMoniker": "ManageExam\\admin\\view\\Home.xaml",
+              "ToolTip": "F:\\CSHAP_CNdotNET\\Project\\ManageExam\\ManageExam\\admin\\view\\Home.xaml",
+              "RelativeToolTip": "ManageExam\\admin\\view\\Home.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-03-04T15:02:18.307Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Login.xaml.cs",
+              "DocumentMoniker": "F:\\CSHAP_CNdotNET\\Project\\ManageExam\\ManageExam\\admin\\view\\Login.xaml.cs",
+              "RelativeDocumentMoniker": "ManageExam\\admin\\view\\Login.xaml.cs",
+              "ToolTip": "F:\\CSHAP_CNdotNET\\Project\\ManageExam\\ManageExam\\admin\\view\\Login.xaml.cs",
+              "RelativeToolTip": "ManageExam\\admin\\view\\Login.xaml.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAkwBsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-04T15:01:09.964Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Signup.xaml",
+              "DocumentMoniker": "F:\\CSHAP_CNdotNET\\Project\\ManageExam\\ManageExam\\admin\\view\\Signup.xaml",
+              "RelativeDocumentMoniker": "ManageExam\\admin\\view\\Signup.xaml",
+              "ToolTip": "F:\\CSHAP_CNdotNET\\Project\\ManageExam\\ManageExam\\admin\\view\\Signup.xaml",
+              "RelativeToolTip": "ManageExam\\admin\\view\\Signup.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-03-04T15:00:55.149Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Login.xaml",
+              "DocumentMoniker": "F:\\CSHAP_CNdotNET\\Project\\ManageExam\\ManageExam\\admin\\view\\Login.xaml",
+              "RelativeDocumentMoniker": "ManageExam\\admin\\view\\Login.xaml",
+              "ToolTip": "F:\\CSHAP_CNdotNET\\Project\\ManageExam\\ManageExam\\admin\\view\\Login.xaml",
+              "RelativeToolTip": "ManageExam\\admin\\view\\Login.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-03-04T14:58:06.939Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "F:\\CSHAP_CNdotNET\\Project\\ManageExam\\ManageExam\\MainWindow.xaml",
               "RelativeDocumentMoniker": "ManageExam\\MainWindow.xaml",
@@ -38,7 +151,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 8,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "F:\\CSHAP_CNdotNET\\Project\\ManageExam\\ManageExam\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "ManageExam\\MainWindow.xaml.cs",

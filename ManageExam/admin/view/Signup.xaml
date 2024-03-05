@@ -5,8 +5,248 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ManageExam.admin.view"
         mc:Ignorable="d"
-        Title="Signup" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="registerStudent" Height="550" Width="800"
+WindowStyle="None"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
+    Background="Transparent"
+    AllowsTransparency="True"
+    MouseDown="Window_MouseDown">
+    <Border CornerRadius="20">
+        <Border.Background>
+            <ImageBrush ImageSource="\Lib\Studying.jpg"
+                Stretch="None"/>
+        </Border.Background>
+        <Border CornerRadius="20"
+        BorderBrush="DarkBlue"
+        BorderThickness="2"
+        Opacity="0.9">
+            <Border.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="LightSkyBlue" Offset="0.3"/>
+                    <GradientStop Color="DodgerBlue" Offset="0.65"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="30"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="ĐĂNG KÍ"
+                       FontFamily="Shruti"
+                       FontSize="15"
+                       Foreground="White"
+                       Grid.Column="0"
+                       VerticalAlignment="Center"
+                       Margin="12 0 0 0"/>
+
+                    <Button x:Name="screenMinimize"
+                    Grid.Column="1"
+                    Content="-"
+                    Foreground="White"
+                    FontSize="20"
+                    Cursor="Hand"
+                    BorderThickness="0"
+                    Click="screenMinimize_Click">
+
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="DodgerBlue"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="LightBlue"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="25" Height="30"
+                                CornerRadius="10"
+                                Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Button x:Name="screenClose"
+                    Grid.Column="2"
+                    Content="X"
+                    Foreground="White"
+                    FontSize="20"
+                    Cursor="Hand"
+                    BorderThickness="0"
+                    Click="screenClose_Click">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="DodgerBlue"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="Red"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="25" Height="30"
+                                CornerRadius="10"
+                                Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Grid>
+
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="350"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel VerticalAlignment="Center" Grid.Column="1">
+                        <Ellipse Height="200" Width="200">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="\Lib\Book2.jpg"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+
+                        <TextBlock TextAlignment="Center"
+                           FontSize="30"
+                           Foreground="White"
+                           FontWeight="Bold"
+                           Margin="0 25 0 0">
+                    Học hay - Thi ngay
+                    <LineBreak/>
+                    Giỏi hơn mỗi ngày
+                        </TextBlock>
+                    </StackPanel>
+
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock Text="Tên đăng nhập"
+                           Foreground="White"
+                           FontSize="12"
+                           FontWeight="Medium"
+                           FontFamily="Montserrat"
+                           Margin="35 0 0 0"/>
+
+                        <TextBox x:Name="textBox1"
+                         FontSize="20"
+                         FontWeight="Medium"
+                         FontFamily="Montserrat"
+                         Background="White"
+                         Foreground="Black"
+                         BorderThickness="0"
+                         VerticalContentAlignment="Center"
+                         Margin="30 5 0 0"
+                         Padding="6 4 6 4">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="10"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+
+                        <TextBlock Text="Nhập mật khẩu"
+                           Foreground="White"
+                           FontSize="12"
+                           FontWeight="Medium"
+                           FontFamily="Montserrat"
+                           Margin="35 10 0 0"/>
+
+                        <TextBox x:Name="textBox2"
+                         FontSize="20"
+                         FontWeight="Medium"
+                         FontFamily="Montserrat"
+                         Background="White"
+                         Foreground="Black"
+                         BorderThickness="0"
+                         VerticalContentAlignment="Center"
+                         Margin="30 5 0 0"
+                         Padding="6 4 6 4">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="10"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+
+                        <TextBlock Text="Xác thực mật khẩu"
+                           Foreground="White"
+                           FontSize="12"
+                           FontWeight="Medium"
+                           FontFamily="Montserrat"
+                           Margin="35 10 0 0"/>
+
+                        <TextBox x:Name="textBox3"
+                         FontSize="20"
+                         FontWeight="Medium"
+                         FontFamily="Montserrat"
+                         Background="White"
+                         Foreground="Black"
+                         BorderThickness="0"
+                         VerticalContentAlignment="Center"
+                         Margin="30 5 0 0"
+                         Padding="6 4 6 4">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="10"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+
+                        <Button x:Name="resgisterBtn"
+                        Width="70"
+                        Margin="30 10 5 0"
+                        Padding="5"
+                        HorizontalAlignment="Left"
+                        Cursor="Hand">Đăng kí
+
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="White"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="Gray"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+
+                            <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="10"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+
+                        <TextBlock Margin="30 5 0 0">
+                    <Run Text="Bạn đã có tài khoản? "/>
+                    <Hyperlink x:Name="toLoginTab" 
+                           Click="toLoginTab_Click"
+                           TextDecorations="None">
+                        Đăng nhập tại đây
+                    </Hyperlink>
+                        </TextBlock>
+
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Border>
+    </Border>
 </Window>

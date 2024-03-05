@@ -1,0 +1,47 @@
+# Visual Studio code files
+.vscode/
+
+# Visual Studio files
+*.suo
+*.user
+*.sln.docstates
+
+# Rider files
+.idea/
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio thumbnails
+Thumbs.db
+[Tt]humbs.db
+
+# macOS files
+.DS_Store
+
+# Unity files
+[Oo]bj/
+[Bb]uild/
+Library/
+Temp/
+
+# Ignore .vs/ManageExam/FileContentIndex/*.vsidx
+.vs/ManageExam/FileContentIndex/*.vsidx

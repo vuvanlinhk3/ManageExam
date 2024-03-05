@@ -5,8 +5,106 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ManageExam.admin.view"
         mc:Ignorable="d"
-        Title="Home" Height="450" Width="800">
+        Title="Home" Height="750" Width="1200">
     <Grid>
-        
+        <Grid Margin="0,0,0,0" Height="50" VerticalAlignment="Top">
+            <Label Content="ADMIN" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
+            <Button Content="Log out" HorizontalAlignment="Left" Margin="108,0,0,0" VerticalAlignment="Center" FontSize="20" Padding="10 5">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+        </Grid>
+        <Grid Margin="0,100,0,0" Height="250" VerticalAlignment="Top" Background="#66DADCE0">
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                <Grid Height="170" Width="150"  VerticalAlignment="Top" HorizontalAlignment="Left">
+                    <Button HorizontalAlignment="Left" VerticalAlignment="Top" Height="130" Width="150" FontSize="100" Cursor="Hand" FontFamily="Microsoft Tai Le" FontWeight="Bold" BorderBrush="#FFDDEC9E" Background="White" Foreground="#FF737264">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="\Lib\addexam.png" Width="150" Height="170" />
+
+                        </StackPanel>
+                    </Button>
+                    <Label Content="Add Exam" VerticalAlignment="Bottom" FontWeight="Bold"  FontSize="18" HorizontalAlignment="Center" FontFamily="Cambria" Foreground="#FF202124"></Label>
+                </Grid>
+                <Grid Margin="170 0 0 0" Height="170" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left">
+                    <Button  HorizontalAlignment="Center" Width="150" FontSize="100" Cursor="Hand" FontFamily="Microsoft Tai Le" FontWeight="Bold" BorderBrush="#FFDDEC9E" Background="White" Margin="0,0,0,40">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="\Lib\addexam.png" Width="150" Height="170" />
+
+                        </StackPanel>
+                    </Button>
+                    <Label Content="Add exam schedule" VerticalAlignment="Bottom" FontWeight="Bold"  FontSize="18" HorizontalAlignment="Center" FontFamily="Cambria" Foreground="#FF202124"></Label>
+                </Grid>
+                <Grid Margin="340 0 0 0" Height="170" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left">
+                    <Button  HorizontalAlignment="Left" VerticalAlignment="Top" Height="130" Width="150" FontSize="100" Cursor="Hand" FontFamily="Microsoft Tai Le" FontWeight="Bold" BorderBrush="#FFDDEC9E" Background="White">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="\Lib\maukithi.png" Width="150" Height="170" />
+
+                        </StackPanel>
+                    </Button>
+                    <Label Content="View exam schedule" VerticalAlignment="Bottom" FontWeight="Bold"  FontSize="18" HorizontalAlignment="Center" FontFamily="Cambria" Foreground="#FF202124"></Label>
+                </Grid>
+                <Grid Margin="510 0 0 0" Height="170" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left">
+                    <Button HorizontalAlignment="Left" VerticalAlignment="Top" Height="130" Width="150" FontSize="100" Cursor="Hand" FontFamily="Microsoft Tai Le" FontWeight="Bold" BorderBrush="#FFDDEC9E" Background="White">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="\Lib\mau2.png" Width="150" Height="170" />
+
+                        </StackPanel>
+                    </Button>
+                    <Label Content="Results of the exams" VerticalAlignment="Bottom" FontWeight="Bold"  FontSize="18" HorizontalAlignment="Center" FontFamily="Cambria" Foreground="#FF202124"></Label>
+                </Grid>
+                <Grid Margin="680 0 0 0" Height="170" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left">
+                    <Button HorizontalAlignment="Left" VerticalAlignment="Top" Height="130" Width="150" FontSize="100" Cursor="Hand" FontFamily="Microsoft Tai Le" FontWeight="Bold" BorderBrush="#FFDDEC9E" Background="White">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="\Lib\maukithi.png" Width="150" Height="170" />
+
+                        </StackPanel>
+                    </Button>
+                    <Label Content="Candidate information" VerticalAlignment="Bottom" FontWeight="Bold"  FontSize="18" HorizontalAlignment="Center" FontFamily="Cambria" Foreground="#FF202124"></Label>
+                </Grid>
+            </Grid>
+
+        </Grid>
+        <Grid Margin="0,352,0,104">
+            <Label Content="News List" FontSize="18" Margin="350 0 0 0" Foreground="#FF202124" FontFamily="Dubai Medium" FontWeight="Bold" ></Label>
+            <Grid VerticalAlignment="Center" Margin="100 0 0 0">
+                <Grid Height="170" Width="150"  VerticalAlignment="Top" HorizontalAlignment="Left">
+                    <Button HorizontalAlignment="Left" VerticalAlignment="Top" Height="130" Width="150" FontSize="100" Cursor="Hand" FontFamily="Microsoft Tai Le" FontWeight="Bold" BorderBrush="#FFDDEC9E" Background="White" Foreground="#FF737264">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="\Lib\addexam.png" Width="150" Height="170" />
+
+                        </StackPanel>
+                    </Button>
+                    <Label Content="Add News" VerticalAlignment="Bottom" FontWeight="Bold"  FontSize="18" HorizontalAlignment="Center" FontFamily="Cambria" Foreground="#FF202124"></Label>
+                </Grid>
+            </Grid>
+
+            <Grid Margin="350,40,0,10">
+                <ListView d:ItemsSource="{d:SampleData ItemCount=5}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+
+
+
+
+            </Grid>
+        </Grid>
+        <Grid VerticalAlignment="Bottom" Height="100">
+            <Button Background="#FFF3F3F3" HorizontalAlignment="Right" Margin="0 0 20 0" Content="Check help messages" Height="50" Width="220"  FontSize="18" FontFamily="Cambria">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="20"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </Grid>
     </Grid>
 </Window>

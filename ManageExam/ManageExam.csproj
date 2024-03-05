@@ -55,10 +55,45 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="admin\view\diaLog\selectAddExam.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="admin\view\Home.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="admin\view\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="admin\view\Signup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="admin\view\viewExam\viewImgExam.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="admin\view\diaLog\selectAddExam.xaml.cs">
+      <DependentUpon>selectAddExam.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="admin\view\Home.xaml.cs">
+      <DependentUpon>Home.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="admin\view\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="admin\view\Signup.xaml.cs">
+      <DependentUpon>Signup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="admin\view\viewExam\viewImgExam.xaml.cs">
+      <DependentUpon>viewImgExam.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -93,6 +128,32 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="lib\addexam.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="lib\anh1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="lib\anhnen.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="lib\Book2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="lib\mau2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="lib\maukithi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="lib\Studying.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="admin\controll\" />
+    <Folder Include="admin\model\" />
+    <Folder Include="admin\view\addExam\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
