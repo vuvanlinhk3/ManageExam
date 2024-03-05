@@ -5,8 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ManageExam.admin.view.mUser"
         mc:Ignorable="d"
-        Title="adduser" Height="450" Width="800">
+        Title="adduser" Height="750" Width="1200">
     <Grid>
-        
+
+        <Grid >
+            <TextBox Margin="56,52,944,662" Text="" Width="200" Height="20"></TextBox>
+            <TextBox Margin="56,108,944,606" Text="" Width="200" Height="20"></TextBox>
+            <TextBox Margin="56,177,944,537" Text="" Width="200" Height="20"></TextBox>
+            <TextBox Margin="56,307,944,407" Text="" Width="200" Height="20"></TextBox>
+            <TextBox Margin="56,238,944,476" Text="" Width="200" Height="20"></TextBox>
+        </Grid>
     </Grid>
 </Window>

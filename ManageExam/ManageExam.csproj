@@ -75,6 +75,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="admin\view\pointuser\grades.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="admin\view\Signup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -105,6 +109,9 @@
     </Compile>
     <Compile Include="admin\view\mUser\viewuser.xaml.cs">
       <DependentUpon>viewuser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="admin\view\pointuser\grades.xaml.cs">
+      <DependentUpon>grades.xaml</DependentUpon>
     </Compile>
     <Compile Include="admin\view\Signup.xaml.cs">
       <DependentUpon>Signup.xaml</DependentUpon>
@@ -174,6 +181,7 @@
   <ItemGroup>
     <Folder Include="admin\controll\" />
     <Folder Include="admin\model\" />
+    <Folder Include="admin\view\addaset\" />
     <Folder Include="admin\view\addExam\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

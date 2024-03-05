@@ -10,12 +10,8 @@
         <Image Source="\Lib\anhnen.jpg" Stretch="Fill" Opacity="0.7"  />
         <StackPanel>
             <Canvas>
-<<<<<<< HEAD
+
                 <Image Source="\Lib\anh1.jpg" VerticalAlignment="Top" Width="250" HorizontalAlignment="Right" Canvas.Top="20" Canvas.Right="70" Opacity="0.8"  >
-=======
-                <Image Source="\Lib\anh1.jpg" Height="400" Width="250" Stretch="Fill" 
-Canvas.Top="23" Canvas.Right="70" Opacity="0.8" Canvas.Left="480"  >
->>>>>>> fa545afe0c4819836cda40669c714734924d343b
 
                 </Image>
                 <Border Background="White" BorderBrush="LightGray" BorderThickness="1" CornerRadius="20" Padding="7, 6" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="505" Canvas.Top="136" RenderTransformOrigin="0.49,1.549" Width="200">
