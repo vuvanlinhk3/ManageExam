@@ -95,6 +95,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="admin\controll\controller.cs" />
     <Compile Include="admin\view\diaLog\selectAddExam.xaml.cs">
       <DependentUpon>selectAddExam.xaml</DependentUpon>
     </Compile>
@@ -179,7 +180,6 @@
     <Resource Include="lib\Studying.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="admin\controll\" />
     <Folder Include="admin\model\" />
     <Folder Include="admin\view\addaset\" />
     <Folder Include="admin\view\addExam\" />

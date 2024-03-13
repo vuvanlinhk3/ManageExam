@@ -8,5 +8,6 @@ namespace ManageExam.admin.controll
 {
     internal class controller
     {
+
     }
 }

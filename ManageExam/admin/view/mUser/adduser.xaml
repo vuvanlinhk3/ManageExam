@@ -5,15 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ManageExam.admin.view.mUser"
         mc:Ignorable="d"
-        Title="adduser" Height="750" Width="1200">
+        Title="Quản lý Người Dùng" Height="750" Width="1200">
     <Grid>
-
-        <Grid >
-            <TextBox Margin="56,52,944,662" Text="" Width="200" Height="20"></TextBox>
-            <TextBox Margin="56,108,944,606" Text="" Width="200" Height="20"></TextBox>
-            <TextBox Margin="56,177,944,537" Text="" Width="200" Height="20"></TextBox>
-            <TextBox Margin="56,307,944,407" Text="" Width="200" Height="20"></TextBox>
-            <TextBox Margin="56,238,944,476" Text="" Width="200" Height="20"></TextBox>
+        <!-- Phần tìm kiếm -->
+        <Grid Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="txtSearch" Grid.Column="0" Margin="0,0,10,0" VerticalAlignment="Center"/>
+            <Button Grid.Column="2" Content="Tìm kiếm" Width="100" Height="30" Margin="0,0,0,664"/>
         </Grid>
+
+        <!-- Phần chức năng -->
+        <StackPanel Orientation="Horizontal" Margin="20" VerticalAlignment="Top">
+            <Button Content="Thêm người dùng" Width="150" Height="30"/>
+            <Button Content="Sửa thông tin người dùng" Width="150" Height="30"/>
+            <Button Content="Xóa người dùng" Width="150" Height="30"/>
+        </StackPanel>
+
+        <!-- Danh sách người dùng -->
+        <ListView Margin="20,100,20,0" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Tên đăng nhập" DisplayMemberBinding="{Binding Username}"/>
+                    <GridViewColumn Header="Họ và tên" DisplayMemberBinding="{Binding FullName}"/>
+                    <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Email}"/>
+                    <GridViewColumn Header="Số điện thoại" DisplayMemberBinding="{Binding PhoneNumber}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Window>

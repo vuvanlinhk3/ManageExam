@@ -8,44 +8,50 @@
         Title="Login" Height="550" Width="800">
     <Grid>
         <Image Source="\Lib\anhnen.jpg" Stretch="Fill" Opacity="0.7"  />
-        <StackPanel>
-            <Canvas>
 
-                <Image Source="\Lib\anh1.jpg" VerticalAlignment="Top" Width="250" HorizontalAlignment="Right" Canvas.Top="20" Canvas.Right="70" Opacity="0.8"  >
 
-                </Image>
-                <Border Background="White" BorderBrush="LightGray" BorderThickness="1" CornerRadius="20" Padding="7, 6" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="505" Canvas.Top="136" RenderTransformOrigin="0.49,1.549" Width="200">
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Image Source="\Lib\anh1.jpg" VerticalAlignment="Top" Width="250" HorizontalAlignment="Right" Canvas.Top="20" Canvas.Right="70" Opacity="0.8"  >
+            </Image>
+
+            <Grid>
+                <Border Background="White"  BorderBrush="LightGray" BorderThickness="1" CornerRadius="20" Padding="7, 6" HorizontalAlignment="Left" VerticalAlignment="Top"  RenderTransformOrigin="0.49,1.549" Width="200" Margin="348,131,0,0">
                     <StackPanel>
                         <TextBox Text="Nhập tài khoản của bạn" Foreground="Gray" Background="Transparent" BorderThickness="0" Margin="0, 0, 0, 5"/>
                     </StackPanel>
                 </Border>
-                <Border Background="White" BorderBrush="LightGray" BorderThickness="1" CornerRadius="20" Padding="7, 6" Canvas.Left="505" Canvas.Top="188" RenderTransformOrigin="0.49,1.549" HorizontalAlignment="Center" VerticalAlignment="Top" Width="200">
+                <Border Background="White" BorderBrush="LightGray" BorderThickness="1" CornerRadius="20" Padding="7, 6" Canvas.Left="505" Canvas.Top="188" RenderTransformOrigin="0.49,1.549" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="348,197,0,0">
                     <StackPanel>
                         <PasswordBox  PasswordChar="*" BorderBrush="White"/>
                     </StackPanel>
                 </Border>
-                <TextBlock Canvas.Left="622" Canvas.Top="243">
-                <Hyperlink NavigateUri="">Quên Mật Khẩu</Hyperlink>
+                <TextBlock Canvas.Left="622" Canvas.Top="243" Margin="465,247,29,179">
+                                            <Hyperlink NavigateUri="">Quên Mật Khẩu</Hyperlink>
                 </TextBlock>
-                <Border Background="BlanchedAlmond" BorderBrush="White" BorderThickness="1" CornerRadius="20" Padding="7, 6" Canvas.Left="505" Canvas.Top="275" RenderTransformOrigin="0.49,1.549" HorizontalAlignment="Center" VerticalAlignment="Top" Width="200">
+                <Border Background="BlanchedAlmond" BorderBrush="White" BorderThickness="1" CornerRadius="20" Padding="7, 6" Canvas.Left="505" Canvas.Top="275" RenderTransformOrigin="0.49,1.549" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="348,279,0,0">
                     <StackPanel>
                         <Button Content="Đăng Nhập " Background="Transparent" BorderThickness="0" Margin="0, 0, 0, 5"></Button>
 
                     </StackPanel>
                 </Border>
 
-                <Label Canvas.Left="489" Canvas.Top="343" FontFamily="Cambria" HorizontalAlignment="Center" VerticalAlignment="Top" >
+                <Label Canvas.Left="489" Canvas.Top="343" FontFamily="Cambria" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="339,349,0,0" >
                     Bạn chưa có tài khoản ?
                 </Label>
-                <TextBlock Canvas.Left="633" Canvas.Top="342">
-                <Hyperlink NavigateUri="">Đăng ký ngay</Hyperlink>
+                <TextBlock Margin="488,351,10,73" RenderTransformOrigin="0.909,0.164">
+    <Hyperlink NavigateUri="">Đăng ký ngay</Hyperlink>
                 </TextBlock>
+                <CheckBox Content="ghi nhớ" HorizontalAlignment="Left" Margin="348,247,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked"/>
+                <Label Content="LOGIN"  HorizontalAlignment="Left"  VerticalAlignment="Top" FontFamily="Bahnschrift SemiBold" FontSize="30" Foreground="#FF2523EB" Height="37" Width="100" FontWeight="Bold" Margin="404,34,0,0"/>
+            </Grid>
+            
+        </Grid>
 
 
 
-            </Canvas>
-        </StackPanel>
-        <CheckBox Content="ghi nhớ" HorizontalAlignment="Left" Margin="518,248,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked"/>
-        <Label Content="LOGIN"  HorizontalAlignment="Left" Margin="563,78,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift SemiBold" FontSize="30" Foreground="#FF2523EB" Height="37" Width="100" FontWeight="Bold"/>
+
+
+
+        
     </Grid>
 </Window>
