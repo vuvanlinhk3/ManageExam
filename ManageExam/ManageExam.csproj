@@ -67,7 +67,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="admin\view\mUser\adduser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="admin\view\mUser\viewuser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="admin\view\pointuser\grades.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -87,6 +95,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="admin\controll\controller.cs" />
     <Compile Include="admin\view\diaLog\selectAddExam.xaml.cs">
       <DependentUpon>selectAddExam.xaml</DependentUpon>
     </Compile>
@@ -96,8 +105,14 @@
     <Compile Include="admin\view\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
+    <Compile Include="admin\view\mUser\adduser.xaml.cs">
+      <DependentUpon>adduser.xaml</DependentUpon>
+    </Compile>
     <Compile Include="admin\view\mUser\viewuser.xaml.cs">
       <DependentUpon>viewuser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="admin\view\pointuser\grades.xaml.cs">
+      <DependentUpon>grades.xaml</DependentUpon>
     </Compile>
     <Compile Include="admin\view\Signup.xaml.cs">
       <DependentUpon>Signup.xaml</DependentUpon>
@@ -165,8 +180,8 @@
     <Resource Include="lib\Studying.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="admin\controll\" />
     <Folder Include="admin\model\" />
+    <Folder Include="admin\view\addaset\" />
     <Folder Include="admin\view\addExam\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
