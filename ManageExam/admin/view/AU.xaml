@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="ManageExam.admin.view.AU"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ManageExam.admin.view"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="652">
+    <UserControl.Resources>
+        <Style x:Key="botron" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="#FFF0B272"
+                            BorderBrush="Blue"
+                            CornerRadius="15">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Image Stretch="FILL" Source="/lib/b.jpg" Opacity="0.8"/>
+        <Border Background="White"  BorderBrush="LightGray" BorderThickness="1" CornerRadius="20" Padding="7, 6" HorizontalAlignment="Left" VerticalAlignment="Top"  RenderTransformOrigin="0.49,1.549" Width="228" Margin="156,120,0,0" Height="47">
+            <StackPanel>
+                <TextBox Text="Nhập tài khoản của bạn" Background="Transparent" BorderThickness="0" Margin="0, 0, 0, 5" Height="34" FontSize="20"/>
+            </StackPanel>
+        </Border>
+        <Button Content="Thêm" HorizontalAlignment="Left" Background="White" Margin="376,278,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" FontSize="22" Click="Button_Click" Width="74" Style="{StaticResource botron}"/>
+        <Border Background="White"  BorderBrush="LightGray" BorderThickness="1" CornerRadius="20" Padding="7, 6" HorizontalAlignment="Left" VerticalAlignment="Center"  RenderTransformOrigin="0.49,1.549" Width="229" Margin="156,0,0,0" Height="46">
+            <StackPanel>
+                <TextBox Text="Nhập mật khẩu của bạn" Background="Transparent" BorderThickness="0" Margin="0, 0, 0, 5" Height="34" FontSize="20"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

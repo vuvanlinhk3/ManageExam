@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-F:\CSHAP_CNdotNET\Project\ManageExam\ManageExam\obj\Debug\
+D:\NNc#\DuAN\ManageExam\ManageExam\obj\Debug\
 ManageExam
 none
 false
 DEBUG;TRACE
-F:\CSHAP_CNdotNET\Project\ManageExam\ManageExam\App.xaml
-10-269845361
+D:\NNc#\DuAN\ManageExam\ManageExam\App.xaml
+131489470242
 
-16-1703880495
+192147139158
 13-1310406943
-admin\view\diaLog\selectAddExam.xaml;admin\view\Home.xaml;admin\view\Login.xaml;admin\view\mUser\adduser.xaml;admin\view\mUser\viewuser.xaml;admin\view\pointuser\grades.xaml;admin\view\Signup.xaml;admin\view\viewExam\viewImgExam.xaml;laucher.xaml;MainWindow.xaml;
+admin\view\AU.xaml;admin\view\diaLog\selectAddExam.xaml;admin\view\DSND.xaml;admin\view\Home.xaml;admin\view\Login.xaml;admin\view\mUser\adduser.xaml;admin\view\mUser\viewuser.xaml;admin\view\pointuser\grades.xaml;admin\view\Signup.xaml;admin\view\usercontrol.xaml;admin\view\viewExam\viewImgExam.xaml;laucher.xaml;MainWindow.xaml;
 
 True
 

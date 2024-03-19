@@ -55,7 +55,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="admin\view\AU.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="admin\view\diaLog\selectAddExam.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="admin\view\DSND.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -83,6 +91,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="admin\view\usercontrol.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="admin\view\viewExam\viewImgExam.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -96,8 +108,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Compile Include="admin\controll\controller.cs" />
+    <Compile Include="admin\view\AU.xaml.cs">
+      <DependentUpon>AU.xaml</DependentUpon>
+    </Compile>
     <Compile Include="admin\view\diaLog\selectAddExam.xaml.cs">
       <DependentUpon>selectAddExam.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="admin\view\DSND.xaml.cs">
+      <DependentUpon>DSND.xaml</DependentUpon>
     </Compile>
     <Compile Include="admin\view\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
@@ -116,6 +134,9 @@
     </Compile>
     <Compile Include="admin\view\Signup.xaml.cs">
       <DependentUpon>Signup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="admin\view\usercontrol.xaml.cs">
+      <DependentUpon>usercontrol.xaml</DependentUpon>
     </Compile>
     <Compile Include="admin\view\viewExam\viewImgExam.xaml.cs">
       <DependentUpon>viewImgExam.xaml</DependentUpon>
@@ -183,6 +204,12 @@
     <Folder Include="admin\model\" />
     <Folder Include="admin\view\addaset\" />
     <Folder Include="admin\view\addExam\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="lib\a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="lib\b.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

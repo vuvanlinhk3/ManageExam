@@ -1,0 +1,42 @@
+﻿<Window x:Class="ManageExam.admin.view.usercontrol"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ManageExam.admin.view"
+        mc:Ignorable="d"
+        Title="usercontrol" ResizeMode="NoResize" Height="450" Width="800">
+    <Window.Resources>
+        <Style x:Key="botron" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="#FF7DF177"
+                                BorderBrush="Blue"
+                                CornerRadius="20">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+    </Window.Resources>
+    
+    <Grid>
+        <local:AU x:Name="AU" HorizontalAlignment="Left" Margin="148,0,0,0" VerticalAlignment="Center" Height="435" Width="652"/>
+        <Image HorizontalAlignment="Left" Height="148" Stretch="Fill" VerticalAlignment="Top" Width="450" Source="/lib/a.png" Opacity="0.6" RenderTransformOrigin="0.5,0.5" Margin="-150,152,0,0">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Button Content="Danh sách người dùng " HorizontalAlignment="Left" Margin="0,147,0,0" VerticalAlignment="Top" Height="31" Width="148" Click="Button_Click_2" BorderBrush="#FFA17777" Style="{StaticResource botron}"/>
+        <Button Content="Thêm người dùng" HorizontalAlignment="Left" VerticalAlignment="Center" Height="31" Width="148" BorderBrush="{x:Null}"  Style="{StaticResource botron}" Click="Button_Click_3"/>
+        <local:DSND x:Name="DSND" HorizontalAlignment="Left" Margin="148,0,0,0" VerticalAlignment="Center" Height="434" Width="652"/>
+    </Grid>
+</Window>
