@@ -79,6 +79,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="admin\view\mUser\edituser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="admin\view\mUser\viewuser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -125,6 +129,9 @@
     </Compile>
     <Compile Include="admin\view\mUser\adduser.xaml.cs">
       <DependentUpon>adduser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="admin\view\mUser\edituser.xaml.cs">
+      <DependentUpon>edituser.xaml</DependentUpon>
     </Compile>
     <Compile Include="admin\view\mUser\viewuser.xaml.cs">
       <DependentUpon>viewuser.xaml</DependentUpon>
@@ -210,6 +217,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="lib\b.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="lib\Background2.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
