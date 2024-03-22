@@ -19,9 +19,31 @@ namespace ManageExam.admin.view.addexam
     /// </summary>
     public partial class nameaddexam : Window
     {
+        public string nameExam { get; private set; }
         public nameaddexam()
         {
             InitializeComponent();
+        }
+        private void Next(object sender, RoutedEventArgs e)
+        {   // nếu đề thi không null thì mới chạy
+            if(!string.IsNullOrEmpty(tendethi.Text))
+            {
+                nameExam = tendethi.Text;
+
+
+
+                DialogResult = true;// đóng cả 2 tab home và này
+
+                addexammain addexammain = new addexammain(nameExam);    
+                addexammain.Show();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng nhập tên đề thi");
+            }
+
+
+
         }
     }
 }

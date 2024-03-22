@@ -8,17 +8,103 @@
         Title="addexammain" Height="750" Width="1200">
     <Grid>
         <Label Content="ĐỀ : " HorizontalAlignment="Left" Margin="527,10,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <Label Content="1" HorizontalAlignment="Left" Margin="585,10,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label x:Name="tendethichinh" Content="1" HorizontalAlignment="Left" Margin="585,10,0,0" VerticalAlignment="Top" FontSize="20"/>
 
 
-        <DataGrid d:ItemsSource="{d:SampleData ItemCount=10}" Margin="0,94,639,0"/>
-        <Button Content="Thêm Ảnh" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top" Height="48" Width="132" FontSize="20"/>
+        <DataGrid x:Name="dataGrid" Margin="0,94,639,0" AutoGenerateColumns="False" FontSize="18">
+            <!-- Cột cho hiển thị tên đề thi -->
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Đề thi" Binding="{Binding TenDeThi}"/>
+
+                <!-- Cột cho hiển thị hình ảnh -->
+                <DataGridTemplateColumn Header="Hình ảnh">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding Image}" Width="150" Height="auto"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <!-- Cột nút "Thay đổi" -->
+                <DataGridTemplateColumn Header="Thay đổi">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Thay đổi" Click="ThayDoi_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <!-- Cột nút "Xóa" -->
+                <DataGridTemplateColumn Header="Xóa">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Xóa" Click="Xoa_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <!-- Các cột khác có thể thêm ở đây -->
+            </DataGrid.Columns>
+
+            <!-- Xử lý khi DataGrid không có dữ liệu -->
+            <DataGrid.Style>
+                <Style TargetType="DataGrid">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Items.Count, RelativeSource={RelativeSource Self}}" Value="0">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate>
+                                        <TextBlock Text="Không có dữ liệu" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.Style>
+        </DataGrid>
+
+
+
+
+
+
+        <Button Click="themanh" Content="Thêm Ảnh" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top" Height="48" Width="132" FontSize="20"/>
         <Button Content="Lưu" HorizontalAlignment="Left" Margin="1058,676,0,0" VerticalAlignment="Top" Height="48" Width="132" FontSize="20"/>
-        <Button Content="Thiết Lập Đáp Án" HorizontalAlignment="Left" Margin="986,94,0,0" VerticalAlignment="Top" Height="48" Width="204" FontSize="20"/>
+        <Button Click="thietlapdapan_Click" Content="Thiết Lập Đáp Án" HorizontalAlignment="Left" Margin="986,94,0,0" VerticalAlignment="Top" Height="48" Width="204" FontSize="20"/>
 
 
-        <DataGrid d:ItemsSource="{d:SampleData ItemCount=10}" Margin="585,160,10,66"/>
-        <TextBox HorizontalAlignment="Left" Margin="774,94,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="114" Height="48" FontSize="20"/>
+
+        <DataGrid x:Name="bangdapan" FontSize="18" Margin="585,160,10,66" AutoGenerateColumns="False" ItemsSource="{Binding danhSachDeThi}">
+            <DataGrid.Columns>
+                <!-- Cột cho câu -->
+                <DataGridTextColumn x:Name="cau" Header="Câu" Binding="{Binding cau}" />
+
+                <!-- Cột cho số lượng đáp án -->
+                <DataGridTemplateColumn Header="Số lượng đáp án">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBox Text="{Binding SoLuongDapAn, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,TargetNullValue=4}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <!-- Cột cho đáp án đúng -->
+                <DataGridTemplateColumn Header="Đáp án đúng">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBox Text="{Binding DapAnDung, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+
+
+
+        <TextBox x:Name="soluongcauhoi" HorizontalAlignment="Left" Margin="774,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="114" Height="48" FontSize="20"/>
         <Label Content="Số Lượng câu hỏi" HorizontalAlignment="Left" Margin="585,100,0,0" VerticalAlignment="Top" FontSize="20"/>
     </Grid>
 </Window>
