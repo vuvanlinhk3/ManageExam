@@ -19,9 +19,48 @@ namespace ManageExam.admin.view.addexam
     /// </summary>
     public partial class dapancauhoi : Window
     {
+        public int soddapans = 4;
+        public string dapandung;
+
         public dapancauhoi()
         {
+
             InitializeComponent();
+
+        }
+
+        private void chonslda_Click(object sender, RoutedEventArgs e)
+        {
+            soddapans = int.Parse(soddapan.Text);
+
+        }
+
+        public void nextcau_Click(object sender, RoutedEventArgs e)
+        {
+            //if (a.IsChecked == true)
+            //{
+            //    dapandung = "A";
+            //    Console.WriteLine("A");
+            //}
+            //if (b.IsChecked == true)
+            //{
+            //    dapandung = "B";
+            //    Console.WriteLine("B");
+
+            //}
+            //if (c.IsChecked == true)
+            //{
+            //    dapandung = "C";
+            //    Console.WriteLine("C");
+
+            //}
+            //if (d.IsChecked == true)
+            //{
+            //    dapandung = "D";
+            //    Console.WriteLine("D");
+
+            //}
+
         }
     }
 }

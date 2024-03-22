@@ -82,5 +82,13 @@ namespace ManageExam.admin.view
             // Đóng form hiện tại (MainPage.xaml)
             this.Close();
         }
+        private void tk_TextChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

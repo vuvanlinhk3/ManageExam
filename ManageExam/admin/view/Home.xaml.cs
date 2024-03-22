@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManageExam.admin.view.addexam;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,17 @@ namespace ManageExam.admin.view
         public Home()
         {
             InitializeComponent();
+        }
+
+        private void addExam(object sender, RoutedEventArgs e)
+        {
+            nameaddexam dialog = new nameaddexam();
+            bool? result = dialog.ShowDialog();
+            if (result.HasValue && result.Value)
+            {
+                // Đã click vào nút trong dialog, đóng cả hai cửa sổ
+                Close();
+            }
         }
     }
 }

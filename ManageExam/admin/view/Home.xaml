@@ -18,11 +18,11 @@
             </Button>
 
         </Grid>
-        <Grid Margin="0,100,0,0" Height="250" VerticalAlignment="Top" Background="#66DADCE0">
+        <Grid Margin="0,97,0,0" Height="250" VerticalAlignment="Top" Background="#66DADCE0">
             <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
 
                 <Grid Height="170" Width="150"  VerticalAlignment="Top" HorizontalAlignment="Left">
-                    <Button HorizontalAlignment="Left" VerticalAlignment="Top" Height="130" Width="150" FontSize="100" Cursor="Hand" FontFamily="Microsoft Tai Le" FontWeight="Bold" BorderBrush="#FFDDEC9E" Background="White" Foreground="#FF737264">
+                    <Button Click="addExam" HorizontalAlignment="Left" VerticalAlignment="Top" Height="130" Width="150" FontSize="100" Cursor="Hand" FontFamily="Microsoft Tai Le" FontWeight="Bold" BorderBrush="#FFDDEC9E" Background="White" Foreground="#FF737264">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="\Lib\addexam.png" Width="150" Height="170" />
 
