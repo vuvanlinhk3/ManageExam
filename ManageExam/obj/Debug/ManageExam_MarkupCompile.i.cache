@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 F:\CSHAP_CNdotNET\Project\BAITAPLON\ManageExam\ManageExam\App.xaml
-161516253103
+18-395775607
 
-24629721566
+26-1334477372
 33-1362554666
-admin\view\addexam\nameaddexam.xaml;admin\view\AU.xaml;admin\view\diaLog\selectAddExam.xaml;admin\view\diaLog\Window1.xaml;admin\view\DSND.xaml;admin\view\Home.xaml;admin\view\Login.xaml;admin\view\mUser\adduser.xaml;admin\view\mUser\edituser.xaml;admin\view\mUser\viewuser.xaml;admin\view\pointuser\grades.xaml;admin\view\Signup.xaml;admin\view\usercontrol.xaml;admin\view\viewExam\viewImgExam.xaml;laucher.xaml;MainWindow.xaml;
+admin\view\addexam\addexammain.xaml;admin\view\addexam\dapancauhoi.xaml;admin\view\addexam\nameaddexam.xaml;admin\view\AU.xaml;admin\view\diaLog\selectAddExam.xaml;admin\view\diaLog\Window1.xaml;admin\view\DSND.xaml;admin\view\Home.xaml;admin\view\Login.xaml;admin\view\mUser\adduser.xaml;admin\view\mUser\edituser.xaml;admin\view\mUser\viewuser.xaml;admin\view\pointuser\grades.xaml;admin\view\Signup.xaml;admin\view\usercontrol.xaml;admin\view\viewExam\viewImgExam.xaml;laucher.xaml;MainWindow.xaml;
 
-False
+True
 

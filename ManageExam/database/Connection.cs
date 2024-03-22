@@ -1,6 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
 using System.Data;
-using System.Data.SqlClient;
 
 namespace ManageExam.database
 {
@@ -24,7 +23,7 @@ namespace ManageExam.database
             server = "localhost";
             database = "sdfsfffff";
             uid = "root";
-            password = ""; 
+            password = "";
 
             string connectionString;
             connectionString = $"SERVER={server};DATABASE={database};UID={uid};PASSWORD={password};";
