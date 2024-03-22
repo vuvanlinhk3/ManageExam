@@ -107,6 +107,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="admin\view\addexam\nameaddexam.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="admin\view\AU.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -116,6 +120,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="admin\view\diaLog\selectAddExam.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="admin\view\diaLog\Window1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -132,6 +140,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="admin\view\mUser\adduser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="admin\view\mUser\edituser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -164,6 +176,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Compile Include="admin\controll\controller.cs" />
+    <Compile Include="admin\controll\test.cs" />
+    <Compile Include="admin\view\addexam\nameaddexam.xaml.cs">
+      <DependentUpon>nameaddexam.xaml</DependentUpon>
+    </Compile>
     <Compile Include="admin\view\AU.xaml.cs">
       <DependentUpon>AU.xaml</DependentUpon>
     </Compile>
@@ -172,6 +188,9 @@
     </Compile>
     <Compile Include="admin\view\diaLog\selectAddExam.xaml.cs">
       <DependentUpon>selectAddExam.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="admin\view\diaLog\Window1.xaml.cs">
+      <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
     <Compile Include="admin\view\DSND.xaml.cs">
       <DependentUpon>DSND.xaml</DependentUpon>
@@ -184,6 +203,9 @@
     </Compile>
     <Compile Include="admin\view\mUser\adduser.xaml.cs">
       <DependentUpon>adduser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="admin\view\mUser\edituser.xaml.cs">
+      <DependentUpon>edituser.xaml</DependentUpon>
     </Compile>
     <Compile Include="admin\view\mUser\viewuser.xaml.cs">
       <DependentUpon>viewuser.xaml</DependentUpon>
@@ -204,6 +226,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="database\Connection.cs" />
     <Compile Include="laucher.xaml.cs">
       <DependentUpon>laucher.xaml</DependentUpon>
     </Compile>
@@ -263,13 +286,15 @@
   <ItemGroup>
     <Folder Include="admin\model\" />
     <Folder Include="admin\view\addaset\" />
-    <Folder Include="admin\view\addExam\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="lib\a.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="lib\b.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="lib\Background2.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
