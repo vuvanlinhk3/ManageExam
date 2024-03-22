@@ -3,31 +3,47 @@
   "WorkspaceRootPath": "F:\\CSHAP_CNdotNET\\Project\\BAITAPLON\\ManageExam\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|f:\\cshap_cndotnet\\project\\baitaplon\\manageexam\\manageexam\\admin\\view\\addexam\\addexammain.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|solutionrelative:manageexam\\admin\\view\\addexam\\addexammain.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|f:\\cshap_cndotnet\\project\\baitaplon\\manageexam\\manageexam\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|solutionrelative:manageexam\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|f:\\cshap_cndotnet\\project\\baitaplon\\manageexam\\manageexam\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|solutionrelative:manageexam\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|f:\\cshap_cndotnet\\project\\baitaplon\\manageexam\\manageexam\\admin\\view\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|solutionrelative:manageexam\\admin\\view\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|f:\\cshap_cndotnet\\project\\baitaplon\\manageexam\\manageexam\\admin\\view\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|solutionrelative:manageexam\\admin\\view\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|f:\\cshap_cndotnet\\project\\baitaplon\\manageexam\\manageexam\\admin\\view\\addexam\\addexammain.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|solutionrelative:manageexam\\admin\\view\\addexam\\addexammain.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|f:\\cshap_cndotnet\\project\\baitaplon\\manageexam\\manageexam\\admin\\view\\addexam\\nameaddexam.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|F:\\CSHAP_CNdotNET\\Project\\BAITAPLON\\ManageExam\\manageexam\\admin\\view\\addexam\\addexammain.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|solutionrelative:manageexam\\admin\\view\\addexam\\addexammain.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|F:\\CSHAP_CNdotNET\\Project\\BAITAPLON\\ManageExam\\manageexam\\admin\\view\\addexam\\nameaddexam.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|solutionrelative:manageexam\\admin\\view\\addexam\\nameaddexam.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|f:\\cshap_cndotnet\\project\\baitaplon\\manageexam\\manageexam\\admin\\view\\addexam\\dapancauhoi.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|F:\\CSHAP_CNdotNET\\Project\\BAITAPLON\\ManageExam\\manageexam\\admin\\view\\addexam\\dapancauhoi.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|solutionrelative:manageexam\\admin\\view\\addexam\\dapancauhoi.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|f:\\cshap_cndotnet\\project\\baitaplon\\manageexam\\manageexam\\admin\\view\\addexam\\dapancauhoi.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|F:\\CSHAP_CNdotNET\\Project\\BAITAPLON\\ManageExam\\manageexam\\admin\\view\\addexam\\dapancauhoi.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|solutionrelative:manageexam\\admin\\view\\addexam\\dapancauhoi.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|f:\\cshap_cndotnet\\project\\baitaplon\\manageexam\\manageexam\\admin\\view\\addexam\\nameaddexam.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|F:\\CSHAP_CNdotNET\\Project\\BAITAPLON\\ManageExam\\manageexam\\admin\\view\\addexam\\nameaddexam.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|solutionrelative:manageexam\\admin\\view\\addexam\\nameaddexam.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|f:\\cshap_cndotnet\\project\\baitaplon\\manageexam\\manageexam\\admin\\view\\home.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|F:\\CSHAP_CNdotNET\\Project\\BAITAPLON\\ManageExam\\manageexam\\admin\\view\\home.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|solutionrelative:manageexam\\admin\\view\\home.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -54,11 +70,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "addexammain.xaml",
               "DocumentMoniker": "F:\\CSHAP_CNdotNET\\Project\\BAITAPLON\\ManageExam\\ManageExam\\admin\\view\\addexam\\addexammain.xaml",
               "RelativeDocumentMoniker": "ManageExam\\admin\\view\\addexam\\addexammain.xaml",
@@ -66,18 +82,17 @@
               "RelativeToolTip": "ManageExam\\admin\\view\\addexam\\addexammain.xaml*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-03-22T15:29:32.242Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "addexammain.xaml.cs",
               "DocumentMoniker": "F:\\CSHAP_CNdotNET\\Project\\BAITAPLON\\ManageExam\\ManageExam\\admin\\view\\addexam\\addexammain.xaml.cs",
               "RelativeDocumentMoniker": "ManageExam\\admin\\view\\addexam\\addexammain.xaml.cs",
-              "ToolTip": "F:\\CSHAP_CNdotNET\\Project\\BAITAPLON\\ManageExam\\ManageExam\\admin\\view\\addexam\\addexammain.xaml.cs*",
-              "RelativeToolTip": "ManageExam\\admin\\view\\addexam\\addexammain.xaml.cs*",
-              "ViewState": "AQIAADsAAAAAAAAAAAAIwGgAAAAiAAAA",
+              "ToolTip": "F:\\CSHAP_CNdotNET\\Project\\BAITAPLON\\ManageExam\\ManageExam\\admin\\view\\addexam\\addexammain.xaml.cs",
+              "RelativeToolTip": "ManageExam\\admin\\view\\addexam\\addexammain.xaml.cs",
+              "ViewState": "AQIAAEEAAAAAAAAAAAAkwDQAAABEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-22T15:27:38.381Z",
               "IsPinned": true,
@@ -85,7 +100,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "dapancauhoi.xaml.cs",
               "DocumentMoniker": "F:\\CSHAP_CNdotNET\\Project\\BAITAPLON\\ManageExam\\ManageExam\\admin\\view\\addexam\\dapancauhoi.xaml.cs",
               "RelativeDocumentMoniker": "ManageExam\\admin\\view\\addexam\\dapancauhoi.xaml.cs",
@@ -94,12 +109,11 @@
               "ViewState": "AQIAAA0AAAAAAAAAAAAQwC8AAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-22T15:35:50.936Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "dapancauhoi.xaml",
               "DocumentMoniker": "F:\\CSHAP_CNdotNET\\Project\\BAITAPLON\\ManageExam\\ManageExam\\admin\\view\\addexam\\dapancauhoi.xaml",
               "RelativeDocumentMoniker": "ManageExam\\admin\\view\\addexam\\dapancauhoi.xaml",
@@ -107,12 +121,61 @@
               "RelativeToolTip": "ManageExam\\admin\\view\\addexam\\dapancauhoi.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-03-22T15:34:31.189Z",
-              "IsPinned": true,
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Login.xaml.cs",
+              "DocumentMoniker": "F:\\CSHAP_CNdotNET\\Project\\BAITAPLON\\ManageExam\\ManageExam\\admin\\view\\Login.xaml.cs",
+              "RelativeDocumentMoniker": "ManageExam\\admin\\view\\Login.xaml.cs",
+              "ToolTip": "F:\\CSHAP_CNdotNET\\Project\\BAITAPLON\\ManageExam\\ManageExam\\admin\\view\\Login.xaml.cs",
+              "RelativeToolTip": "ManageExam\\admin\\view\\Login.xaml.cs",
+              "ViewState": "AQIAAEQAAAAAAAAAAAAwwFAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-22T17:55:26.599Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
+              "Title": "Login.xaml",
+              "DocumentMoniker": "F:\\CSHAP_CNdotNET\\Project\\BAITAPLON\\ManageExam\\ManageExam\\admin\\view\\Login.xaml",
+              "RelativeDocumentMoniker": "ManageExam\\admin\\view\\Login.xaml",
+              "ToolTip": "F:\\CSHAP_CNdotNET\\Project\\BAITAPLON\\ManageExam\\ManageExam\\admin\\view\\Login.xaml",
+              "RelativeToolTip": "ManageExam\\admin\\view\\Login.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-03-22T17:55:20.433Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "App.xaml",
+              "DocumentMoniker": "F:\\CSHAP_CNdotNET\\Project\\BAITAPLON\\ManageExam\\ManageExam\\App.xaml",
+              "RelativeDocumentMoniker": "ManageExam\\App.xaml",
+              "ToolTip": "F:\\CSHAP_CNdotNET\\Project\\BAITAPLON\\ManageExam\\ManageExam\\App.xaml*",
+              "RelativeToolTip": "ManageExam\\App.xaml*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-03-22T17:54:51.981Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "App.config",
+              "DocumentMoniker": "F:\\CSHAP_CNdotNET\\Project\\BAITAPLON\\ManageExam\\ManageExam\\App.config",
+              "RelativeDocumentMoniker": "ManageExam\\App.config",
+              "ToolTip": "F:\\CSHAP_CNdotNET\\Project\\BAITAPLON\\ManageExam\\ManageExam\\App.config",
+              "RelativeToolTip": "ManageExam\\App.config",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-03-22T17:54:46.862Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "Home.xaml.cs",
               "DocumentMoniker": "F:\\CSHAP_CNdotNET\\Project\\BAITAPLON\\ManageExam\\ManageExam\\admin\\view\\Home.xaml.cs",
               "RelativeDocumentMoniker": "ManageExam\\admin\\view\\Home.xaml.cs",
@@ -120,12 +183,11 @@
               "RelativeToolTip": "ManageExam\\admin\\view\\Home.xaml.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAACMAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-22T15:35:04.555Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-22T15:35:04.555Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "nameaddexam.xaml.cs",
               "DocumentMoniker": "F:\\CSHAP_CNdotNET\\Project\\BAITAPLON\\ManageExam\\ManageExam\\admin\\view\\addexam\\nameaddexam.xaml.cs",
               "RelativeDocumentMoniker": "ManageExam\\admin\\view\\addexam\\nameaddexam.xaml.cs",
@@ -133,60 +195,55 @@
               "RelativeToolTip": "ManageExam\\admin\\view\\addexam\\nameaddexam.xaml.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAABwAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-22T15:27:36.714Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-22T15:27:36.714Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "nameaddexam.xaml",
               "DocumentMoniker": "F:\\CSHAP_CNdotNET\\Project\\BAITAPLON\\ManageExam\\ManageExam\\admin\\view\\addexam\\nameaddexam.xaml",
               "RelativeDocumentMoniker": "ManageExam\\admin\\view\\addexam\\nameaddexam.xaml",
               "ToolTip": "F:\\CSHAP_CNdotNET\\Project\\BAITAPLON\\ManageExam\\ManageExam\\admin\\view\\addexam\\nameaddexam.xaml",
               "RelativeToolTip": "ManageExam\\admin\\view\\addexam\\nameaddexam.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-03-22T15:27:34.792Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-22T15:27:34.792Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "usercontrol.xaml",
               "DocumentMoniker": "F:\\CSHAP_CNdotNET\\Project\\BAITAPLON\\ManageExam\\ManageExam\\admin\\view\\usercontrol.xaml",
               "RelativeDocumentMoniker": "ManageExam\\admin\\view\\usercontrol.xaml",
               "ToolTip": "F:\\CSHAP_CNdotNET\\Project\\BAITAPLON\\ManageExam\\ManageExam\\admin\\view\\usercontrol.xaml",
               "RelativeToolTip": "ManageExam\\admin\\view\\usercontrol.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-03-21T15:53:42.869Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-21T15:53:42.869Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "Home.xaml",
               "DocumentMoniker": "F:\\CSHAP_CNdotNET\\Project\\BAITAPLON\\ManageExam\\ManageExam\\admin\\view\\Home.xaml",
               "RelativeDocumentMoniker": "ManageExam\\admin\\view\\Home.xaml",
               "ToolTip": "F:\\CSHAP_CNdotNET\\Project\\BAITAPLON\\ManageExam\\ManageExam\\admin\\view\\Home.xaml",
               "RelativeToolTip": "ManageExam\\admin\\view\\Home.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-03-04T15:02:18.307Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-04T15:02:18.307Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "viewuser.xaml",
               "DocumentMoniker": "F:\\CSHAP_CNdotNET\\Project\\BAITAPLON\\ManageExam\\ManageExam\\admin\\view\\mUser\\viewuser.xaml",
               "RelativeDocumentMoniker": "ManageExam\\admin\\view\\mUser\\viewuser.xaml",
               "ToolTip": "F:\\CSHAP_CNdotNET\\Project\\BAITAPLON\\ManageExam\\ManageExam\\admin\\view\\mUser\\viewuser.xaml",
               "RelativeToolTip": "ManageExam\\admin\\view\\mUser\\viewuser.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-03-05T06:03:21.426Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-05T06:03:21.426Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "edituser.xaml.cs",
               "DocumentMoniker": "F:\\CSHAP_CNdotNET\\Project\\BAITAPLON\\ManageExam\\ManageExam\\admin\\view\\mUser\\edituser.xaml.cs",
               "RelativeDocumentMoniker": "ManageExam\\admin\\view\\mUser\\edituser.xaml.cs",
@@ -194,8 +251,7 @@
               "RelativeToolTip": "ManageExam\\admin\\view\\mUser\\edituser.xaml.cs",
               "ViewState": "AQIAAAcAAAAAAAAAAAAowCcAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-21T13:58:17.243Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-21T13:58:17.243Z"
             }
           ]
         }
