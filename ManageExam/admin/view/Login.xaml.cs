@@ -12,6 +12,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MySql.Data.MySqlClient;
+using ManageExam.database;
+using System.Collections.ObjectModel;
+
 
 namespace ManageExam.admin.view
 {
@@ -24,54 +28,81 @@ namespace ManageExam.admin.view
         {
             InitializeComponent();
         }
+
+        // Sự kiện xử lý khi nhấn nút "Đăng nhập"
         private void login_Click(object sender, RoutedEventArgs e)
-        {   string TK= tk.Text;
+        {
+            // Lấy tên tài khoản và mật khẩu từ các trường nhập liệu
+            string TK = tk.Text;
             string PASS = pass.Password;
-            if (String.IsNullOrEmpty(TK) || String.IsNullOrEmpty(PASS))
+
+            // Kiểm tra xem tên tài khoản và mật khẩu có được nhập hay không
+            if (string.IsNullOrEmpty(TK) || string.IsNullOrEmpty(PASS))
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin đăng nhập!", "Cảnh báo", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
-            // Thực hiện truy vấn cơ sở dữ liệu để kiểm tra thông tin đăng nhập
-            string query = "SELECT COUNT(*) FROM user WHERE id = @id AND mkUSER = @mkUSER";
-            string connectionString = "";
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            // Sử dụng kết nối cơ sở dữ liệu
+            using (Connection conn = new Connection())
             {
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@id", TK);
-                command.Parameters.AddWithValue("@mkUSER", PASS);
-
                 try
                 {
-                    connection.Open();
-                    int count = (int)command.ExecuteScalar();
-                    if (count > 0)
-                    {                  
-                        MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
-                        
+                    // Mở kết nối đến cơ sở dữ liệu
+                    if (conn.OpenConnection())
+                    {
+                        // Truy vấn để kiểm tra xem tên tài khoản và mật khẩu có tồn tại hay không
+                        string query = "SELECT COUNT(*) FROM tkadmin WHERE taikhoanAD = @id AND matkhauAD = @mk";
+                        MySqlCommand cmd = new MySqlCommand(query, conn.connection);
+                        cmd.Parameters.AddWithValue("@id", TK);
+                        cmd.Parameters.AddWithValue("@mk", PASS);
+
+                        // Thực thi truy vấn và kiểm tra kết quả
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                int count = reader.GetInt32(0);
+                                if (count > 0)
+                                {
+                                    // Nếu tên tài khoản và mật khẩu chính xác, hiển thị thông báo đăng nhập thành công và mở cửa sổ chính
+                                    MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+                                    Home home = new Home();
+                                    home.Show();
+                                    this.Close();
+                                }
+                                else
+                                {
+                                    // Nếu tên tài khoản hoặc mật khẩu không chính xác, hiển thị thông báo lỗi
+                                    MessageBox.Show("Tài khoản không tồn tại!", "Cảnh báo", MessageBoxButton.OK, MessageBoxImage.Warning);
+                                }
+                            }
+                        }
                     }
                     else
-                    {                   
-                        MessageBox.Show("Tài khoản không tồn tại!", "Cảnh báo", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    {
+                        // Nếu không thể kết nối đến cơ sở dữ liệu, hiển thị thông báo lỗi
+                        MessageBox.Show("Không thể kết nối đến cơ sở dữ liệu.", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 }
                 catch (Exception ex)
                 {
+                    // Nếu xảy ra lỗi trong quá trình xử lý, hiển thị thông báo lỗi
                     MessageBox.Show("Đã xảy ra lỗi khi thực hiện đăng nhập: " + ex.Message, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
-     
-    
-}
+        }
 
+        // Sự kiện xử lý khi nhấn nút "Quên mật khẩu"
         private void quenmk_Click(object sender, RoutedEventArgs e)
         {
-            changePassWord changePW= new changePassWord();
+            // Mở cửa sổ thay đổi mật khẩu
+            changePassWord changePW = new changePassWord();
             changePW.Show();
             this.Close();
         }
 
+        // Sự kiện xử lý khi nhấn nút "Đăng ký"
         private void dki_Click(object sender, RoutedEventArgs e)
         {
             Signup signupForm = new Signup();

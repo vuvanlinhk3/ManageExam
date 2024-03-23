@@ -58,7 +58,7 @@ namespace ManageExam.database
                 connection.Open();
                 return true;
             }
-            catch (MySqlException ex)
+            catch (MySqlException)
             {
                 // Handle exception
                 return false;
@@ -73,7 +73,7 @@ namespace ManageExam.database
                 connection.Close();
                 return true;
             }
-            catch (MySqlException ex)
+            catch (MySqlException)
             {
                 // Handle exception
                 return false;

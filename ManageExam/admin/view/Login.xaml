@@ -46,7 +46,7 @@
                 <CheckBox Content="ghi nhớ" HorizontalAlignment="Left" Margin="348,247,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked"/>
                 <Label Content="LOGIN"  HorizontalAlignment="Left"  VerticalAlignment="Top" FontFamily="Bahnschrift SemiBold" FontSize="30" Foreground="#FF2523EB" Height="37" Width="100" FontWeight="Bold" Margin="404,34,0,0"/>
                 <Label FontFamily="Cambria" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="348,102,0,0" Content="Nhập tài khoản của bạn : " />
-                <Label FontFamily="Cambria" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="348,173,0,0" Content="Nh mật khẩu của bạn :" />
+                <Label FontFamily="Cambria" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="348,173,0,0" Content="Nhập mật khẩu của bạn :" />
             </Grid>
             
         </Grid>

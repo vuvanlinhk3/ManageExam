@@ -14,6 +14,8 @@ using System.Windows.Shapes;
 using System.Data.SqlClient;
 using System.Data;
 using ManageExam.database;
+using MySql.Data.MySqlClient;
+
 
 namespace ManageExam.admin.view
 {
@@ -42,17 +44,22 @@ namespace ManageExam.admin.view
         {
             try
             {
-                conn.OpenConnection();
-                cmd = new SqlCommand("select * from ketqua");
-                adt = new SqlDataAdapter(cmd);
-                adt.Fill(dt);
-                datagrid.ItemsSource = dt.DefaultView;
-                conn.CloseConnection();
+                if (conn.OpenConnection())
+                {
+                    string query = "SELECT * FROM ketqua";
+                    MySqlCommand cmd = new MySqlCommand(query, conn.connection);
+
+                    MySqlDataAdapter adt = new MySqlDataAdapter(cmd);
+                    adt.Fill(dt);
+                    datagrid.ItemsSource = dt.DefaultView;
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
+
+
     }
 }
