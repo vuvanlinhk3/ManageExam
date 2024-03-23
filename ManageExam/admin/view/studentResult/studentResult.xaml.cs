@@ -1,34 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.Data;
+using System.Windows;
 using ManageExam.database;
 using MySql.Data.MySqlClient;
 
-
 namespace ManageExam.admin.view
 {
-    /// <summary>
-    /// Interaction logic for studentResult.xaml
-    /// </summary>
     public partial class studentResult : Window
     {
-        //string connectstring = @"";
-        //SqlConnection connection;
-        MySqlCommand cmd;
-        MySqlDataAdapter adt;
-        Connection conn;
-        DataTable dt = new DataTable();
         public studentResult()
         {
             InitializeComponent();
@@ -36,27 +15,33 @@ namespace ManageExam.admin.view
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            conn = new Connection();
+            datagrid.ItemsSource = null;
         }
 
         private void Result_Click(object sender, RoutedEventArgs e)
         {
-            try
+            using (Connection conn = new Connection())
             {
-                if (conn.OpenConnection())
+                try
                 {
-                    string query = "SELECT * FROM ketqua";
-                    MySqlCommand cmd = new MySqlCommand(query, conn.connection);
+                    conn.OpenConnection();
+                    string sqlQuery = "SELECT * FROM ketqua";
 
-                    MySqlDataAdapter adt = new MySqlDataAdapter(cmd);
-                    adt.Fill(dt);
-                    datagrid.ItemsSource = dt.DefaultView;
-                    conn.CloseConnection();
+                    using (MySqlCommand command = new MySqlCommand(sqlQuery, conn.connection))
+                    {
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
+                        {
+                            DataTable dataTable = new DataTable();
+                            adapter.Fill(dataTable);
+                            datagrid.ItemsSource = dataTable.DefaultView;
+                            conn.CloseConnection();
+                        }
+                    }
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("Error connecting to database: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
         }
     }
