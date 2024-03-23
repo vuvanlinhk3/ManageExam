@@ -1,11 +1,14 @@
 ﻿using MySql.Data.MySqlClient;
 using System.Data;
+using ManageExam.database;
+using System;
+
 
 namespace ManageExam.database
 {
-    internal class Connection
+    internal class Connection : IDisposable
     {
-        private MySqlConnection connection;
+        public MySqlConnection connection;
         private string server;
         private string database;
         private string uid;
@@ -16,7 +19,23 @@ namespace ManageExam.database
         {
             Initialize();
         }
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
 
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (connection != null)
+                {
+                    connection.Dispose();
+                    connection = null;
+                }
+            }
+        }
         // Initialize values
         private void Initialize()
         {
@@ -47,7 +66,7 @@ namespace ManageExam.database
         }
 
         // Close connection
-        private bool CloseConnection()
+        public bool CloseConnection()
         {
             try
             {

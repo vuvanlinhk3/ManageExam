@@ -5,6 +5,9 @@ using Microsoft.Win32;
 using System.Windows.Media.Imaging;
 using System.Collections.Generic;
 using Microsoft.VisualBasic;
+using ManageExam.database;
+using MySql.Data.MySqlClient;
+using System.IO;
 
 namespace ManageExam.admin.view.addexam
 {
@@ -106,9 +109,62 @@ namespace ManageExam.admin.view.addexam
             public BitmapImage Image { get; set; }
         }
 
+
         private void save_Click(object sender, RoutedEventArgs e)
         {
+            using (Connection conn = new Connection())
+            {
+                if (conn.OpenConnection())
+                {
+                    try
+                    {
+                        foreach (var cauHoi in bangdapans)
+                        {
+                            string query = "INSERT INTO CauHoi (Cau, SoLuongDapAn, DapAnDung) VALUES (@Cau, @SoLuongDapAn, @DapAnDung)";
+                            MySqlCommand cmd = new MySqlCommand(query, conn.connection);
+                            cmd.Parameters.AddWithValue("@Cau", cauHoi.cau);
+                            cmd.Parameters.AddWithValue("@SoLuongDapAn", cauHoi.SoLuongDapAn);
+                            cmd.Parameters.AddWithValue("@DapAnDung", cauHoi.DapAnDung);
+                            cmd.ExecuteNonQuery();
+                        }
 
+                        foreach (var deThi in danhSachDeThi)
+                        {
+                            // Chuyển đổi hình ảnh thành mảng byte để lưu vào cơ sở dữ liệu
+                            byte[] imageBytes;
+                            using (var stream = new MemoryStream())
+                            {
+                                PngBitmapEncoder encoder = new PngBitmapEncoder();
+                                encoder.Frames.Add(BitmapFrame.Create(deThi.Image));
+                                encoder.Save(stream);
+                                imageBytes = stream.ToArray();
+                            }
+
+                            string query = "INSERT INTO DeThi (TenDeThi, HinhAnh) VALUES (@TenDeThi, @HinhAnh)";
+                            MySqlCommand cmd = new MySqlCommand(query, conn.connection);
+                            cmd.Parameters.AddWithValue("@TenDeThi", deThi.TenDeThi);
+                            cmd.Parameters.AddWithValue("@HinhAnh", imageBytes);
+                            cmd.ExecuteNonQuery();
+                        }
+
+                        MessageBox.Show("Dữ liệu đã được lưu thành công vào cơ sở dữ liệu.");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Đã xảy ra lỗi khi lưu dữ liệu vào cơ sở dữ liệu: " + ex.Message);
+                    }
+                    finally
+                    {
+                        conn.CloseConnection();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Không thể kết nối đến cơ sở dữ liệu.");
+                }
+            }
         }
+
+
     }
 }

@@ -70,7 +70,7 @@
 
 
         <Button Click="themanh" Content="Thêm Ảnh" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top" Height="48" Width="132" FontSize="20"/>
-        <Button Content="Lưu" HorizontalAlignment="Left" Margin="1058,676,0,0" VerticalAlignment="Top" Height="48" Width="132" FontSize="20"/>
+        <Button  Content="Lưu" HorizontalAlignment="Left" Margin="1058,676,0,0" VerticalAlignment="Top" Height="48" Width="132" FontSize="20" Click="save_Click"/>
         <Button Click="thietlapdapan_Click" Content="Thiết Lập Đáp Án" HorizontalAlignment="Left" Margin="986,94,0,0" VerticalAlignment="Top" Height="48" Width="204" FontSize="20"/>
 
 
