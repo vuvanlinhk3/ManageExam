@@ -12,6 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MySql.Data.MySqlClient;
+
 
 namespace ManageExam.admin.view
 {
@@ -34,11 +36,11 @@ namespace ManageExam.admin.view
             }
 
             // Thực hiện truy vấn cơ sở dữ liệu để kiểm tra thông tin đăng nhập
-            string query = "SELECT COUNT(*) FROM user WHERE id = @id AND mkUSER = @mkUSER";
-            string connectionString = "";
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            string query = "SELECT COUNT(*) FROM user WHERE nameUSER = @id AND matkhauUSER = @mkUSER";
+            string connectionString = "Server=localhost;Port=3306;Database=qldulieu;Uid=root;Pwd=";
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
-                SqlCommand command = new SqlCommand(query, connection);
+                MySqlCommand command = new MySqlCommand(query, connection);
                 command.Parameters.AddWithValue("@id", TK);
                 command.Parameters.AddWithValue("@mkUSER", PASS);
 
