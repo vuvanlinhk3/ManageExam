@@ -11,7 +11,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using System.Data.SqlClient;
 using System.Data;
 using ManageExam.database;
 using MySql.Data.MySqlClient;
@@ -26,8 +25,8 @@ namespace ManageExam.admin.view
     {
         //string connectstring = @"";
         //SqlConnection connection;
-        SqlCommand cmd;
-        SqlDataAdapter adt;
+        MySqlCommand cmd;
+        MySqlDataAdapter adt;
         Connection conn;
         DataTable dt = new DataTable();
         public studentResult()
@@ -52,6 +51,7 @@ namespace ManageExam.admin.view
                     MySqlDataAdapter adt = new MySqlDataAdapter(cmd);
                     adt.Fill(dt);
                     datagrid.ItemsSource = dt.DefaultView;
+                    conn.CloseConnection();
                 }
             }
             catch (Exception ex)
@@ -59,7 +59,5 @@ namespace ManageExam.admin.view
                 MessageBox.Show(ex.Message);
             }
         }
-
-
     }
 }
