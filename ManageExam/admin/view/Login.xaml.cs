@@ -37,7 +37,7 @@ namespace ManageExam.admin.view
 
             // Thực hiện truy vấn cơ sở dữ liệu để kiểm tra thông tin đăng nhập
             string query = "SELECT COUNT(*) FROM user WHERE nameUSER = @id AND matkhauUSER = @mkUSER";
-            string connectionString = "Server=localhost;Port=3306;Database=qldulieu;Uid=root;Pwd=";
+            string connectionString = "Server=localhost;Port=3306;Database=qldulieu;Uid=root";
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 MySqlCommand command = new MySqlCommand(query, connection);
