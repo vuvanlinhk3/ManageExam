@@ -45,11 +45,9 @@ namespace ManageExam.admin.view
 
         private void toLoginTab_Click(object sender, RoutedEventArgs e)
         {
-            //LoginWindow loginWindowInstance = new LoginWindow();
-
-            //loginWindowInstance.Owner = this;
-
-            //loginWindowInstance.ShowDialog();
+            this.Close();
+            Login loginWindow = new Login();
+            loginWindow.Show();
         }
 
         private void resgisterBtn_Click(object sender, RoutedEventArgs e)
@@ -67,12 +65,12 @@ namespace ManageExam.admin.view
                     conn.OpenConnection();
                     string dataInsert = "INSERT INTO user (nameUSER, matkhauUSER) VALUES (@name, @password)";
                     MySqlCommand cmd = new MySqlCommand(dataInsert, conn.connection);
-                    cmd.Parameters.AddWithValue("@name", "Tên người dùng"); // Thay "Tên người dùng" bằng giá trị thực tế bạn muốn thêm
-                    cmd.Parameters.AddWithValue("@password", "Mật khẩu"); // Thay "Mật khẩu" bằng giá trị thực tế bạn muốn thêm
+                    cmd.Parameters.AddWithValue("@name", username.Text); // Thay "Tên người dùng" bằng giá trị thực tế bạn muốn thêm
+                    cmd.Parameters.AddWithValue("@password", password.Text); // Thay "Mật khẩu" bằng giá trị thực tế bạn muốn thêm
                     cmd.ExecuteNonQuery();
                     conn.CloseConnection();
                     username.Text = "";
-                    password.Text = "";     
+                    password.Text = "";
                 }
                 catch (Exception ex)
                 {
