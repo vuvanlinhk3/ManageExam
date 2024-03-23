@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:ManageExam"
 
-             StartupUri="\admin\view\Home.xaml">
+             StartupUri="\admin\view\studentResult.xaml">
 
     <Application.Resources>
          

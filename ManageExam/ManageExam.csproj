@@ -168,6 +168,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="admin\view\studentResult\studentResult.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="admin\view\usercontrol.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -230,6 +234,9 @@
     </Compile>
     <Compile Include="admin\view\Signup.xaml.cs">
       <DependentUpon>Signup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="admin\view\studentResult\studentResult.xaml.cs">
+      <DependentUpon>studentResult.xaml</DependentUpon>
     </Compile>
     <Compile Include="admin\view\usercontrol.xaml.cs">
       <DependentUpon>usercontrol.xaml</DependentUpon>
