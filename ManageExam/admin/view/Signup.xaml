@@ -145,7 +145,7 @@ WindowStyle="None"
                            FontFamily="Montserrat"
                            Margin="35 0 0 0"/>
 
-                        <TextBox x:Name="textBox1"
+                        <TextBox x:Name="username"
                          FontSize="20"
                          FontWeight="Medium"
                          FontFamily="Montserrat"
@@ -169,7 +169,7 @@ WindowStyle="None"
                            FontFamily="Montserrat"
                            Margin="35 10 0 0"/>
 
-                        <TextBox x:Name="textBox2"
+                        <TextBox x:Name="password"
                          FontSize="20"
                          FontWeight="Medium"
                          FontFamily="Montserrat"
@@ -193,7 +193,7 @@ WindowStyle="None"
                            FontFamily="Montserrat"
                            Margin="35 10 0 0"/>
 
-                        <TextBox x:Name="textBox3"
+                        <TextBox x:Name="passwordAuth"
                          FontSize="20"
                          FontWeight="Medium"
                          FontFamily="Montserrat"
@@ -215,7 +215,7 @@ WindowStyle="None"
                         Margin="30 10 5 0"
                         Padding="5"
                         HorizontalAlignment="Left"
-                        Cursor="Hand">Đăng kí
+                        Cursor="Hand" Click="resgisterBtn_Click">Đăng kí
 
                             <Button.Style>
                                 <Style TargetType="Button">
@@ -243,7 +243,6 @@ WindowStyle="None"
                         Đăng nhập tại đây
                     </Hyperlink>
                         </TextBlock>
-
                     </StackPanel>
                 </Grid>
             </Grid>

@@ -9,7 +9,7 @@
         WindowStyle="None"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
-        Background="Transparent"
+        Background="Gray"
         AllowsTransparency="True">
     <Grid>
         <Grid.RowDefinitions>

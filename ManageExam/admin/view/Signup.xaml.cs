@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -11,6 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ManageExam.database;
+using MySql.Data.MySqlClient;
 
 namespace ManageExam.admin.view
 {
@@ -42,11 +45,38 @@ namespace ManageExam.admin.view
 
         private void toLoginTab_Click(object sender, RoutedEventArgs e)
         {
-            //LoginWindow loginWindowInstance = new LoginWindow();
+            this.Close();
+            Login loginWindow = new Login();
+            loginWindow.Show();
+        }
 
-            //loginWindowInstance.Owner = this;
+        private void resgisterBtn_Click(object sender, RoutedEventArgs e)
+        {
+            using (Connection conn = new Connection())
+            {
+                try
+                {
+                    if (password.Text != passwordAuth.Text)
+                    {
+                        MessageBox.Show("Mật khẩu nhập lại không khớp. Vui lòng nhập lại.", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                        return;
+                    }
 
-            //loginWindowInstance.ShowDialog();
+                    conn.OpenConnection();
+                    string dataInsert = "INSERT INTO user (nameUSER, matkhauUSER) VALUES (@name, @password)";
+                    MySqlCommand cmd = new MySqlCommand(dataInsert, conn.connection);
+                    cmd.Parameters.AddWithValue("@name", username.Text); // Thay "Tên người dùng" bằng giá trị thực tế bạn muốn thêm
+                    cmd.Parameters.AddWithValue("@password", password.Text); // Thay "Mật khẩu" bằng giá trị thực tế bạn muốn thêm
+                    cmd.ExecuteNonQuery();
+                    conn.CloseConnection();
+                    username.Text = "";
+                    password.Text = "";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
         }
     }
 }
