@@ -1,4 +1,5 @@
 ﻿using ManageExam.admin.view.addexam;
+using ManageExam.admin.view.viewExam;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +35,13 @@ namespace ManageExam.admin.view
                 // Đã click vào nút trong dialog, đóng cả hai cửa sổ
                 Close();
             }
+        }
+        private void themlichthi_Click (object sender, RoutedEventArgs e)
+        {
+            viewImgExam viewImgExam = new viewImgExam();
+            viewImgExam.Show();
+
+            this.Close();
         }
     }
 }

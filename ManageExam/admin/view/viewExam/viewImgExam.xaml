@@ -5,11 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ManageExam.admin.view.viewExam"
         mc:Ignorable="d"
-        Title="viewImgExam" Height="450" Width="800">
+        WindowStartupLocation="CenterScreen"
+        Title="viewImgExam" Height="750" Width="1200">
     <Grid>
-        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,77,0,0" FontSize="18"/>
-        <TextBox HorizontalAlignment="Left" Margin="37,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="260" FontSize="18" Height="28"/>
-        <Button Content="Tìm Kiếm" HorizontalAlignment="Left" Margin="302,32,0,0" VerticalAlignment="Top" FontSize="18" Width="108"/>
+        <DataGrid x:Name="dataGrid" Margin="0,77,0,0" FontSize="18" Width="1170">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Mã đề thi" Width="150" Binding="{Binding MaDeThi}" />
+                <DataGridTextColumn Header="Tên đề thi" Width="400" Binding="{Binding TenDeThi}" />
+                <DataGridTextColumn Header="Môn thi" Width="200" Binding="{Binding MonThi}" />
+                <DataGridTextColumn Header="Số lượng câu hỏi" Width="170" Binding="{Binding SoLuongCauHoi}" />
+                <DataGridTemplateColumn Header="Xem đề thi" Width="150">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <Button Width="150" Content="Xem" Click="XemDeThi_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn  Header="Xóa đề thi" Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Width="100" Content="Xóa" Click="XoaDeThi_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+
+
+        <TextBox x:Name="inputtinkem" HorizontalAlignment="Left" Margin="37,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="260" FontSize="18" Height="28"/>
+        <Button Click="timkiem_Click" Content="Tìm Kiếm" HorizontalAlignment="Left" Margin="302,32,0,0" VerticalAlignment="Top" FontSize="18" Width="108"/>
+        <Button Click="back_Click" Content="Quay lại" HorizontalAlignment="Right"  VerticalAlignment="Top" FontSize="18" Width="91" Margin="0,10,10,0"/>
 
     </Grid>
 </Window>

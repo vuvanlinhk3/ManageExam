@@ -22,10 +22,12 @@ namespace ManageExam.admin.view
         {
             using (Connection conn = new Connection())
             {
-                try
+                if (conn.OpenConnection())
                 {
-                    conn.OpenConnection();
-                    string sqlQuery = "SELECT * FROM ketqua";
+                    string sqlQuery = @"SELECT ketqua.idKETQUA, user.nameUSER, dethi.nameDETHI, dethi.monhocDETHI, ketqua.diemKETQUA
+                            FROM ketqua
+                            INNER JOIN user ON ketqua.IDUSER = user.IDUSER
+                            INNER JOIN dethi ON ketqua.idDETHI = dethi.IDDETHI";
 
                     using (MySqlCommand command = new MySqlCommand(sqlQuery, conn.connection))
                     {
@@ -34,15 +36,24 @@ namespace ManageExam.admin.view
                             DataTable dataTable = new DataTable();
                             adapter.Fill(dataTable);
                             datagrid.ItemsSource = dataTable.DefaultView;
-                            conn.CloseConnection();
                         }
                     }
+
+                    conn.CloseConnection();
                 }
-                catch (MySqlException ex)
+                else
                 {
-                    MessageBox.Show("Error connecting to database: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Không thể kết nối đến cơ sở dữ liệu.");
                 }
             }
+        }
+        private void XemBaiThi_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void Sua_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

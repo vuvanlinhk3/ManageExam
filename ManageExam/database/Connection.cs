@@ -40,7 +40,7 @@ namespace ManageExam.database
         private void Initialize()
         {
             server = "localhost";
-            database = "sdfsfffff";
+            database = "qldethi";
             uid = "root";
             password = "";
 

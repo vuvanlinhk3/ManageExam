@@ -26,7 +26,35 @@
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"/>
         <Button Content="Tra Cứu Kết Quả" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Height="25" Width="92" Click="Result_Click"/>
-        <DataGrid Grid.Row ="2" x:Name="datagrid" d:ItemsSource="{d:SampleData ItemCount=0}"/>
+        <DataGrid Grid.Row="2" x:Name="datagrid" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <!-- Thêm các cột cho các trường mới -->
+                <DataGridTextColumn Header="ID" Binding="{Binding IdKetQua}" />
+                <DataGridTextColumn Header="Tên Người Dùng" Binding="{Binding TenNguoiDung}" />
+                <DataGridTextColumn Header="Đề Thi" Binding="{Binding TenDeThi}" />
+                <DataGridTextColumn Header="Môn Thi" Binding="{Binding MonThi}" />
+                <DataGridTextColumn Header="Điểm" Binding="{Binding Diem}" />
+
+                <!-- Thêm cột nút Xem bài thi -->
+                <DataGridTemplateColumn Header="Xem bài thi">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Xem" Click="XemBaiThi_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <!-- Thêm cột nút Sửa -->
+                <DataGridTemplateColumn Header="Sửa">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Sửa" Click="Sua_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
     </Grid>
 </Window>
 

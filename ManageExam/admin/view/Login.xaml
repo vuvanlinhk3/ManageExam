@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ManageExam.admin.view"
         mc:Ignorable="d"
-        Title="Login" Height="550" Width="800">
+        Title="Login" Height="550" Width="800"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Image Source="\Lib\anhnen.jpg" Stretch="Fill" Opacity="0.7"  />
 

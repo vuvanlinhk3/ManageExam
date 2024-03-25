@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ManageExam.admin.view.addexam"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
             Title="namenewexam" Height="250" Width="500">
     <Grid>
         <TextBox x:Name="tendethi" HorizontalAlignment="Center" Margin="0,71,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="458" FontFamily="Cambria" FontSize="20" RenderTransformOrigin="0.481,0.51" Height="31"/>

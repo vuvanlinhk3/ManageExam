@@ -45,9 +45,10 @@ namespace ManageExam.admin.view
 
         private void toLoginTab_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
             Login loginWindow = new Login();
             loginWindow.Show();
+            this.Close();
+            
         }
 
         private void resgisterBtn_Click(object sender, RoutedEventArgs e)
@@ -61,16 +62,26 @@ namespace ManageExam.admin.view
                         MessageBox.Show("Mật khẩu nhập lại không khớp. Vui lòng nhập lại.", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
                         return;
                     }
+                    else
+                    {
+                        conn.OpenConnection();
+                        string dataInsert = "INSERT INTO user (nameUSER, matkhauUSER) VALUES (@name, @password)";
+                        MySqlCommand cmd = new MySqlCommand(dataInsert, conn.connection);
+                        cmd.Parameters.AddWithValue("@name", username.Text); // Thay "Tên người dùng" bằng giá trị thực tế bạn muốn thêm
+                        cmd.Parameters.AddWithValue("@password", password.Text); // Thay "Mật khẩu" bằng giá trị thực tế bạn muốn thêm
+                        cmd.ExecuteNonQuery();
+                        conn.CloseConnection();
+                        username.Text = "";
+                        password.Text = "";
+                        passwordAuth.Text = "";
+                        MessageBox.Show("ĐĂNG KÝ THÀNH CÔNG", "Success");
 
-                    conn.OpenConnection();
-                    string dataInsert = "INSERT INTO user (nameUSER, matkhauUSER) VALUES (@name, @password)";
-                    MySqlCommand cmd = new MySqlCommand(dataInsert, conn.connection);
-                    cmd.Parameters.AddWithValue("@name", username.Text); // Thay "Tên người dùng" bằng giá trị thực tế bạn muốn thêm
-                    cmd.Parameters.AddWithValue("@password", password.Text); // Thay "Mật khẩu" bằng giá trị thực tế bạn muốn thêm
-                    cmd.ExecuteNonQuery();
-                    conn.CloseConnection();
-                    username.Text = "";
-                    password.Text = "";
+
+                        Login login = new Login();
+                        login.Show();
+                        this.Close();
+                    }
+                    
                 }
                 catch (Exception ex)
                 {
