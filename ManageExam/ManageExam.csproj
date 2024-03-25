@@ -154,18 +154,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="admin\view\mUser\adduser.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="admin\view\mUser\edituser.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="admin\view\mUser\viewuser.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="admin\view\pointuser\grades.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -179,6 +167,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="admin\view\usercontrol.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="admin\view\userInfoEditing.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -226,15 +218,6 @@
     <Compile Include="admin\view\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
-    <Compile Include="admin\view\mUser\adduser.xaml.cs">
-      <DependentUpon>adduser.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="admin\view\mUser\edituser.xaml.cs">
-      <DependentUpon>edituser.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="admin\view\mUser\viewuser.xaml.cs">
-      <DependentUpon>viewuser.xaml</DependentUpon>
-    </Compile>
     <Compile Include="admin\view\pointuser\grades.xaml.cs">
       <DependentUpon>grades.xaml</DependentUpon>
     </Compile>
@@ -246,6 +229,9 @@
     </Compile>
     <Compile Include="admin\view\usercontrol.xaml.cs">
       <DependentUpon>usercontrol.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="admin\view\userInfoEditing.xaml.cs">
+      <DependentUpon>userInfoEditing.xaml</DependentUpon>
     </Compile>
     <Compile Include="admin\view\viewExam\viewImgExam.xaml.cs">
       <DependentUpon>viewImgExam.xaml</DependentUpon>

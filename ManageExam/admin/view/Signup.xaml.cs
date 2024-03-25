@@ -76,7 +76,6 @@ namespace ManageExam.admin.view
                         passwordAuth.Text = "";
                         MessageBox.Show("ĐĂNG KÝ THÀNH CÔNG", "Success");
 
-
                         Login login = new Login();
                         login.Show();
                         this.Close();

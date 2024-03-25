@@ -135,15 +135,15 @@
                                    FontFamily="Montserrat"
                                    Margin="25 0 0 5"/>
 
-                            <TextBox x:Name="textBox1"
-                                 FontSize="20"
+                            <TextBox x:Name="HovaTen"
+                                 FontSize="15"
                                  FontWeight="Medium"
                                  FontFamily="Montserrat"
                                  Background="White"
                                  Foreground="Black"
                                  BorderThickness="0"
                                  VerticalContentAlignment="Center"
-                                 Padding="5 4 5 4"
+                                 Padding="10 9 10 9"
                                  Margin="15 0 15 0">
                                 <TextBox.Resources>
                                     <Style TargetType="{x:Type Border}">
@@ -154,22 +154,22 @@
                         </StackPanel>
 
                         <StackPanel VerticalAlignment="Center" Grid.Column="1">
-                            <TextBlock Text="Ngày sinh"
+                            <TextBlock Text="Giới tính"
                                    Foreground="White"
                                    FontSize="12"
                                    FontWeight="Medium"
                                    FontFamily="Montserrat"
                                    Margin="25 0 0 5"/>
 
-                            <TextBox x:Name="textBox2"
-                                 FontSize="20"
+                            <TextBox x:Name="gioiTinh"
+                                 FontSize="15"
                                  FontWeight="Medium"
                                  FontFamily="Montserrat"
                                  Background="White"
                                  Foreground="Black"
                                  BorderThickness="0"
                                  VerticalContentAlignment="Center"
-                                 Padding="5 4 5 4"
+                                 Padding="10 9 10 9"
                                  Margin="15 0 15 0">
                                 <TextBox.Resources>
                                     <Style TargetType="{x:Type Border}">
@@ -180,7 +180,7 @@
                         </StackPanel>
 
                         <StackPanel VerticalAlignment="Center" Grid.Column="2">
-                            <TextBlock Text="Giới tính"
+                            <TextBlock Text="Ngày sinh"
                                    Foreground="White"
                                    FontSize="12"
                                    FontWeight="Medium"
@@ -188,13 +188,13 @@
                                    Margin="25 0 0 5"/>
 
                             <DatePicker x:Name="birthInput"
-                                 FontSize="20"
+                                 FontSize="15"
                                  FontWeight="Medium"
                                  FontFamily="Montserrat"
                                  Background="White"
                                  Foreground="Black"
                                  BorderThickness="0"
-                                 Padding="5 4 5 4"
+                                 Padding="10 9 10 9"
                                  Margin="15 0 15 0"
                                  VerticalContentAlignment="Center">
                                 <DatePicker.Resources>
@@ -213,22 +213,22 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <StackPanel VerticalAlignment="Center">
-                            <TextBlock Text="Chọn quốc tịch"
+                            <TextBlock Text="Quốc tịch"
                                    Foreground="White"
                                    FontSize="12"
                                    FontWeight="Medium"
                                    FontFamily="Montserrat"
                                    Margin="25 0 0 5"/>
 
-                            <TextBox x:Name="textBox3"
-                                 FontSize="20"
+                            <TextBox x:Name="quocTich"
+                                 FontSize="15"
                                  FontWeight="Medium"
                                  FontFamily="Montserrat"
                                  Background="White"
                                  Foreground="Black"
                                  BorderThickness="0"
                                  VerticalContentAlignment="Center"
-                                 Padding="5 4 5 4"
+                                 Padding="10 9 10 9"
                                  Margin="15 0 15 0">
                                 <TextBox.Resources>
                                     <Style TargetType="{x:Type Border}">
@@ -246,15 +246,15 @@
                                    FontFamily="Montserrat"
                                    Margin="25 0 0 5"/>
 
-                            <TextBox x:Name="textBox4"
-                                 FontSize="20"
+                            <TextBox x:Name="tinhTP"
+                                 FontSize="15"
                                  FontWeight="Medium"
                                  FontFamily="Montserrat"
                                  Background="White"
                                  Foreground="Black"
                                  BorderThickness="0"
                                  VerticalContentAlignment="Center"
-                                 Padding="5 4 5 4"
+                                 Padding="10 9 10 9"
                                  Margin="15 0 15 0">
                                 <TextBox.Resources>
                                     <Style TargetType="{x:Type Border}">
@@ -272,15 +272,15 @@
                                    FontFamily="Montserrat"
                                    Margin="25 0 0 5"/>
 
-                            <TextBox x:Name="textBox5"
-                                 FontSize="20"
+                            <TextBox x:Name="quanHuyen"
+                                 FontSize="15"
                                  FontWeight="Medium"
                                  FontFamily="Montserrat"
                                  Background="White"
                                  Foreground="Black"
                                  BorderThickness="0"
                                  VerticalContentAlignment="Center"
-                                 Padding="5 4 5 4"
+                                 Padding="10 9 10 9"
                                  Margin="15 0 15 0">
                                 <TextBox.Resources>
                                     <Style TargetType="{x:Type Border}">
@@ -301,7 +301,8 @@
                             FontFamily="Montserrat"
                             FontWeight="Bold"
                             Foreground="White"
-                            Background="Green">
+                            Background="Green"
+                            Click="submitBtn_Click">
                         CẬP NHẬT
                         <Button.Style>
                             <Style TargetType="Button">

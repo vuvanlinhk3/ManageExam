@@ -55,5 +55,17 @@ namespace ManageExam.admin.view
         {
 
         }
+
+        private void screenMinimize_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+        private void screenClose_Click(object sender, RoutedEventArgs e)
+        {
+            Home homeWindow = new Home();
+            homeWindow.Show();
+            this.Close();
+        }
     }
 }

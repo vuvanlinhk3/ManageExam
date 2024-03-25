@@ -11,32 +11,104 @@
         WindowStartupLocation="CenterScreen"
         Background="Gray"
         AllowsTransparency="True">
-    <Grid>
+    <Grid Background="LightBlue">
         <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
             <RowDefinition Height="35"/>
             <RowDefinition Height="35"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="30"/>
+            </Grid.ColumnDefinitions>
+            
+            <Button x:Name="screenMinimize"
+                    Grid.Column="1"
+                    Content="-"
+                    Foreground="White"
+                    FontSize="20"
+                    Cursor="Hand"
+                    BorderThickness="0"
+                    Click="screenMinimize_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="DodgerBlue"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="LightBlue"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="25" Height="30"
+                                CornerRadius="10"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                              HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Button x:Name="screenClose"
+                    Grid.Column="2"
+                    Content="X"
+                    Foreground="White"
+                    FontSize="20"
+                    Cursor="Hand"
+                    BorderThickness="0"
+                    Click="screenClose_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="DodgerBlue"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Red"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="25" Height="30"
+                                CornerRadius="10"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                              HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
+
         <TextBlock Text="KẾT QUẢ THI"
                    FontFamily="Shruti"
                    FontSize="15"
-                   Foreground="White"
-                   Grid.Row="0"
+                   Foreground="Black"
+                   FontWeight="ExtraBold"
+                   Grid.Row="1"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"/>
-        <Button Content="Tra Cứu Kết Quả" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Height="25" Width="92" Click="Result_Click"/>
-        <DataGrid Grid.Row="2" x:Name="datagrid" AutoGenerateColumns="False">
+        <Button Content="Tra Cứu Kết Quả" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Height="25" Width="92" Click="Result_Click"/>
+        <DataGrid Grid.Row="3" x:Name="datagrid" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <!-- Thêm các cột cho các trường mới -->
-                <DataGridTextColumn Header="ID" Binding="{Binding IdKetQua}" />
-                <DataGridTextColumn Header="Tên Người Dùng" Binding="{Binding TenNguoiDung}" />
-                <DataGridTextColumn Header="Đề Thi" Binding="{Binding TenDeThi}" />
-                <DataGridTextColumn Header="Môn Thi" Binding="{Binding MonThi}" />
-                <DataGridTextColumn Header="Điểm" Binding="{Binding Diem}" />
+                <DataGridTextColumn Header="ID" Binding="{Binding IdKetQua}" Width="40"/>
+                <DataGridTextColumn Header="Tên Người Dùng" Binding="{Binding TenNguoiDung}" Width="300" />
+                <DataGridTextColumn Header="Đề Thi" Binding="{Binding TenDeThi}" Width="150"/>
+                <DataGridTextColumn Header="Môn Thi" Binding="{Binding MonThi}" Width="*"/>
+                <DataGridTextColumn Header="Điểm" Binding="{Binding Diem}" Width="50"/>
 
                 <!-- Thêm cột nút Xem bài thi -->
-                <DataGridTemplateColumn Header="Xem bài thi">
+                <DataGridTemplateColumn Header="Xem bài thi" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button Content="Xem" Click="XemBaiThi_Click"/>
@@ -45,7 +117,7 @@
                 </DataGridTemplateColumn>
 
                 <!-- Thêm cột nút Sửa -->
-                <DataGridTemplateColumn Header="Sửa">
+                <DataGridTemplateColumn Header="Sửa" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button Content="Sửa" Click="Sua_Click"/>
@@ -54,7 +126,6 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-
     </Grid>
 </Window>
 
