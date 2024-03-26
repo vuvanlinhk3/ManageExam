@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "F:\\PROJECT_CSHAP\\ManageExam\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|F:\\PROJECT_CSHAP\\ManageExam\\manageexam\\admin\\view\\studentresult\\studentresult.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|solutionrelative:manageexam\\admin\\view\\studentresult\\studentresult.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|f:\\project_cshap\\manageexam\\manageexam\\admin\\view\\viewexam\\ketquachonnguoidung.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|solutionrelative:manageexam\\admin\\view\\viewexam\\ketquachonnguoidung.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|F:\\PROJECT_CSHAP\\ManageExam\\manageexam\\admin\\view\\dsnd.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|solutionrelative:manageexam\\admin\\view\\dsnd.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|f:\\project_cshap\\manageexam\\manageexam\\admin\\view\\viewexam\\ketquachonnguoidung.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|solutionrelative:manageexam\\admin\\view\\viewexam\\ketquachonnguoidung.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|F:\\PROJECT_CSHAP\\ManageExam\\manageexam\\admin\\view\\studentresult\\studentresult.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|solutionrelative:manageexam\\admin\\view\\studentresult\\studentresult.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|F:\\PROJECT_CSHAP\\ManageExam\\manageexam\\admin\\view\\dsnd.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|solutionrelative:manageexam\\admin\\view\\dsnd.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{98712D3F-B56E-4AB8-AEAC-5B5173444D6D}|ManageExam\\ManageExam.csproj|F:\\PROJECT_CSHAP\\ManageExam\\manageexam\\admin\\view\\viewexam\\singerexam.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -137,24 +137,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "ketquachonnguoidung.xaml.cs",
               "DocumentMoniker": "F:\\PROJECT_CSHAP\\ManageExam\\ManageExam\\admin\\view\\viewExam\\ketquachonnguoidung.xaml.cs",
               "RelativeDocumentMoniker": "ManageExam\\admin\\view\\viewExam\\ketquachonnguoidung.xaml.cs",
-              "ToolTip": "F:\\PROJECT_CSHAP\\ManageExam\\ManageExam\\admin\\view\\viewExam\\ketquachonnguoidung.xaml.cs",
-              "RelativeToolTip": "ManageExam\\admin\\view\\viewExam\\ketquachonnguoidung.xaml.cs",
-              "ViewState": "AQIAAEEAAAAAAAAAAAAqwFsAAABdAAAA",
+              "ToolTip": "F:\\PROJECT_CSHAP\\ManageExam\\ManageExam\\admin\\view\\viewExam\\ketquachonnguoidung.xaml.cs*",
+              "RelativeToolTip": "ManageExam\\admin\\view\\viewExam\\ketquachonnguoidung.xaml.cs*",
+              "ViewState": "AQIAADsAAAAAAAAAAAAqwEcAAABBAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-26T16:06:50.317Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "ketquachonnguoidung.xaml",
               "DocumentMoniker": "F:\\PROJECT_CSHAP\\ManageExam\\ManageExam\\admin\\view\\viewExam\\ketquachonnguoidung.xaml",
               "RelativeDocumentMoniker": "ManageExam\\admin\\view\\viewExam\\ketquachonnguoidung.xaml",
@@ -229,7 +229,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "DSND.xaml.cs",
               "DocumentMoniker": "F:\\PROJECT_CSHAP\\ManageExam\\ManageExam\\admin\\view\\DSND.xaml.cs",
               "RelativeDocumentMoniker": "ManageExam\\admin\\view\\DSND.xaml.cs",
@@ -242,13 +242,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "studentResult.xaml.cs",
               "DocumentMoniker": "F:\\PROJECT_CSHAP\\ManageExam\\ManageExam\\admin\\view\\studentResult\\studentResult.xaml.cs",
               "RelativeDocumentMoniker": "ManageExam\\admin\\view\\studentResult\\studentResult.xaml.cs",
               "ToolTip": "F:\\PROJECT_CSHAP\\ManageExam\\ManageExam\\admin\\view\\studentResult\\studentResult.xaml.cs",
               "RelativeToolTip": "ManageExam\\admin\\view\\studentResult\\studentResult.xaml.cs",
-              "ViewState": "AQIAAEwAAAAAAAAAAAAcwGcAAABLAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-26T08:37:29.064Z",
               "EditorCaption": ""

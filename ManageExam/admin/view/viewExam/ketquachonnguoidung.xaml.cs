@@ -70,11 +70,10 @@ SELECT cauhoi.tenCAUHOI, dapan.dapandungDAPAN, dapancuauser.DAPAN AS dapancuause
 FROM cauhoi 
 LEFT JOIN dapan ON cauhoi.idCAUHOI = dapan.idCAUHOI 
 LEFT JOIN dapancuauser ON cauhoi.idCAUHOI = dapancuauser.idCAUHOI
-WHERE cauhoi.IDDETHI = @id AND dapancuauser.idKETQUA = @idKetQua"; // Thêm điều kiện lấy đáp án của người dùng
+WHERE cauhoi.IDDETHI = @id"; // Thêm điều kiện lấy đáp án của người dùng và đề thi
 
                     command = new MySqlCommand(selectQuery, conn.connection);
                     command.Parameters.AddWithValue("@id", MADE);
-                    command.Parameters.AddWithValue("@idKetQua", IDKQ); // Thêm id kết quả vào tham số truy vấn
                     MySqlDataReader renders = command.ExecuteReader();
 
                     // List để lưu trữ các mục hiển thị trong ListView
@@ -103,6 +102,7 @@ WHERE cauhoi.IDDETHI = @id AND dapancuauser.idKETQUA = @idKetQua"; // Thêm đi�
                             questionItems.Add(item);
                         }
                     }
+
 
 
                     renders.Close();
