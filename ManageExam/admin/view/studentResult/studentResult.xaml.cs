@@ -89,8 +89,9 @@ namespace ManageExam.admin.view
             {
                 KetQuaItem selectedItem = (KetQuaItem)datagrid.SelectedItem;
                 int idDeThi = Convert.ToInt32(selectedItem.IdDeThis);
+                int idketqua = Convert.ToInt32(selectedItem.IdKetQua);
 
-                SingerExam singerExam = new SingerExam(idDeThi);
+                ketquachonnguoidung singerExam = new ketquachonnguoidung(idDeThi, idketqua);
                 singerExam.Show();
             }
             else
