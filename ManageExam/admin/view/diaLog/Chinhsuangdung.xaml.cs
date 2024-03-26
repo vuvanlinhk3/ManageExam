@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ManageExam.database;
+using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,41 +13,72 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using MySql.Data.MySqlClient;
-using ManageExam.database;
-using System.Collections.ObjectModel;
 
-namespace ManageExam.admin.view
+namespace ManageExam.admin.view.diaLog
 {
     /// <summary>
-    /// Interaction logic for AU.xaml
+    /// Interaction logic for Chinhsuangdung.xaml
     /// </summary>
-    public partial class AU : UserControl
+    public partial class Chinhsuangdung : Window
     {
-        public AU()
+        public int UserID { get; set; }
+        public Chinhsuangdung(int UserIDs)
         {
+            UserID = UserIDs;
             InitializeComponent();
+            Load();
         }
-
-
-
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        public void Load()
         {
+            try
+            {
+                using (Connection conn = new Connection())
+                {
+                    if (conn.OpenConnection())
+                    {
+                        string query = "SELECT * FROM user WHERE IDUSER = @id";
+                        MySqlCommand cmd = new MySqlCommand(query, conn.connection);
+                        cmd.Parameters.AddWithValue("@id", UserID);
 
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                // Gán thông tin của người dùng vào các trường tương ứng trên form
+                                hoten.Text = reader.GetString("nameUSER");
+                                gioitinh.Text = reader.GetString("gioitinhUSER");
+                                email.Text = reader.GetString("emailUSER");
+                                sdt.Text = reader.GetString("sdtUSER");
+                                //ngaysinh.SelectedDate = reader.GetDateTime("ngaysinhUSER");
+                                // Lưu ý: Đối với ngày sinh, bạn cần kiểm tra null trước khi gán giá trị
+                                // Đọc giá trị ngày tháng từ cơ sở dữ liệu
+                                // Đọc giá trị ngày tháng từ cơ sở dữ liệu
+                                DateTime? ngaysinhUSER = reader.IsDBNull(reader.GetOrdinal("ngaysinhUSER")) ? null : (DateTime?)reader.GetDateTime("ngaysinhUSER");
+
+                                // Kiểm tra xem ngày tháng từ cơ sở dữ liệu có rỗng không
+                                if (ngaysinhUSER != null)
+                                {
+                                    // Gán giá trị ngày tháng cho SelectedDate của DatePicker
+                                    date.SelectedDate = ngaysinhUSER;
+                                }
+
+
+
+
+                                // Tiếp tục gán thông tin cho các trường khác nếu cần
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải thông tin người dùng: " + ex.Message, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                Console.WriteLine(ex.Message);
+            }
         }
 
-        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
 
         private void submitBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -127,16 +160,6 @@ namespace ManageExam.admin.view
             {
                 MessageBox.Show("Đã xảy ra lỗi khi cập nhật thông tin người dùng: " + ex.Message, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-        }
-
-        private void textBox2_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
 
 

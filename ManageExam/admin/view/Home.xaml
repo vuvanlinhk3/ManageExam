@@ -9,7 +9,7 @@
     <Grid>
         <Grid Margin="0,0,0,0" Height="50" VerticalAlignment="Top">
             <Label Content="ADMIN" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
-            <Button Content="Log out" HorizontalAlignment="Left" Margin="108,0,0,0" VerticalAlignment="Center" FontSize="20" Padding="10 5">
+            <Button Content="Log out" HorizontalAlignment="Left" Margin="108,0,0,0" VerticalAlignment="Center" FontSize="20" Padding="10 5" Click="Button_Click">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="10"/>
@@ -30,16 +30,8 @@
                     </Button>
                     <Label Content="Thêm Đề" VerticalAlignment="Bottom" FontWeight="Bold"  FontSize="18" HorizontalAlignment="Center" FontFamily="Cambria" Foreground="#FF202124"></Label>
                 </Grid>
+                
                 <Grid Margin="170 0 0 0" Height="170" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left">
-                    <Button Click="themlichthi_Click" HorizontalAlignment="Center" Width="150" FontSize="100" Cursor="Hand" FontFamily="Microsoft Tai Le" FontWeight="Bold" BorderBrush="#FFDDEC9E" Background="White" Margin="0,0,0,40">
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="\Lib\addexam.png" Width="150" Height="170" />
-
-                        </StackPanel>
-                    </Button>
-                    <Label Content="Thêm Lịch thi" VerticalAlignment="Bottom" FontWeight="Bold"  FontSize="18" HorizontalAlignment="Center" FontFamily="Cambria" Foreground="#FF202124"></Label>
-                </Grid>
-                <Grid Margin="340 0 0 0" Height="170" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left">
                     <Button Click="DSde_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Height="130" Width="150" FontSize="100" Cursor="Hand" FontFamily="Microsoft Tai Le" FontWeight="Bold" BorderBrush="#FFDDEC9E" Background="White">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="\Lib\maukithi.png" Width="150" Height="170" />
@@ -48,7 +40,7 @@
                     </Button>
                     <Label Content="Danh sách đề" VerticalAlignment="Bottom" FontWeight="Bold"  FontSize="18" HorizontalAlignment="Center" FontFamily="Cambria" Foreground="#FF202124"></Label>
                 </Grid>
-                <Grid Margin="510 0 0 0" Height="170" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left">
+                <Grid Margin="340 0 0 0" Height="170" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left">
                     <Button Click="KQ_click" HorizontalAlignment="Left" VerticalAlignment="Top" Height="130" Width="150" FontSize="100" Cursor="Hand" FontFamily="Microsoft Tai Le" FontWeight="Bold" BorderBrush="#FFDDEC9E" Background="White">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="\Lib\mau2.png" Width="150" Height="170" />
@@ -57,14 +49,14 @@
                     </Button>
                     <Label Content="Kết quả kì thi" VerticalAlignment="Bottom" FontWeight="Bold"  FontSize="18" HorizontalAlignment="Center" FontFamily="Cambria" Foreground="#FF202124"></Label>
                 </Grid>
-                <Grid Margin="680 0 0 0" Height="170" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left">
-                    <Button HorizontalAlignment="Left" VerticalAlignment="Top" Height="130" Width="150" FontSize="100" Cursor="Hand" FontFamily="Microsoft Tai Le" FontWeight="Bold" BorderBrush="#FFDDEC9E" Background="White">
+                <Grid Margin="520 0 0 0" Height="170" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left">
+                    <Button Click="TTHS_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Height="130" Width="150" FontSize="100" Cursor="Hand" FontFamily="Microsoft Tai Le" FontWeight="Bold" BorderBrush="#FFDDEC9E" Background="White">
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="\Lib\maukithi.png" Width="150" Height="170" />
+                            <Image Source="\Lib\maukithi.png" Width="145" Height="170" />
 
                         </StackPanel>
                     </Button>
-                    <Label Content="Thông tin học sinh" VerticalAlignment="Bottom" FontWeight="Bold"  FontSize="18" HorizontalAlignment="Center" FontFamily="Cambria" Foreground="#FF202124"></Label>
+                    <Label Content="Thông tin học sinh" VerticalAlignment="Top" FontWeight="Bold"  FontSize="18" HorizontalAlignment="Center" FontFamily="Cambria" Foreground="#FF202124" Margin="0,139,0,0" Width="164"></Label>
                 </Grid>
             </Grid>
 
@@ -84,10 +76,34 @@
             </Grid>
 
             <Grid Margin="350,40,0,10">
-                <ListView Name="tintuc" d:ItemsSource="{d:SampleData ItemCount=5}">
+                <ListView Name="tintuc">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn/>
+                            <!-- Column for action -->
+                            <GridViewColumn Width="Auto">
+                                <GridViewColumn.Header>
+                                    <TextBlock Text="Hành động"/>
+                                </GridViewColumn.Header>
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <!-- Add your action content here -->
+                                        <TextBlock Text="{Binding Action}"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                            <!-- Column for delete button -->
+                            <GridViewColumn Width="Auto">
+                                <GridViewColumn.Header>
+                                    <TextBlock Text=""/>
+                                </GridViewColumn.Header>
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <!-- Add delete button for each item -->
+                                        <Button Content="Xóa" Click="DeleteButton_Click"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
                         </GridView>
                     </ListView.View>
                 </ListView>
@@ -95,10 +111,11 @@
 
 
 
+
             </Grid>
         </Grid>
         <Grid VerticalAlignment="Bottom" Height="100">
-            <Button Background="#FFF3F3F3" HorizontalAlignment="Right" Margin="0 0 20 0" Content="Check help messages" Height="50" Width="220"  FontSize="18" FontFamily="Cambria">
+            <Button  Background="#FFF3F3F3" HorizontalAlignment="Right" Margin="0 0 20 0" Content="Check help messages" Height="50" Width="220"  FontSize="18" FontFamily="Cambria" Click="Button_Click_1">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="20"/>

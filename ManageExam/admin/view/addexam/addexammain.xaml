@@ -113,6 +113,7 @@
         <Label Content="Thời gian làm bài" HorizontalAlignment="Left" Margin="68,395,0,0" VerticalAlignment="Top" FontSize="20"/>
         <Label Content="Môn Học" HorizontalAlignment="Left" Margin="68,558,0,0" VerticalAlignment="Top" FontSize="20"/>
         <ComboBox x:Name="monhoc" HorizontalAlignment="Left" Margin="74,618,0,0" VerticalAlignment="Top" Width="202" FontSize="18" Height="36"/>
+        <Button Click="back_Click" Content="Quay lại" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="45" Width="118" FontSize="20"/>
 
 
     </Grid>

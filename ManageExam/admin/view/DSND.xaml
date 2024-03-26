@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ManageExam.admin.view"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="652">
+             Width="1200" Height="800">
     <Grid>
         <Image Stretch="fill"  Source="/lib/Book2.jpg" Opacity="0.8" >
             <Image.RenderTransform>
@@ -25,16 +25,26 @@
                             <Setter Property="Margin" Value="0,15,0,0"/>
                         </Style>
                     </GridView.ColumnHeaderContainerStyle>
-                    <GridViewColumn Header="IDUSER" DisplayMemberBinding="{Binding IDUSER}" />
-                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding nameUSER}"/>
-                    <GridViewColumn Header="Password" DisplayMemberBinding="{Binding matkhauUSER}"/>
-                    <GridViewColumn Header="Phone" DisplayMemberBinding="{Binding sdtUSER}"/>
-                    <GridViewColumn Header="Email" DisplayMemberBinding="{Binding emailUSER}"/>
+                    <GridViewColumn Width="50" Header="IDUSER" DisplayMemberBinding="{Binding IDUSER}" />
+                    <GridViewColumn Width="130" Header="Name" DisplayMemberBinding="{Binding nameUSER}"/>
+                    <GridViewColumn Width="100" Header="Password" DisplayMemberBinding="{Binding matkhauUSER}"/>
+                    <GridViewColumn Width="100" Header="Phone" DisplayMemberBinding="{Binding sdtUSER}"/>
+                    <GridViewColumn Width="200" Header="Email" DisplayMemberBinding="{Binding emailUSER}"/>
                     <!-- <GridViewColumn Header="Date" DisplayMemberBinding="{Binding ngaysinhUSER, StringFormat={}{0:yyyy-MM-dd}}"/>-->
-                    <GridViewColumn Header="Gender" DisplayMemberBinding="{Binding gioitinhUSER}"/>
-                    <GridViewColumn Header="Nationality" DisplayMemberBinding="{Binding quoctich}"/>
-                    <GridViewColumn Header="City" DisplayMemberBinding="{Binding tinhTp}"/>
-                    <GridViewColumn Header="District" DisplayMemberBinding="{Binding quanhuyen}"/>
+                    <GridViewColumn Width="70" Header="Gender" DisplayMemberBinding="{Binding gioitinhUSER}"/>
+                    <GridViewColumn Width="150" Header="Nationality" DisplayMemberBinding="{Binding quoctich}"/>
+                    <GridViewColumn Width="70" Header="City" DisplayMemberBinding="{Binding tinhTp}"/>
+                    <GridViewColumn Width="100" Header="District" DisplayMemberBinding="{Binding quanhuyen}"/>
+                    
+                    <GridViewColumn>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Sửa Thông Tin" Click="SuaButton_Click"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    
+                    
                     <GridViewColumn>
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>

@@ -24,7 +24,7 @@
     <Grid>
         <Border>
             <Border.Background>
-                <ImageBrush ImageSource="/lib/b.jpg"
+                <ImageBrush ImageSource="\lib\b.jpg"
                 Stretch="None"/>
             </Border.Background>
             <Border BorderBrush="DarkBlue"

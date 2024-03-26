@@ -130,11 +130,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="admin\view\AU.xaml">
+    <Page Include="admin\view\changePassWord.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="admin\view\changePassWord.xaml">
+    <Page Include="admin\view\diaLog\Chinhsuangdung.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="admin\view\diaLog\help.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -208,11 +212,14 @@
     <Compile Include="admin\view\AddU.xaml.cs">
       <DependentUpon>AddU.xaml</DependentUpon>
     </Compile>
-    <Compile Include="admin\view\AU.xaml.cs">
-      <DependentUpon>AU.xaml</DependentUpon>
-    </Compile>
     <Compile Include="admin\view\changePassWord.xaml.cs">
       <DependentUpon>changePassWord.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="admin\view\diaLog\Chinhsuangdung.xaml.cs">
+      <DependentUpon>Chinhsuangdung.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="admin\view\diaLog\help.xaml.cs">
+      <DependentUpon>help.xaml</DependentUpon>
     </Compile>
     <Compile Include="admin\view\diaLog\selectAddExam.xaml.cs">
       <DependentUpon>selectAddExam.xaml</DependentUpon>
@@ -329,6 +336,9 @@
     <Resource Include="lib\Background2.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="lib\help.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

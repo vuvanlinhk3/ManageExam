@@ -1,13 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Windows;
+using ManageExam.admin.view.viewExam;
 using ManageExam.database;
 using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Asn1.Cms;
 
 namespace ManageExam.admin.view
 {
     public partial class studentResult : Window
     {
+       
         public studentResult()
         {
             InitializeComponent();
@@ -17,44 +21,84 @@ namespace ManageExam.admin.view
         {
             datagrid.ItemsSource = null;
         }
-
         private void Result_Click(object sender, RoutedEventArgs e)
         {
-            using (Connection conn = new Connection())
+            try
             {
-                if (conn.OpenConnection())
+                using (Connection conn = new Connection())
                 {
-                    string sqlQuery = @"SELECT ketqua.idKETQUA, user.nameUSER, dethi.nameDETHI, dethi.monhocDETHI, ketqua.diemKETQUA
-                            FROM ketqua
-                            INNER JOIN user ON ketqua.IDUSER = user.IDUSER
-                            INNER JOIN dethi ON ketqua.idDETHI = dethi.IDDETHI";
+                    conn.OpenConnection();
 
-                    using (MySqlCommand command = new MySqlCommand(sqlQuery, conn.connection))
+                    string selectQuery = @"
+                SELECT kq.idKETQUA, kq.idDETHI, u.nameUSER AS TenNguoiDung, dt.nameDETHI AS TenDeThi, dt.monhocDETHI AS MonThi, kq.diemKETQUA AS Diem
+                FROM ketqua kq
+                INNER JOIN user u ON kq.IDUSER = u.IDUSER
+                INNER JOIN dethi dt ON kq.idDETHI = dt.IDDETHI";
+
+                    MySqlCommand command = new MySqlCommand(selectQuery, conn.connection);
+                    MySqlDataReader reader = command.ExecuteReader();
+
+                    List<KetQuaItem> ketQuaItems = new List<KetQuaItem>();
+
+                    while (reader.Read())
                     {
-                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
+                        KetQuaItem item = new KetQuaItem()
                         {
-                            DataTable dataTable = new DataTable();
-                            adapter.Fill(dataTable);
-                            datagrid.ItemsSource = dataTable.DefaultView;
-                        }
+                            IdKetQua = reader["idKETQUA"].ToString(),
+                            IdDeThis = reader["idDETHI"].ToString(), // Lấy ID đề thi
+                            TenNguoiDung = reader["TenNguoiDung"].ToString(),
+                            TenDeThi = reader["TenDeThi"].ToString(),
+                            MonThi = reader["MonThi"].ToString(),
+                            Diem = Convert.ToDouble(reader["Diem"]) // Chuyển đổi dữ liệu kiểu double
+                        };
+
+                        ketQuaItems.Add(item);
                     }
+
+                    reader.Close();
+
+                    // Gán danh sách các đối tượng vào ItemsSource của DataGrid
+                    datagrid.ItemsSource = ketQuaItems;
 
                     conn.CloseConnection();
                 }
-                else
-                {
-                    MessageBox.Show("Không thể kết nối đến cơ sở dữ liệu.");
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
             }
         }
+
+
+
+        public class KetQuaItem
+        {
+            public string IdKetQua { get; set; }
+            public string TenNguoiDung { get; set; }
+            public string TenDeThi { get; set; }
+            public string MonThi { get; set; }
+
+            public double Diem { get; set; }
+            public string IdDeThis { get; set; }
+
+        }
+
         private void XemBaiThi_Click(object sender, RoutedEventArgs e)
         {
+            if (datagrid.SelectedItem != null)
+            {
+                KetQuaItem selectedItem = (KetQuaItem)datagrid.SelectedItem;
+                int idDeThi = Convert.ToInt32(selectedItem.IdDeThis);
 
+                SingerExam singerExam = new SingerExam(idDeThi);
+                singerExam.Show();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một kết quả để xem bài thi.");
+            }
         }
-        private void Sua_Click(object sender, RoutedEventArgs e)
-        {
 
-        }
 
         private void screenMinimize_Click(object sender, RoutedEventArgs e)
         {

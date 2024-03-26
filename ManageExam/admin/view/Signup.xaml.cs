@@ -65,7 +65,7 @@ namespace ManageExam.admin.view
                     else
                     {
                         conn.OpenConnection();
-                        string dataInsert = "INSERT INTO user (nameUSER, matkhauUSER) VALUES (@name, @password)";
+                        string dataInsert = "INSERT INTO tkadmin (nameAD, matkhauAD) VALUES (@name, @password)";
                         MySqlCommand cmd = new MySqlCommand(dataInsert, conn.connection);
                         cmd.Parameters.AddWithValue("@name", username.Text); // Thay "Tên người dùng" bằng giá trị thực tế bạn muốn thêm
                         cmd.Parameters.AddWithValue("@password", password.Text); // Thay "Mật khẩu" bằng giá trị thực tế bạn muốn thêm

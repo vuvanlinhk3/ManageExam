@@ -1,0 +1,4 @@
+﻿HƯỚNG DẪN 
+-- --- Thêm đề thi theo các bước và hạn chế để trống mục
+----   không xóa đề thi bừa bãi
+ -- Tin tức thêm xóa đề được cập nhật thường xuyên 

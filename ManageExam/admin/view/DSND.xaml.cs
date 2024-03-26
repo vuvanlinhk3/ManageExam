@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using MySql.Data.MySqlClient;
 using ManageExam.database;
 using System.Collections.ObjectModel;
+using ManageExam.admin.view.diaLog;
 
 namespace ManageExam.admin.view
 {
@@ -117,5 +118,17 @@ namespace ManageExam.admin.view
                 }
             }
         }
+        private void SuaButton_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            var user = button?.DataContext as User; // Lấy đối tượng người dùng từ DataContext của nút
+
+            if (user != null)
+            {
+                Chinhsuangdung chinhsuangdung = new Chinhsuangdung(user.IDUSER);
+                chinhsuangdung.ShowDialog();
+            }
+        }
+
     }
 }

@@ -13,9 +13,9 @@
         <Label Content="Các Câu hỏi: " HorizontalAlignment="Left" Margin="10,133,0,0" VerticalAlignment="Top" FontSize="18"/>
 
         <Grid HorizontalAlignment="Left" VerticalAlignment="Center" Margin="1016,0,0,0"/>
-        <Label Content="Thời Gian Thi" HorizontalAlignment="Left" Margin="795,222,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label Content="Thời Gian Thi" HorizontalAlignment="Left" Margin="901,208,0,0" VerticalAlignment="Top" FontSize="18"/>
         <Label Content="Số Câu Hỏi" HorizontalAlignment="Left" Margin="379,169,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <ListView x:Name="listViewQuestions" Margin="379,208,425,-1">
+        <ListView x:Name="listViewQuestions" Margin="379,208,402,-1">
             <ListView.View>
                 <GridView>
                     <!-- Cột cho số thứ tự của câu hỏi -->
@@ -44,13 +44,21 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
+
+                    <GridViewColumn Width="150" Header="Đáp án Người dùng chọn">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding CorrectAnswer}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>
 
-        <TextBox x:Name="txtMonHoc" HorizontalAlignment="Left" Margin="795,409,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" FontSize="18" Height="45"/>
-        <Label Content="Môn Thi" HorizontalAlignment="Left" Margin="795,368,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <TextBox x:Name="txtThoiGianThi" HorizontalAlignment="Left" Margin="801,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" FontSize="18" Height="45"/>
+        <TextBox x:Name="txtMonHoc" HorizontalAlignment="Left" Margin="901,342,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" FontSize="18" Height="45"/>
+        <Label Content="Môn Thi" HorizontalAlignment="Left" Margin="901,308,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox x:Name="txtThoiGianThi" HorizontalAlignment="Left" Margin="901,247,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" FontSize="18" Height="45"/>
         <Label x:Name="tenfile" Content="" HorizontalAlignment="Left" Margin="10,232,0,0" VerticalAlignment="Top" FontSize="18" Width="364" Height="100"/>
 
 

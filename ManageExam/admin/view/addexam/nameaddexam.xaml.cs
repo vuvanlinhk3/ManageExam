@@ -45,5 +45,9 @@ namespace ManageExam.admin.view.addexam
 
 
         }
+        private void thoat_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ManageExam.admin.view.diaLog"
         mc:Ignorable="d"
-           Title="SelectAddExam" Height="300" Width="500">
+           Title="SelectAddExam" Height="350" Width="510">
     <Grid>
         <Label Content="Nhập Thông Tin Tin Tức" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Cambria" FontWeight="Bold"/>
         <Button Content="OK" Padding="20 5" HorizontalAlignment="Left" Margin="395,241,0,0" VerticalAlignment="Top" FontFamily="Cambria" FontSize="18" Background="#FFF3F3F3" Width="95" Click="Button_Click">

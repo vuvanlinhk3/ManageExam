@@ -1,0 +1,14 @@
+﻿<Window x:Class="ManageExam.admin.view.diaLog.help"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ManageExam.admin.view.diaLog"
+        mc:Ignorable="d"
+        Title="help" Height="650" Width="900">
+    <Grid>
+        <TextBox x:Name="help1" HorizontalAlignment="Center" Margin="0,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="900" Height="540" FontSize="18"/>
+        <Button Content="Thoát" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="18" Height="47" Width="96" Click="Button_Click"/>
+
+    </Grid>
+</Window>

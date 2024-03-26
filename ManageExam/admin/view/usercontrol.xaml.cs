@@ -30,32 +30,32 @@ namespace ManageExam.admin.view
         private void danhsach(object sender, RoutedEventArgs e)
         {
             Panel.SetZIndex(DSND, 3);
-            Panel.SetZIndex(AU, 2);
             Panel.SetZIndex(AddU, 1);
         }
 
         private void chinhsua(object sender, RoutedEventArgs e)
         {
             Panel.SetZIndex(DSND, 1);
-            Panel.SetZIndex(AU, 3);
             Panel.SetZIndex(AddU, 2);
         }
 
         private void them(object sender, RoutedEventArgs e)
         {
             Panel.SetZIndex(DSND, 1);
-            Panel.SetZIndex(AU, 2);
             Panel.SetZIndex(AddU, 3);
         }
 
-        private void AU_Loaded(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void DSND_Loaded(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void thoat_Click(object sender, RoutedEventArgs e)
+        {
+            Home home = new Home();
+            home.Show();
+            this.Close();
         }
     }
 }

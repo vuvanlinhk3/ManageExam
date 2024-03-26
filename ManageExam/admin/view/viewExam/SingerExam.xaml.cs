@@ -49,49 +49,52 @@ namespace ManageExam.admin.view.viewExam
                     // Đóng reader sau khi sử dụng
                     reader.Close();
 
+                    // Khởi tạo một HashSet để lưu trữ các tên câu hỏi đã xuất hiện
+                    HashSet<string> questionNames = new HashSet<string>();
+
                     // Mở reader mới để truy vấn bảng "cauhoi" và "dapan"
                     selectQuery = @"
-                SELECT cauhoi.tenCAUHOI, dapan.tenDAPAN 
-                FROM cauhoi 
-                LEFT JOIN dapan ON cauhoi.idCAUHOI = dapan.idCAUHOI 
-                WHERE cauhoi.IDDETHI = @id";
+SELECT cauhoi.tenCAUHOI, dapan.dapandungDAPAN 
+FROM cauhoi 
+LEFT JOIN dapan ON cauhoi.idCAUHOI = dapan.idCAUHOI 
+WHERE cauhoi.IDDETHI = @id";
                     command = new MySqlCommand(selectQuery, conn.connection);
                     command.Parameters.AddWithValue("@id", MADE);
                     MySqlDataReader renders = command.ExecuteReader();
 
-                    // Dictionary để lưu trữ câu hỏi và danh sách các đáp án đúng
-                    Dictionary<string, List<string>> questions = new Dictionary<string, List<string>>();
+                    // List để lưu trữ các mục hiển thị trong ListView
+                    List<QuestionItem> questionItems = new List<QuestionItem>();
 
                     while (renders.Read())
                     {
-                        string question = renders["tenCAUHOI"].ToString();
-                        string answer = renders["tenDAPAN"].ToString();
+                        string questionContent = renders["tenCAUHOI"].ToString();
+                        string correctAnswer = renders["dapandungDAPAN"].ToString();
 
-                        if (!questions.ContainsKey(question))
+                        // Kiểm tra xem câu hỏi có tồn tại trong HashSet không
+                        if (!questionNames.Contains(questionContent))
                         {
-                            questions[question] = new List<string>();
-                        }
+                            // Nếu không tồn tại, thêm vào HashSet và tạo một mục câu hỏi mới
+                            questionNames.Add(questionContent);
 
-                        questions[question].Add(answer);
+                            QuestionItem item = new QuestionItem()
+                            {
+                                QuestionNumber = (questionItems.Count + 1).ToString(),
+                                QuestionContent = questionContent,
+                                CorrectAnswer = correctAnswer
+                            };
+
+                            questionItems.Add(item);
+                        }
                     }
+
                     renders.Close();
 
                     // Hiển thị dữ liệu trong ListView
-                    listViewQuestions.Items.Clear();
-
-                    foreach (var item in questions)
-                    {
-                        string question = item.Key;
-                        List<string> answers = item.Value;
-                        string correctAnswersString = string.Join(", ", answers);
-
-                        ListViewItem questionItem = new ListViewItem();
-                        questionItem.Content = question + " - Đáp án đúng: " + correctAnswersString;
-                        listViewQuestions.Items.Add(questionItem);
-                    }
+                    listViewQuestions.ItemsSource = questionItems;
 
                     // Đóng kết nối
                     conn.connection.Close();
+
                 }
             }
             catch (Exception ex)
@@ -100,6 +103,13 @@ namespace ManageExam.admin.view.viewExam
                 Console.WriteLine("\n \n \n \n Lỗi :::" + ex.Message);
             }
         }
+        public class QuestionItem
+        {
+            public string QuestionNumber { get; set; }
+            public string QuestionContent { get; set; }
+            public string CorrectAnswer { get; set; }
+        }
+
 
 
 

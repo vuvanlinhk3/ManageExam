@@ -19,11 +19,13 @@ namespace ManageExam.admin.view.addexam
     public partial class addexammain : Window
     {
         private ObservableCollection<FileItem> filesList = new ObservableCollection<FileItem>();
+        private ObservableCollection<DeThiItem> listdapan = new ObservableCollection<DeThiItem>();
         public string namedethi;
         public addexammain(string nameExam)
         {
             InitializeComponent();
             file.ItemsSource = filesList;
+            bangdapans.ItemsSource = listdapan;
             namedethi = nameExam;
 
 
@@ -33,8 +35,23 @@ namespace ManageExam.admin.view.addexam
         }
         private void Load()
         {
+            // Gán tên đề thi chính từ biến namedethi cho tendethichinh
             tendethichinh.Content = namedethi;
-            monhoc.SelectedItem = "Tiếng Anh";
+
+            // Tạo danh sách các môn học
+            List<string> subjects = new List<string> { "Tiếng Anh" };
+
+            // Xóa danh sách lựa chọn hiện tại của combobox monhoc
+            monhoc.Items.Clear();
+
+            // Thêm các môn học vào danh sách lựa chọn của combobox monhoc
+            foreach (string subject in subjects)
+            {
+                monhoc.Items.Add(subject);
+            }
+
+            // Chọn mặc định môn học là "Tiếng Anh"
+            monhoc.SelectedIndex = monhoc.Items.IndexOf("Tiếng Anh");
 
         }
         private void AddExamMain_Loaded(object sender, RoutedEventArgs e)
@@ -59,7 +76,7 @@ namespace ManageExam.admin.view.addexam
             }
 
             // Xóa tất cả các mục hiện có trong DataGrid
-            bangdapans.Items.Clear();
+            //bangdapans.Items.Clear();
 
             // Tạo và thêm các mục mới vào danh sách
             for (int i = 1; i <= soLuongCau; i++)
@@ -77,7 +94,7 @@ namespace ManageExam.admin.view.addexam
                 };
 
                 // Thêm mục mới vào DataGrid
-                bangdapans.Items.Add(newItem);
+                listdapan.Add(newItem);
             }
         }
 
@@ -245,15 +262,23 @@ namespace ManageExam.admin.view.addexam
                         {
                             idCauHoi = Convert.ToInt32(getIdCauHoiCommand.ExecuteScalar());
                         }
+                        foreach (var item in listdapan)
+                        {
+                            string dapAnDung = ""; // Không có đáp án đúng ban đầu
+                            string insertDapAnQuery = "INSERT INTO dapan (idCAUHOI, dapandungDAPAN, IDDETHI) VALUES (@IdCauHoi, @DapAnDung, @IdDeThi)";
+                            MySqlCommand insertDapAnCommand = new MySqlCommand(insertDapAnQuery, conn.connection);
 
+                            insertDapAnCommand.Parameters.AddWithValue("@IdCauHoi", idCauHoi);
+                            insertDapAnCommand.Parameters.AddWithValue("@DapAnDung", item.DapAnDung
+
+                                );
+                            insertDapAnCommand.Parameters.AddWithValue("@IdDeThi", idDeThi);
+                            insertDapAnCommand.ExecuteNonQuery();
+
+
+
+                        }
                         // Lưu đáp án đúng vào bảng dapan
-                        string dapAnDung = ""; // Không có đáp án đúng ban đầu
-                        string insertDapAnQuery = "INSERT INTO dapan (idCAUHOI, dapandungDAPAN, IDDETHI) VALUES (@IdCauHoi, @DapAnDung, @IdDeThi)";
-                        MySqlCommand insertDapAnCommand = new MySqlCommand(insertDapAnQuery, conn.connection);
-                        insertDapAnCommand.Parameters.AddWithValue("@IdCauHoi", idCauHoi);
-                        insertDapAnCommand.Parameters.AddWithValue("@DapAnDung", dapAnDung);
-                        insertDapAnCommand.Parameters.AddWithValue("@IdDeThi", idDeThi);
-                        insertDapAnCommand.ExecuteNonQuery();
 
 
                     }
@@ -281,14 +306,12 @@ namespace ManageExam.admin.view.addexam
             }
         }
 
-
-
-
-
-
-
-
-
+        private void back_Click(object sender, RoutedEventArgs e)
+        {
+            Home home = new Home();
+            home.Show();
+            this.Close();
+        }
     }
 
 }

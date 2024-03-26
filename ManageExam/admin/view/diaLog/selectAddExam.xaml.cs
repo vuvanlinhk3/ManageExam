@@ -30,34 +30,41 @@ namespace ManageExam.admin.view.diaLog
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            try
+            if (tintuc.Text =="")
             {
-                using (Connection conn = new Connection())
+                this.Close();
+            }
+            else
+            {
+                try
                 {
-                    if (conn.OpenConnection())
+                    using (Connection conn = new Connection())
                     {
-                        DateTime timestamp = DateTime.Now;
-                        string action = "Tin tức mới : " + tintuc.Text;
+                        if (conn.OpenConnection())
+                        {
+                            DateTime timestamp = DateTime.Now;
+                            string action = "Tin tức mới : " + tintuc.Text;
 
-                        string insertActionQuery = "INSERT INTO tintuc (hanhdong, time) VALUES (@Action, @Timestamp)";
-                        MySqlCommand insertActionCommand = new MySqlCommand(insertActionQuery, conn.connection);
-                        insertActionCommand.Parameters.AddWithValue("@Action", action);
-                        insertActionCommand.Parameters.AddWithValue("@Timestamp", timestamp);
-                        insertActionCommand.ExecuteNonQuery();
-                        conn.connection.Close();
-                        DialogResult = true;
+                            string insertActionQuery = "INSERT INTO tintuc (hanhdong, time) VALUES (@Action, @Timestamp)";
+                            MySqlCommand insertActionCommand = new MySqlCommand(insertActionQuery, conn.connection);
+                            insertActionCommand.Parameters.AddWithValue("@Action", action);
+                            insertActionCommand.Parameters.AddWithValue("@Timestamp", timestamp);
+                            insertActionCommand.ExecuteNonQuery();
+                            conn.connection.Close();
+                            DialogResult = true;
 
-                        this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Không thể kết nối đến cơ sở dữ liệu.", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không thể kết nối đến cơ sở dữ liệu.", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
         }
     }
