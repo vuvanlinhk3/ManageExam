@@ -8,259 +8,287 @@ using Microsoft.VisualBasic;
 using ManageExam.database;
 using MySql.Data.MySqlClient;
 using System.IO;
+using System.Diagnostics;
+using System.Windows.Controls;
+using System.Linq;
+using System.Data;
+using DataSqlClient;
 
 namespace ManageExam.admin.view.addexam
 {
     public partial class addexammain : Window
     {
-        private string receivedNameExam;
-        private ObservableCollection<DeThi> exams; // Danh sách chứa các đề thi
-        private int stt = 1;
-        private ObservableCollection<CauHoi> bangdapan;
-
+        private ObservableCollection<FileItem> filesList = new ObservableCollection<FileItem>();
+        public string namedethi;
         public addexammain(string nameExam)
         {
             InitializeComponent();
-            Loaded += AddExamMain_Loaded;
-            exams = new ObservableCollection<DeThi>();
-            dataGrid.ItemsSource = exams;
-            receivedNameExam = nameExam;
-            bangdapan = new ObservableCollection<CauHoi>();
-            bangdapans.ItemsSource = bangdapan;
+            file.ItemsSource = filesList;
+            namedethi = nameExam;
+
+
+
+
+            Load();
+        }
+        private void Load()
+        {
+            tendethichinh.Content = namedethi;
+            monhoc.SelectedItem = "Tiếng Anh";
 
         }
         private void AddExamMain_Loaded(object sender, RoutedEventArgs e)
         {
-            tendethichinh.Content = receivedNameExam.ToString();
-        }
-        public class DeThi
-        {
-            public string NameDETHI { get; set; }
-            public string MonHocDETHI { get; set; }
-            public string TimeDETHI { get; set; }
-            public DateTime NgayTaoDETHI { get; set; }
-            public int NguoiTaoDETHI { get; set; }
-            public List<AnhDeThi> AnhDeThis { get; set; }
-            public List<CauHoi> DanhSachCauHoi { get; set; }
+
         }
 
-        public class AnhDeThi
-        {
-            public int IdHA { get; set; }
-            public byte[] HinhAnh { get; set; }
-            public int IDDETHI { get; set; }
-        }
-
-        public class CauHoi
-        {
-            //public int IdCAUHOI { get; set; }
-            public string TenCAUHOI { get; set; }
-            //public int LoaiCAUHOI { get; set; }
-            public int IDDETHI { get; set; }
-            public List<DapAn> DanhSachDapAn { get; set; }
-        }
-
-        public class DapAn
-        {
-            public int IdDAPAN { get; set; }
-            public int IdCAUHOI { get; set; }
-            public int DapAnDungDAPAN { get; set; }
-            public int IDDETHI { get; set; }
-        }
         // Sự kiện click nút để thêm hình ảnh
-        private void themanh(object sender, RoutedEventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Image Files (*.jpg; *.jpeg; *.png; *.gif)|*.jpg; *.jpeg; *.png; *.gif|All files (*.*)|*.*";
-
-            if (openFileDialog.ShowDialog() == true)
-            {
-                string imagePath = openFileDialog.FileName;
-                BitmapImage bitmap = new BitmapImage(new Uri(imagePath));
-
-                // Tạo một đối tượng DeThi mới và thêm vào danh sách
-                DeThi newExam = new DeThi();
-                newExam.NameDETHI = "" + stt;
-                newExam.AnhDeThis = new List<AnhDeThi>()
-        {
-            new AnhDeThi() { HinhAnh = ConvertImageToByteArray(bitmap) }
-        };
-                exams.Add(newExam);
-
-                // Tăng biến đếm lên để sử dụng cho tên đề thi tiếp theo
-                stt++;
-            }
-        }
-
-        private byte[] ConvertImageToByteArray(BitmapImage bitmapImage)
-        {
-            byte[] data;
-            JpegBitmapEncoder encoder = new JpegBitmapEncoder();
-            encoder.Frames.Add(BitmapFrame.Create(bitmapImage));
-
-            using (MemoryStream ms = new MemoryStream())
-            {
-                encoder.Save(ms);
-                data = ms.ToArray();
-            }
-
-            return data;
-        }
 
 
 
 
-        public void ThayDoi_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        public void Xoa_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
+        public int sum;
         private void thietlapdapan_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrEmpty(soluongcauhoi.Text) && int.TryParse(soluongcauhoi.Text, out int soLuongCauHoi) && soLuongCauHoi > 0)
+            // Kiểm tra xem giá trị nhập vào có phải là số hay không
+            if (!int.TryParse(soluongcauhoi.Text, out int soLuongCau))
             {
-                bangdapan.Clear(); // Xóa dữ liệu cũ trong danh sách trước khi thêm mới
-
-                // Lặp qua số lượng câu hỏi được chỉ định và thêm các đáp án vào danh sách
-                for (int i = 1; i <= soLuongCauHoi; i++)
-                {
-                    CauHoi cauHoi = new CauHoi();
-
-                    // Thiết lập tên câu hỏi
-                    cauHoi.TenCAUHOI = "Câu hỏi số " + i;
-
-                    // Thiết lập loại câu hỏi (giả sử mặc định là 1)
-
-                    // Tạo danh sách đáp án cho câu hỏi
-                    cauHoi.DanhSachDapAn = new List<DapAn>();
-
-                    // Thiết lập số lượng đáp án mặc định là 4 và đáp án đúng mặc định là "A"
-                    for (int j = 1; j <= 4; j++)
-                    {
-                        DapAn dapAn = new DapAn();
-                        dapAn.IdCAUHOI = i;
-                        dapAn.DapAnDungDAPAN = (j == 1) ? 1 : 0; // Giả sử đáp án đầu tiên là đáp án đúng
-                        cauHoi.DanhSachDapAn.Add(dapAn);
-                    }
-
-                    bangdapan.Add(cauHoi);
-                }
+                // Nếu không phải là số, hiển thị MessageBox thông báo lỗi
+                MessageBox.Show("Vui lòng nhập số nguyên dương.");
+                return;
             }
-            else
+
+            // Xóa tất cả các mục hiện có trong DataGrid
+            bangdapans.Items.Clear();
+
+            // Tạo và thêm các mục mới vào danh sách
+            for (int i = 1; i <= soLuongCau; i++)
             {
-                MessageBox.Show("Vui lòng nhập số lượng câu hỏi là một số nguyên dương hợp lệ.");
+                string cau = i.ToString(); // Tạo câu với số thứ tự tăng dần
+                int soLuongDapAn = 4; // Giả sử số lượng đáp án mặc định là 4
+                string dapAnDung = ""; // Không có đáp án đúng ban đầu
+
+                // Tạo một mục mới và thêm vào danh sách dữ liệu
+                DeThiItem newItem = new DeThiItem
+                {
+                    Cau = cau,
+                    SoLuongDapAn = soLuongDapAn,
+                    DapAnDung = dapAnDung
+                };
+
+                // Thêm mục mới vào DataGrid
+                bangdapans.Items.Add(newItem);
+            }
+        }
+
+        public class DeThiItem
+        {
+            public string Cau { get; set; }
+            public int SoLuongDapAn { get; set; }
+            public string DapAnDung { get; set; }
+        }
+        public class FileItem
+        {
+            public string FileName { get; set; }
+            public string FilePath { get; set; }
+        }
+
+        private void themFile_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Multiselect = false; // Chỉ cho phép chọn một tệp duy nhất
+            if (openFileDialog.ShowDialog() == true)
+            {
+                string filename = openFileDialog.FileName; // Lấy tên của tệp duy nhất được chọn
+                FileInfo fileInfo = new FileInfo(filename);
+
+                // Kiểm tra xem danh sách đã chứa tệp nào hay không
+                FileItem existingFile = filesList.FirstOrDefault();
+                if (existingFile != null)
+                {
+                    // Nếu danh sách đã chứa tệp, thực hiện thay đổi tệp đã có
+                    existingFile.FileName = fileInfo.Name;
+                    existingFile.FilePath = fileInfo.FullName;
+                }
+                else
+                {
+                    // Nếu danh sách không chứa tệp nào, thêm tệp mới
+                    FileItem fileItem = new FileItem()
+                    {
+                        FileName = fileInfo.Name,
+                        FilePath = fileInfo.FullName
+                    };
+                    filesList.Add(fileItem);
+                }
             }
         }
 
 
+        private void Xem_Click(object sender, RoutedEventArgs e)
+        {
+            Button button = sender as Button;
+            FileItem fileItem = button.DataContext as FileItem;
+            if (fileItem != null)
+            {
+                // Mở tệp tin để xem
+                Process.Start(fileItem.FilePath);
+            }
+        }
+        private void ChangeButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Lấy hàng chứa nút được nhấn
+            var button = sender as Button;
+            if (button == null)
+                return;
 
+            var item = button.DataContext as FileItem;
+            if (item == null)
+                return;
 
+            // Mở hộp thoại OpenFileDialog để chọn tệp mới
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Multiselect = false; // Chỉ cho phép chọn một tệp duy nhất
+            if (openFileDialog.ShowDialog() == true)
+            {
+                string newFilename = openFileDialog.FileName;
+                FileInfo newFileInfo = new FileInfo(newFilename);
 
+                // Cập nhật thông tin của tệp trong danh sách
+                item.FileName = newFileInfo.Name;
+                item.FilePath = newFileInfo.FullName;
+            }
+        }
 
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Lấy hàng chứa nút được nhấn
+            var button = sender as Button;
+            if (button == null)
+                return;
 
-        public string LoaiCAUHOI ="a";
-        public int NguoiTao = 1;
-        public string MonHoc = "Tiếng Anh";
-        public int selectedHour;
-        public string NgayTao = DateTime.Now.ToString();
+            var item = button.DataContext as FileItem;
+            if (item == null)
+                return;
+
+            // Xác nhận xóa từ người dùng (tùy chọn)
+            MessageBoxResult result = MessageBox.Show("Bạn có chắc muốn xóa tệp này?", "Xác nhận xóa", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
+            {
+                // Xóa mục khỏi danh sách
+                filesList.Remove(item);
+            }
+        }
+
         private void save_Click(object sender, RoutedEventArgs e)
         {
-            try
+            // Kiểm tra xem giá trị nhập vào có phải là số hay không
+            if (!int.TryParse(soluongcauhoi.Text, out int soLuongCau))
             {
-                using (Connection conn = new Connection())
+                // Nếu không phải là số, hiển thị MessageBox thông báo lỗi
+                MessageBox.Show("Vui lòng nhập số nguyên dương.");
+                return;
+            }
+
+            MySqlCommand insertDeThiCommand = null; // Khai báo biến insertDeThiCommand ở ngoài vòng lặp
+
+            using (Connection conn = new Connection())
+            {
+                if (conn.OpenConnection())
                 {
-                    if (conn.OpenConnection())
+                    foreach (var item in filesList)
                     {
-                        foreach (var exam in exams)
+                        byte[] fileData;
+                        using (FileStream fs = new FileStream(item.FilePath, FileMode.Open, FileAccess.Read))
                         {
-                            // Lưu thông tin đề thi vào bảng dethi
-                            string insertExamQuery = "INSERT INTO dethi (nameDETHI, monhocDETHI, timeDETHI, ngaytaoDETHI, nguoitaoDETHI) VALUES (@TenDeThi, @MonHoc, @Time, @NgayTao, @NguoiTao)";
-                            MySqlCommand insertExamCmd = new MySqlCommand(insertExamQuery, conn.connection);
-                            exam.NameDETHI = tendethichinh.Content.ToString();
-                            exam.MonHocDETHI = "Tiếng Anh";
-                            string hour;
-                            string minute;
+                            fileData = new byte[fs.Length];
+                            fs.Read(fileData, 0, (int)fs.Length);
+                        }
+                        string times = $"{hourTextBox.Text} : {minuteTextBox.Text}";
+                        // Lưu dữ liệu vào bảng dethi
+                        string insertDeThiQuery = "INSERT INTO dethi (nameDETHI, monhocDETHI, timeDETHI, ngaytaoDETHI, nguoitaoDETHI, filedethi) VALUES (@Name, @MonHoc, @Time, @NgayTao, @NguoiTao, @FileData)";
+                        insertDeThiCommand = new MySqlCommand(insertDeThiQuery, conn.connection);
+                        insertDeThiCommand.Parameters.AddWithValue("@Name", tendethichinh.Content);
+                        insertDeThiCommand.Parameters.AddWithValue("@MonHoc", monhoc.Text);
+                        insertDeThiCommand.Parameters.AddWithValue("@Time", times);
+                        insertDeThiCommand.Parameters.AddWithValue("@NgayTao", DateTime.Now);
+                        insertDeThiCommand.Parameters.AddWithValue("@NguoiTao", 1); // Thay thế 1 bằng ID người tạo
+                        insertDeThiCommand.Parameters.AddWithValue("@FileData", fileData);
 
-                            // Lấy giá trị từ TextBox của giờ và phút
-                            hour = hourTextBox.Text;
-                            minute = minuteTextBox.Text;
+                        insertDeThiCommand.ExecuteNonQuery();
+                    }
 
-                            // Kết hợp giá trị giờ và phút thành một chuỗi
-                            string timeString = hour + ":" + minute;
-                            exam.TimeDETHI = timeString;
+                    // Lấy ID của đề thi vừa thêm vào
+                    int idDeThi;
+                    using (MySqlCommand getIdDeThiCommand = new MySqlCommand("SELECT LAST_INSERT_ID()", conn.connection))
+                    {
+                        idDeThi = Convert.ToInt32(getIdDeThiCommand.ExecuteScalar());
+                    }
 
-                            exam.NgayTaoDETHI = DateTime.Now;
+                    // Lưu dữ liệu vào bảng cauhoi
+                    string insertCauHoiQuery = "INSERT INTO cauhoi (tenCAUHOI, loaiCAUHOI, IDDETHI) VALUES (@TenCauHoi, @LoaiCauHoi, @IdDeThi)";
+                    MySqlCommand insertCauHoiCommand = new MySqlCommand(insertCauHoiQuery, conn.connection);
+                    // Thay thế 1 bằng loại câu hỏi tương ứng
 
-                            exam.NguoiTaoDETHI = 1;
+                    for (int i = 1; i <= soLuongCau; i++)
+                    {
+                        string cau = "Câu " + i.ToString(); // Tạo câu với số thứ tự tăng dần
 
-                            insertExamCmd.Parameters.AddWithValue("@TenDeThi", exam.NameDETHI);
-                            insertExamCmd.Parameters.AddWithValue("@MonHoc", exam.MonHocDETHI);
-                            insertExamCmd.Parameters.AddWithValue("@Time", exam.TimeDETHI);
-                            insertExamCmd.Parameters.AddWithValue("@NgayTao", exam.NgayTaoDETHI);
-                            insertExamCmd.Parameters.AddWithValue("@NguoiTao", exam.NguoiTaoDETHI);
-                            insertExamCmd.ExecuteNonQuery();
+                        insertCauHoiCommand.Parameters.Clear();
+                        insertCauHoiCommand.Parameters.AddWithValue("@TenCauHoi", cau);
+                        insertCauHoiCommand.Parameters.AddWithValue("@IdDeThi", idDeThi);
+                        insertCauHoiCommand.Parameters.AddWithValue("@LoaiCauHoi", "Bình Thường");
+                        insertCauHoiCommand.ExecuteNonQuery();
 
-                            // Lấy IDDETHI của đề thi vừa được tạo
-                            int idExam = (int)insertExamCmd.LastInsertedId;
-
-                            // Lưu hình ảnh vào bảng anhdethi
-                            foreach (var anhDeThi in exam.AnhDeThis)
-                            {
-                                string insertImageQuery = "INSERT INTO anhdethi (HinhAnh, IDDETHI) VALUES (@HinhAnh, @IDDETHI)";
-                                MySqlCommand insertImageCmd = new MySqlCommand(insertImageQuery, conn.connection);
-                                insertImageCmd.Parameters.AddWithValue("@HinhAnh", anhDeThi.HinhAnh);
-                                insertImageCmd.Parameters.AddWithValue("@IDDETHI", idExam);
-                                insertImageCmd.ExecuteNonQuery();
-                            }
-
-                            foreach (var cauHoi in exam.DanhSachCauHoi)
-                            {
-                                // Lưu câu hỏi vào bảng cauhoi
-                                string insertCauHoiQuery = "INSERT INTO cauhoi (tenCAUHOI, loaiCAUHOI, IDDETHI) VALUES (@TenCauHoi, @LoaiCauHoi, @IDDeThi)";
-                                MySqlCommand insertCauHoiCmd = new MySqlCommand(insertCauHoiQuery, conn.connection);
-                                insertCauHoiCmd.Parameters.AddWithValue("@TenCauHoi", cauHoi.TenCAUHOI);
-                                insertCauHoiCmd.Parameters.AddWithValue("@LoaiCauHoi", LoaiCAUHOI);
-                                insertCauHoiCmd.Parameters.AddWithValue("@IDDeThi", idExam);
-                                insertCauHoiCmd.ExecuteNonQuery();
-
-                                // Lấy IDCAUHOI của câu hỏi vừa được tạo
-                                int idCauHoi = (int)insertCauHoiCmd.LastInsertedId;
-
-                                foreach (var dapAn in cauHoi.DanhSachDapAn)
-                                {
-                                    // Lưu đáp án vào bảng dapan
-                                    string insertDapAnQuery = "INSERT INTO dapan (IdCAUHOI, DapAnDungDAPAN, IDDETHI) VALUES (@IdCAUHOI, @DapAnDung, @IDDETHI)";
-                                    MySqlCommand insertDapAnCmd = new MySqlCommand(insertDapAnQuery, conn.connection);
-                                    insertDapAnCmd.Parameters.AddWithValue("@IdCAUHOI", idCauHoi);
-                                    insertDapAnCmd.Parameters.AddWithValue("@DapAnDung", dapAn.DapAnDungDAPAN);
-                                    insertDapAnCmd.Parameters.AddWithValue("@IDDETHI", idExam);
-                                    insertDapAnCmd.ExecuteNonQuery();
-                                }
-                            }
+                        // Lấy ID của câu hỏi vừa thêm vào
+                        int idCauHoi;
+                        using (MySqlCommand getIdCauHoiCommand = new MySqlCommand("SELECT LAST_INSERT_ID()", conn.connection))
+                        {
+                            idCauHoi = Convert.ToInt32(getIdCauHoiCommand.ExecuteScalar());
                         }
 
-                        MessageBox.Show("Dữ liệu đã được lưu thành công vào cơ sở dữ liệu.");
+                        // Lưu đáp án đúng vào bảng dapan
+                        string dapAnDung = ""; // Không có đáp án đúng ban đầu
+                        string insertDapAnQuery = "INSERT INTO dapan (idCAUHOI, dapandungDAPAN, IDDETHI) VALUES (@IdCauHoi, @DapAnDung, @IdDeThi)";
+                        MySqlCommand insertDapAnCommand = new MySqlCommand(insertDapAnQuery, conn.connection);
+                        insertDapAnCommand.Parameters.AddWithValue("@IdCauHoi", idCauHoi);
+                        insertDapAnCommand.Parameters.AddWithValue("@DapAnDung", dapAnDung);
+                        insertDapAnCommand.Parameters.AddWithValue("@IdDeThi", idDeThi);
+                        insertDapAnCommand.ExecuteNonQuery();
+
+
                     }
-                    else
-                    {
-                        MessageBox.Show("Không thể kết nối đến cơ sở dữ liệu.");
-                    }
+
+                    DateTime timestamp = DateTime.Now;
+                    string action = $"Đã thêm đề thi {tendethichinh.Content} vào ngày : {timestamp}";
+
+                    string insertActionQuery = "INSERT INTO tintuc (hanhdong, time) VALUES (@Action, @Timestamp)";
+                    MySqlCommand insertActionCommand = new MySqlCommand(insertActionQuery, conn.connection);
+                    insertActionCommand.Parameters.AddWithValue("@Action", action);
+                    insertActionCommand.Parameters.AddWithValue("@Timestamp", timestamp);
+                    insertActionCommand.ExecuteNonQuery();
+                    MessageBox.Show("Lưu Thành Công", "Thành Công");
+                    conn.CloseConnection();
+
+                    Home home = new Home();
+                    home.Show();
+                    this.Close();
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Đã xảy ra lỗi khi lưu dữ liệu vào cơ sở dữ liệu: " + ex.Message);
+                else
+                {
+                    MessageBox.Show("Không thể kết nối đến cơ sở dữ liệu.", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+
             }
         }
 
-        private void SetTime_Click(object sender, RoutedEventArgs e)
-        {
 
-        }
+
+
+
+
+
+
+
     }
 
 }

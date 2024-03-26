@@ -36,7 +36,7 @@ namespace ManageExam.admin.view
             public int IDUSER { get; set; }
             public string nameUSER { get; set; }
             public string matkhauUSER { get; set; }
-            public int sdtUSER { get; set; }
+            public string sdtUSER { get; set; }
             public string emailUSER { get; set; }
             //  public DateTime ngaysinhUSER { get; set; }
             public string gioitinhUSER { get; set; }
@@ -64,7 +64,7 @@ namespace ManageExam.admin.view
                                     IDUSER = reader.GetInt32("IDUSER"),
                                     nameUSER = reader.GetString("nameUSER"),
                                     matkhauUSER = reader.GetString("matkhauUSER"),
-                                    sdtUSER = reader.GetInt32(reader.GetOrdinal("sdtUSER")),
+                                    sdtUSER = reader.GetString(("sdtUSER")),
                                     //       ngaysinhUSER = reader.GetDateTime("ngaysinhUSER"),
                                     emailUSER = reader.GetString("emailUSER"),
                                     gioitinhUSER = reader.GetString("gioitinhUSER"),

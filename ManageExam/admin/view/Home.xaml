@@ -40,7 +40,7 @@
                     <Label Content="Thêm Lịch thi" VerticalAlignment="Bottom" FontWeight="Bold"  FontSize="18" HorizontalAlignment="Center" FontFamily="Cambria" Foreground="#FF202124"></Label>
                 </Grid>
                 <Grid Margin="340 0 0 0" Height="170" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left">
-                    <Button  HorizontalAlignment="Left" VerticalAlignment="Top" Height="130" Width="150" FontSize="100" Cursor="Hand" FontFamily="Microsoft Tai Le" FontWeight="Bold" BorderBrush="#FFDDEC9E" Background="White">
+                    <Button Click="DSde_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Height="130" Width="150" FontSize="100" Cursor="Hand" FontFamily="Microsoft Tai Le" FontWeight="Bold" BorderBrush="#FFDDEC9E" Background="White">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="\Lib\maukithi.png" Width="150" Height="170" />
 
@@ -49,7 +49,7 @@
                     <Label Content="Danh sách đề" VerticalAlignment="Bottom" FontWeight="Bold"  FontSize="18" HorizontalAlignment="Center" FontFamily="Cambria" Foreground="#FF202124"></Label>
                 </Grid>
                 <Grid Margin="510 0 0 0" Height="170" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left">
-                    <Button HorizontalAlignment="Left" VerticalAlignment="Top" Height="130" Width="150" FontSize="100" Cursor="Hand" FontFamily="Microsoft Tai Le" FontWeight="Bold" BorderBrush="#FFDDEC9E" Background="White">
+                    <Button Click="KQ_click" HorizontalAlignment="Left" VerticalAlignment="Top" Height="130" Width="150" FontSize="100" Cursor="Hand" FontFamily="Microsoft Tai Le" FontWeight="Bold" BorderBrush="#FFDDEC9E" Background="White">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="\Lib\mau2.png" Width="150" Height="170" />
 
@@ -73,7 +73,7 @@
             <Label Content="News List" FontSize="18" Margin="350 0 0 0" Foreground="#FF202124" FontFamily="Dubai Medium" FontWeight="Bold" ></Label>
             <Grid VerticalAlignment="Center" Margin="100 0 0 0">
                 <Grid Height="170" Width="150"  VerticalAlignment="Top" HorizontalAlignment="Left">
-                    <Button HorizontalAlignment="Left" VerticalAlignment="Top" Height="130" Width="150" FontSize="100" Cursor="Hand" FontFamily="Microsoft Tai Le" FontWeight="Bold" BorderBrush="#FFDDEC9E" Background="White" Foreground="#FF737264">
+                    <Button Click="themtintuc_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Height="130" Width="150" FontSize="100" Cursor="Hand" FontFamily="Microsoft Tai Le" FontWeight="Bold" BorderBrush="#FFDDEC9E" Background="White" Foreground="#FF737264">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="\Lib\addexam.png" Width="150" Height="170" />
 
@@ -84,7 +84,7 @@
             </Grid>
 
             <Grid Margin="350,40,0,10">
-                <ListView d:ItemsSource="{d:SampleData ItemCount=5}">
+                <ListView Name="tintuc" d:ItemsSource="{d:SampleData ItemCount=5}">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn/>

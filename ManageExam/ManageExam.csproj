@@ -178,6 +178,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="admin\view\viewExam\SingerExam.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="admin\view\viewExam\viewImgExam.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -239,6 +243,9 @@
     </Compile>
     <Compile Include="admin\view\userInfoEditing.xaml.cs">
       <DependentUpon>userInfoEditing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="admin\view\viewExam\SingerExam.xaml.cs">
+      <DependentUpon>SingerExam.xaml</DependentUpon>
     </Compile>
     <Compile Include="admin\view\viewExam\viewImgExam.xaml.cs">
       <DependentUpon>viewImgExam.xaml</DependentUpon>

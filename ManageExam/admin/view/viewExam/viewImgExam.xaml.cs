@@ -55,7 +55,13 @@ namespace ManageExam.admin.view.viewExam
 
         private void XemDeThi_Click(object sender, RoutedEventArgs e)
         {
-            // Thêm xử lý khi nhấn nút Xem đề thi
+            DataRowView row = (DataRowView)dataGrid.SelectedItem;
+            if (row != null)
+            {
+                int maDeThi = Convert.ToInt32(row["MaDeThi"]);
+                SingerExam singerExam = new SingerExam(maDeThi);
+                singerExam.ShowDialog();
+            }
         }
 
         private void XoaDeThi_Click(object sender, RoutedEventArgs e)
@@ -94,11 +100,6 @@ namespace ManageExam.admin.view.viewExam
                                 deleteCauHoiCommand.Parameters.AddWithValue("@MaDeThi", maDeThi);
                                 deleteCauHoiCommand.ExecuteNonQuery();
 
-                                // Xóa từ bảng anhdethi
-                                string deleteAnhDeThiQuery = "DELETE FROM anhdethi WHERE IDDETHI = @MaDeThi";
-                                MySqlCommand deleteAnhDeThiCommand = new MySqlCommand(deleteAnhDeThiQuery, conn.connection);
-                                deleteAnhDeThiCommand.Parameters.AddWithValue("@MaDeThi", maDeThi);
-                                deleteAnhDeThiCommand.ExecuteNonQuery();
 
                                 // Xóa từ bảng dethi
                                 string deleteDeThiQuery = "DELETE FROM dethi WHERE IDDETHI = @MaDeThi";
@@ -108,6 +109,14 @@ namespace ManageExam.admin.view.viewExam
 
                                 // Load lại dữ liệu sau khi xóa
                                 LoadData();
+                                DateTime timestamp = DateTime.Now;
+                                string action = $"Đã xóa đề thi có mã là {maDeThi} vào ngày : {timestamp}";
+
+                                string insertActionQuery = "INSERT INTO tintuc (hanhdong, time) VALUES (@Action, @Timestamp)";
+                                MySqlCommand insertActionCommand = new MySqlCommand(insertActionQuery, conn.connection);
+                                insertActionCommand.Parameters.AddWithValue("@Action", action);
+                                insertActionCommand.Parameters.AddWithValue("@Timestamp", timestamp);
+                                insertActionCommand.ExecuteNonQuery();
 
                                 MessageBox.Show("Đã xóa đề thi và các thông tin liên quan.", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
                             }

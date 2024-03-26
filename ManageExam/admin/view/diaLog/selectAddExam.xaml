@@ -7,15 +7,14 @@
         mc:Ignorable="d"
            Title="SelectAddExam" Height="300" Width="500">
     <Grid>
-        <Label Content="Lựa chọn kiểu đề" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Cambria" FontWeight="Bold"/>
-        <RadioButton Content="Dạng đề từng câu 50 câu trắc nhiệm  " HorizontalAlignment="Left" Margin="26,70,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Cambria"/>
-        <RadioButton Content="Đưa File đề lên và chọn đáp án trắc nhiệm 50 câu" HorizontalAlignment="Left" Margin="26,0,0,0" VerticalAlignment="Center" FontSize="18" FontFamily="Cambria"/>
-        <Button Content="Button" Padding="20 5" HorizontalAlignment="Left" Margin="395,241,0,0" VerticalAlignment="Top" FontFamily="Cambria" FontSize="18" Background="#FFF3F3F3">
+        <Label Content="Nhập Thông Tin Tin Tức" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Cambria" FontWeight="Bold"/>
+        <Button Content="OK" Padding="20 5" HorizontalAlignment="Left" Margin="395,241,0,0" VerticalAlignment="Top" FontFamily="Cambria" FontSize="18" Background="#FFF3F3F3" Width="95" Click="Button_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
                 </Style>
             </Button.Resources>
         </Button>
+        <TextBox x:Name="tintuc" HorizontalAlignment="Left" Margin="10,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="471" Height="195"/>
     </Grid>
 </Window>
