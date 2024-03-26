@@ -17,7 +17,34 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="DataGrid_SelectionChanged"/>
+        <ListView ItemsSource="{Binding Users}">
+            <ListView.View>
+                <GridView>
+                    <GridView.ColumnHeaderContainerStyle>
+                        <Style TargetType="{x:Type GridViewColumnHeader}">
+                            <Setter Property="Margin" Value="0,15,0,0"/>
+                        </Style>
+                    </GridView.ColumnHeaderContainerStyle>
+                    <GridViewColumn Header="IDUSER" DisplayMemberBinding="{Binding IDUSER}" />
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding nameUSER}"/>
+                    <GridViewColumn Header="Password" DisplayMemberBinding="{Binding matkhauUSER}"/>
+                    <GridViewColumn Header="Phone" DisplayMemberBinding="{Binding sdtUSER}"/>
+                    <GridViewColumn Header="Email" DisplayMemberBinding="{Binding emailUSER}"/>
+                    <!-- <GridViewColumn Header="Date" DisplayMemberBinding="{Binding ngaysinhUSER, StringFormat={}{0:yyyy-MM-dd}}"/>-->
+                    <GridViewColumn Header="Gender" DisplayMemberBinding="{Binding gioitinhUSER}"/>
+                    <GridViewColumn Header="Nationality" DisplayMemberBinding="{Binding quoctich}"/>
+                    <GridViewColumn Header="City" DisplayMemberBinding="{Binding tinhTp}"/>
+                    <GridViewColumn Header="District" DisplayMemberBinding="{Binding quanhuyen}"/>
+                    <GridViewColumn>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Xóa" Click="DeleteButton_Click"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
 
     </Grid>
 </UserControl>

@@ -126,6 +126,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="admin\view\AddU.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="admin\view\AU.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -196,6 +200,9 @@
     </Compile>
     <Compile Include="admin\view\addexam\nameaddexam.xaml.cs">
       <DependentUpon>nameaddexam.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="admin\view\AddU.xaml.cs">
+      <DependentUpon>AddU.xaml</DependentUpon>
     </Compile>
     <Compile Include="admin\view\AU.xaml.cs">
       <DependentUpon>AU.xaml</DependentUpon>
@@ -286,7 +293,9 @@
     <Resource Include="lib\anhnen.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="lib\Book2.jpg" />
+    <Resource Include="lib\Book2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="lib\mau2.png" />
@@ -305,10 +314,14 @@
     <Resource Include="lib\a.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="lib\b.jpg" />
+    <Resource Include="lib\b.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="lib\Background2.jpg" />
+    <Resource Include="lib\Background2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

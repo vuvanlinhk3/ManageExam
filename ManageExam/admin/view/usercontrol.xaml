@@ -20,11 +20,18 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        
+
     </Window.Resources>
-    
+
     <Grid>
-        <local:AU x:Name="AU" HorizontalAlignment="Left" Margin="148,0,0,0" VerticalAlignment="Center" Height="435" Width="652"/>
+        <local:AddU x:Name="AddU" HorizontalAlignment="Left" Margin="148,0,0,0" VerticalAlignment="Center" Height="434" Width="648"/>
+
+        <local:DSND x:Name="DSND" HorizontalAlignment="Left" Margin="146,0,0,0" VerticalAlignment="Center" Height="434" Width="652"/>
+
+        <local:AU HorizontalAlignment="Left" VerticalAlignment="Center" Margin="153,0,0,0"/>
+
+        <local:AU x:Name="AU" HorizontalAlignment="Left" Margin="150,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.519,0.492" Height="434" Width="648"/>
+
         <Image HorizontalAlignment="Left" Height="148" Stretch="Fill" VerticalAlignment="Top" Width="450" Source="/lib/a.png" Opacity="0.6" RenderTransformOrigin="0.5,0.5" Margin="-150,152,0,0">
             <Image.RenderTransform>
                 <TransformGroup>
@@ -35,8 +42,9 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Button Content="Danh sách người dùng " HorizontalAlignment="Left" Margin="0,147,0,0" VerticalAlignment="Top" Height="31" Width="148" Click="Button_Click_2" BorderBrush="#FFA17777" Style="{StaticResource botron}"/>
-        <Button Content="Thêm người dùng" HorizontalAlignment="Left" VerticalAlignment="Center" Height="31" Width="148" BorderBrush="{x:Null}"  Style="{StaticResource botron}" Click="Button_Click_3"/>
-        <local:DSND x:Name="DSND" HorizontalAlignment="Left" Margin="148,0,0,0" VerticalAlignment="Center" Height="434" Width="652"/>
+        <Button Content="Danh sách người dùng " HorizontalAlignment="Left" Margin="0,147,0,0" VerticalAlignment="Top" Height="31" Width="148" Click="danhsach" BorderBrush="#FFA17777" Style="{StaticResource botron}"/>
+        <Button Content="Chỉnh sửa thông tin" HorizontalAlignment="Left" VerticalAlignment="Center" Height="31" Width="148" BorderBrush="{x:Null}"  Style="{StaticResource botron}" Click="chinhsua"/>
+        <Button x:Name="editU" Content="Thêm người dùng" HorizontalAlignment="Left" VerticalAlignment="Top" Height="31" Width="148" BorderBrush="{x:Null}"  Style="{StaticResource botron}" Click="them" Margin="0,263,0,0"/>
+
     </Grid>
 </Window>

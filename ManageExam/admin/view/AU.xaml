@@ -22,22 +22,240 @@
         </Style>
     </UserControl.Resources>
     <Grid>
-        <Image Stretch="FILL" Source="/lib/b.jpg" Opacity="0.8"/>
-        <Border Background="White"  BorderBrush="LightGray" BorderThickness="1" CornerRadius="20" Padding="7, 6" HorizontalAlignment="Left" VerticalAlignment="Top"  RenderTransformOrigin="0.49,1.549" Width="228" Margin="0,30,0,0" Height="47">
-            <StackPanel>
-                <TextBox Text="Nhập tài khoản của bạn" Background="Transparent" BorderThickness="0" Height="34" FontSize="20" TextChanged="TextBox_TextChanged"/>
-            </StackPanel>
-        </Border>
-        <Button Content="Thêm" HorizontalAlignment="Left" Background="White" Margin="551,395,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" FontSize="22" Click="Button_Click" Width="74" Style="{StaticResource botron}"/>
-        <Border Background="White"  BorderBrush="LightGray" BorderThickness="1" CornerRadius="20" Padding="7, 6" HorizontalAlignment="Left" VerticalAlignment="Top"  RenderTransformOrigin="0.49,1.549" Width="229" Margin="0,128,0,0" Height="46">
-            <StackPanel>
-                <TextBox Text="Nhập mật khẩu của bạn" Background="Transparent" BorderThickness="0" Margin="0, 0, 0, 5" Height="34" FontSize="20" TextChanged="TextBox_TextChanged_1"/>
-            </StackPanel>
-        </Border>
-        <Label Content="Họ tên đầy đủ " HorizontalAlignment="Left" Margin="0,-7,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <Label Content="Ngày Sinh  " HorizontalAlignment="Center" Margin="0,-7,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <DatePicker HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Top" Height="47" Width="156" BorderBrush="{x:Null}" />
-        <Label Content="Giới Tính" HorizontalAlignment="Left" Margin="453,-7,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <ComboBox HorizontalAlignment="Left" Margin="468,38,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged"/>
+
+        <Image HorizontalAlignment="Center" Height="448" VerticalAlignment="Center" Width="652" Source="/lib/Background2.jpg" Stretch="None"/>
+
+        <Grid Margin="10,10,-10,-10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="30"/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="100"/>
+                </Grid.RowDefinitions>
+
+                <Image HorizontalAlignment="Center" Height="100" VerticalAlignment="Top" Width="100" Source="/lib/book2.jpg"/>
+
+                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1">
+                    <TextBlock FontSize="15"
+       Foreground="White"
+       FontWeight="Bold"
+       Margin="60 0 0 0"><Run Text="CẬP NHẬT THÔNG TIN CHUNG"/></TextBlock>
+                </StackPanel>
+
+                <Grid Grid.Row="2" Margin="60 0 60 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" Width="176">
+                        <TextBlock Text="Họ và tên đầy đủ"
+       Foreground="White"
+       FontSize="12"
+       FontWeight="Medium"
+       FontFamily="Montserrat"
+       Margin="25 0 0 5"/>
+
+                        <TextBox x:Name="hoten"
+     FontSize="20"
+     FontWeight="Medium"
+     FontFamily="Montserrat"
+     Background="White"
+     Foreground="Black"
+     BorderThickness="0"
+     VerticalContentAlignment="Center"
+     Padding="5 4 5 4"
+     Margin="15 0 15 0">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="15"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                    </StackPanel>
+
+                    <StackPanel VerticalAlignment="Center" Grid.Column="1">
+                        <TextBlock
+       Foreground="White"
+       FontSize="12"
+       FontWeight="Medium"
+       FontFamily="Montserrat"
+       Margin="25 0 0 5"><Run Language="vi-vn" Text="Giới tính"/></TextBlock>
+
+                        <TextBox x:Name="gioitinh"
+     FontSize="20"
+     FontWeight="Medium"
+     FontFamily="Montserrat"
+     Background="White"
+     Foreground="Black"
+     BorderThickness="0"
+     VerticalContentAlignment="Center"
+     Padding="5 4 5 4"
+     Margin="15 0 15 0" TextChanged="textBox2_TextChanged">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="15"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                    </StackPanel>
+
+                    <StackPanel VerticalAlignment="Center" Grid.Column="2" Margin="15,0,-36,0">
+                        <TextBlock Text="Ngày sinh "
+       Foreground="White"
+       FontSize="12"
+       FontWeight="Medium"
+       FontFamily="Montserrat"
+       Margin="25 0 0 5"/>
+                        <DatePicker x:Name="date" HorizontalAlignment="Left"
+     FontSize="18"
+     FontWeight="Medium"
+     FontFamily="Montserrat"
+     Background="White"
+     Foreground="Black"
+     BorderThickness="0"
+     Padding="15 4 5 4"
+     VerticalContentAlignment="Center" Width="152">
+                            <DatePicker.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="15"/>
+                                </Style>
+                            </DatePicker.Resources>
+                        </DatePicker>
+                    </StackPanel>
+                </Grid>
+
+                <Grid Grid.Row="3" Margin="60 0 60 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock Text="Email"
+       Foreground="White"
+       FontSize="12"
+       FontWeight="Medium"
+       FontFamily="Montserrat"
+       Margin="25 0 0 5"/>
+
+                        <TextBox x:Name="email"
+     FontSize="20"
+     FontWeight="Medium"
+     FontFamily="Montserrat"
+     Background="White"
+     Foreground="Black"
+     BorderThickness="0"
+     VerticalContentAlignment="Center"
+     Padding="5 4 5 4"
+     Margin="15 0 15 0">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="15"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                    </StackPanel>
+
+                    <StackPanel VerticalAlignment="Center" Grid.Column="1">
+                        <TextBlock Text="số điện thoại"
+       Foreground="White"
+       FontSize="12"
+       FontWeight="Medium"
+       FontFamily="Montserrat"
+       Margin="25 0 0 5"/>
+
+                        <TextBox x:Name="sdt"
+     FontSize="20"
+     FontWeight="Medium"
+     FontFamily="Montserrat"
+     Background="White"
+     Foreground="Black"
+     BorderThickness="0"
+     VerticalContentAlignment="Center"
+     Padding="5 4 5 4"
+     Margin="15 0 15 0">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="15"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                    </StackPanel>
+
+                    <StackPanel VerticalAlignment="Center" Grid.Column="2">
+                        <TextBlock Text="Mật khẩu"
+       Foreground="White"
+       FontSize="12"
+       FontWeight="Medium"
+       FontFamily="Montserrat"
+       Margin="25 0 0 5"/>
+
+                        <TextBox x:Name="matkhau"
+     FontSize="20"
+     FontWeight="Medium"
+     FontFamily="Montserrat"
+     Background="White"
+     Foreground="Black"
+     BorderThickness="0"
+     VerticalContentAlignment="Center"
+     Padding="5 4 5 4"
+     Margin="15 0 15 0" TextChanged="textBox5_TextChanged">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="15"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                    </StackPanel>
+                </Grid>
+
+                <Button x:Name="submit"
+Width="150"
+Margin="0 10 80 10"
+Padding="20 0 20 0"
+HorizontalAlignment="Right"
+Cursor="Hand"
+Grid.Row="4"
+FontFamily="Montserrat"
+FontWeight="Bold"
+Foreground="White"
+Background="Green" Click="submitBtn_Click" Content="CẬP NHẬT">
+
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="15"/>
+                        </Style>
+                    </Button.Resources>
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="White"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="Gray"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                </Button>
+            </Grid>
+        </Grid>
     </Grid>
 </UserControl>
