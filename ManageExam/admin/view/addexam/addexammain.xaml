@@ -9,14 +9,36 @@
         WindowStartupLocation="CenterScreen"
         Title="addexammain" Height="900" Width="1300">
     <Grid>
-        <Label Content="ĐỀ : " HorizontalAlignment="Center"  VerticalAlignment="Top" FontSize="20" Margin="0,37,0,0"/>
-        <Label HorizontalAlignment="Left" x:Name="tendethichinh" Content="1"   VerticalAlignment="Top" FontSize="20" Margin="664,37,0,0"/>
+        <Image HorizontalAlignment="Left" Height="983" VerticalAlignment="Top" Width="1422" Source="F:\PROJECT_CSHAP\ManageExam\ManageExam\lib\anhnen.jpg"  />
+
+        <Border HorizontalAlignment="Left" Height="727" Margin="0,85,0,0" VerticalAlignment="Top" Width="596" Background="#99247965" CornerRadius="20">
+            <!-- Nội dung bên trong Border -->
+        </Border>
+
+
+        <Label Content="ĐỀ : " HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="24" Margin="606,32,0,0" FontWeight="Bold" Foreground="White"/>
+        <Label HorizontalAlignment="Left" x:Name="tendethichinh" Content="1"   VerticalAlignment="Top" FontSize="24" Margin="672,32,0,0" FontWeight="Bold" Foreground="White"/>
+
+
+
 
 
         <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Width="547" Height="110" Margin="15,242,0,0">
 
             <Grid Margin="0,0,-31,0">
-                <DataGrid x:Name="file" AutoGenerateColumns="False" Margin="0,0,20,42" FontSize="18">
+                <DataGrid x:Name="file" AutoGenerateColumns="False" Margin="0,0,20,42" FontSize="18" Background="#99247965">
+                    <DataGrid.ColumnHeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="Background" Value="#FF106D49"/>
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
+                    <DataGrid.RowStyle>
+                        <Style TargetType="DataGridRow">
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="Background" Value="#FF6FBF73"/>
+                        </Style>
+                    </DataGrid.RowStyle>
                     <DataGrid.Columns>
                         <DataGridTextColumn Width="300" Header="Tên File" Binding="{Binding FileName}"/>
                         <DataGridTemplateColumn Width="100" Header="Thay Đổi">
@@ -48,8 +70,20 @@
         </Grid>
 
 
-        <Grid Margin="0,133,20,0" HorizontalAlignment="Right" VerticalAlignment="Top"  Width="446" Height="679">
-            <DataGrid x:Name="bangdapans" FontSize="18"  AutoGenerateColumns="False" ItemsSource="{Binding danhSachDeThi}">
+        <Grid Margin="0,85,20,0" HorizontalAlignment="Right" VerticalAlignment="Top"  Width="446" Height="727">
+            <DataGrid x:Name="bangdapans" FontSize="18"  AutoGenerateColumns="False" ItemsSource="{Binding danhSachDeThi}" Background="#99247965" Foreground="#FF01120E" BorderBrush="White">
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="Background" Value="#FF195F27"/>
+                    </Style>
+                </DataGrid.ColumnHeaderStyle>
+                <DataGrid.RowStyle>
+                    <Style TargetType="DataGridRow">
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="Background" Value="#4CAF50"/>
+                    </Style>
+                </DataGrid.RowStyle>
                 <DataGrid.Columns>
                     <!-- Cột cho câu -->
                     <DataGridTextColumn Width="100" x:Name="cau" Header="Câu" Binding="{Binding Cau}" />
@@ -79,18 +113,41 @@
 
 
 
+        <Button Click="themFile_Click" Content="Thêm File" HorizontalAlignment="Left" Margin="15,181,0,0" VerticalAlignment="Top" Height="48" Width="132" FontSize="20" Background="#4CAF50" Foreground="White" BorderBrush="#388E3C" BorderThickness="2" FontFamily="Segoe UI" FontWeight="Bold" Padding="10"/>
 
-        <Button Click="themFile_Click" Content="Thêm File" HorizontalAlignment="Left" Margin="15,181,0,0" VerticalAlignment="Top" Height="48" Width="132" FontSize="20"/>
-        <Button  Content="Lưu" HorizontalAlignment="Left" Margin="1158,826,0,0" VerticalAlignment="Top" Height="48" Width="132" FontSize="20" Click="save_Click"/>
-        <Button Click="thietlapdapan_Click" Content="Thiết Lập Đáp Án" HorizontalAlignment="Left" Margin="607,304,0,0" VerticalAlignment="Top" Height="48" Width="204" FontSize="20"/>
+        <Button Content="Lưu" HorizontalAlignment="Left" Margin="1158,826,0,0" VerticalAlignment="Top" Height="48" Width="132" FontSize="20" Click="save_Click">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#4CAF50"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="BorderBrush" Value="#388E3C"/>
+                    <Setter Property="BorderThickness" Value="2"/>
+                    <Setter Property="FontFamily" Value="Arial"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="Padding" Value="10"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border CornerRadius="10" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
+
+
+        <Button Click="thietlapdapan_Click" Content="Thiết Lập Đáp Án" HorizontalAlignment="Left" Margin="625,234,0,0" VerticalAlignment="Top" Height="48" Width="204" FontSize="20" Background="#FF4D9021" Foreground="White" BorderBrush="#1565C0" BorderThickness="2" FontFamily="Segoe UI" FontWeight="Bold" Padding="10"/>
 
 
 
-        <TextBox x:Name="soluongcauhoi" HorizontalAlignment="Left" Margin="607,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="114" Height="48" FontSize="20"/>
-        <Label Content="Số Lượng câu hỏi" HorizontalAlignment="Left" Margin="607,187,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <TextBox x:Name="soluongcauhoi" HorizontalAlignment="Left" Margin="625,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="114" Height="48" FontSize="20"/>
+        <Label Content="Số Lượng câu hỏi" HorizontalAlignment="Left" Margin="625,133,0,0" VerticalAlignment="Top" FontSize="20" Foreground="White"/>
 
 
-        <Grid HorizontalAlignment="Right" VerticalAlignment="Top" Height="71" Margin="0,437,988,0" Width="274">
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Height="71" Margin="0,399,0,0" Width="274">
             <StackPanel Orientation="Horizontal" Width="220">
                 <TextBox x:Name="hourTextBox"
              Margin="10"
@@ -110,10 +167,40 @@
             </StackPanel>
 
         </Grid>
-        <Label Content="Thời gian làm bài" HorizontalAlignment="Left" Margin="68,395,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <Label Content="Môn Học" HorizontalAlignment="Left" Margin="68,558,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <ComboBox x:Name="monhoc" HorizontalAlignment="Left" Margin="74,618,0,0" VerticalAlignment="Top" Width="202" FontSize="18" Height="36"/>
-        <Button Click="back_Click" Content="Quay lại" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="45" Width="118" FontSize="20"/>
+        <Label Content="Thời gian làm bài" HorizontalAlignment="Left" Margin="20,352,0,0" VerticalAlignment="Top" FontSize="20" Foreground="White"/>
+        <Label Content="Môn Học" HorizontalAlignment="Left" Margin="288,362,0,0" VerticalAlignment="Top" FontSize="20" Foreground="White"/>
+        <ComboBox x:Name="monhoc" HorizontalAlignment="Left" Margin="288,413,0,0" VerticalAlignment="Top" Width="202" FontSize="18" Height="36"/>
+        <Button Click="back_Click" Content="Quay lại" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="45" Width="118" FontSize="20">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#FF38880D"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="BorderThickness" Value="2"/>
+                    <Setter Property="BorderBrush" Value="#FF1565C0"/>
+                    <Setter Property="FontSize" Value="20"/>
+                    <Setter Property="Padding" Value="10"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="10">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FF1976D2"/>
+                            <Setter Property="BorderBrush" Value="#FF0D47A1"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="#FF0D47A1"/>
+                            <Setter Property="BorderBrush" Value="#FF0D47A1"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
 
 
     </Grid>

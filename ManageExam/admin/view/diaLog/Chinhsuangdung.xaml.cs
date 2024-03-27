@@ -36,6 +36,7 @@ namespace ManageExam.admin.view.diaLog
                 using (Connection conn = new Connection())
                 {
                     if (conn.OpenConnection())
+
                     {
                         string query = "SELECT * FROM user WHERE IDUSER = @id";
                         MySqlCommand cmd = new MySqlCommand(query, conn.connection);
@@ -50,18 +51,6 @@ namespace ManageExam.admin.view.diaLog
                                 gioitinh.Text = reader.GetString("gioitinhUSER");
                                 email.Text = reader.GetString("emailUSER");
                                 sdt.Text = reader.GetString("sdtUSER");
-                                //ngaysinh.SelectedDate = reader.GetDateTime("ngaysinhUSER");
-                                // Lưu ý: Đối với ngày sinh, bạn cần kiểm tra null trước khi gán giá trị
-                                // Đọc giá trị ngày tháng từ cơ sở dữ liệu
-                                // Đọc giá trị ngày tháng từ cơ sở dữ liệu
-                                //DateTime? ngaysinhUSER = reader.IsDBNull(reader.GetOrdinal("ngaysinhUSER")) ? null : (DateTime?)reader.GetDateTime("ngaysinhUSER");
-
-                                // Kiểm tra xem ngày tháng từ cơ sở dữ liệu có rỗng không
-                                //if (ngaysinhUSER != null)
-                                //{
-                                //    // Gán giá trị ngày tháng cho SelectedDate của DatePicker
-                                //    date.SelectedDate = ngaysinhUSER;
-                                //}
 
                             }
                         }
