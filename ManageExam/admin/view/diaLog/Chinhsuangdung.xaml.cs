@@ -54,19 +54,15 @@ namespace ManageExam.admin.view.diaLog
                                 // Lưu ý: Đối với ngày sinh, bạn cần kiểm tra null trước khi gán giá trị
                                 // Đọc giá trị ngày tháng từ cơ sở dữ liệu
                                 // Đọc giá trị ngày tháng từ cơ sở dữ liệu
-                                DateTime? ngaysinhUSER = reader.IsDBNull(reader.GetOrdinal("ngaysinhUSER")) ? null : (DateTime?)reader.GetDateTime("ngaysinhUSER");
+                                //DateTime? ngaysinhUSER = reader.IsDBNull(reader.GetOrdinal("ngaysinhUSER")) ? null : (DateTime?)reader.GetDateTime("ngaysinhUSER");
 
                                 // Kiểm tra xem ngày tháng từ cơ sở dữ liệu có rỗng không
-                                if (ngaysinhUSER != null)
-                                {
-                                    // Gán giá trị ngày tháng cho SelectedDate của DatePicker
-                                    date.SelectedDate = ngaysinhUSER;
-                                }
+                                //if (ngaysinhUSER != null)
+                                //{
+                                //    // Gán giá trị ngày tháng cho SelectedDate của DatePicker
+                                //    date.SelectedDate = ngaysinhUSER;
+                                //}
 
-
-
-
-                                // Tiếp tục gán thông tin cho các trường khác nếu cần
                             }
                         }
                     }
