@@ -1,0 +1,39 @@
+﻿<Window x:Class="ManageExam.admin.view.themdehoantoan"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ManageExam.admin.view.addexam"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+            Title="namenewexam" Height="300" Width="500">
+    <Grid>
+        <TextBox x:Name="tendethi" HorizontalAlignment="Center" Margin="0,48,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="458" FontFamily="Cambria" FontSize="20" RenderTransformOrigin="0.481,0.51" Height="31"/>
+        <Button Click="Next" Content="Tiếp tục" HorizontalAlignment="Left" Margin="386,210,0,0" VerticalAlignment="Top" FontFamily="Cambria" FontSize="20" Height="46" Width="93"/>
+        <Label Content="Tên Đề" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontFamily="Cambria" FontSize="20"/>
+        <Button Click="thoat_Click" Content="Thoát" HorizontalAlignment="Left" Margin="276,210,0,0" VerticalAlignment="Top" FontFamily="Cambria" FontSize="20" Height="46" Width="93"/>
+        <ComboBox x:Name="monhoc" HorizontalAlignment="Left" Margin="21,142,0,0" VerticalAlignment="Top" Width="202" FontSize="18" Height="36"/>
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Height="72" Margin="276,124,0,0" Width="203">
+            <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
+                <TextBox x:Name="hourTextBox"
+     Margin="10"
+     Width="50"
+     FontSize="18"
+     Height="36"
+     TextAlignment="Center"
+     Text="{Binding Hour, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBlock Text=":" FontSize="18" VerticalAlignment="Center"/>
+                <TextBox x:Name="minuteTextBox"
+     Margin="10"
+     Width="109"
+     FontSize="18"
+     Height="36"
+     TextAlignment="Center"
+     Text="{Binding Minute, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+
+        </Grid>
+        <Label Content="Chọn Môn" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" FontFamily="Cambria" FontSize="20"/>
+        <Label Content="Thời gian làm bài" HorizontalAlignment="Left" Margin="291,93,0,0" VerticalAlignment="Top" FontFamily="Cambria" FontSize="20"/>
+    </Grid>
+</Window>

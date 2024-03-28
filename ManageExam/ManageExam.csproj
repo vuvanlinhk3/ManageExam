@@ -75,6 +75,7 @@
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=7.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.7.0.2\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
+    <Reference Include="System.Drawing" />
     <Reference Include="System.IO.Pipelines, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IO.Pipelines.5.0.2\lib\net461\System.IO.Pipelines.dll</HintPath>
     </Reference>
@@ -93,6 +94,7 @@
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -129,8 +131,25 @@
     <Page Include="admin\view\AddU.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Page>
     <Page Include="admin\view\changePassWord.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="admin\view\contro\a.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="admin\view\contro\b.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="admin\view\contro\filecauhoi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="admin\view\contro\txtcauhoi.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -139,6 +158,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="admin\view\diaLog\help.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="admin\view\diaLog\nhapcauhoi.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -171,6 +194,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="admin\view\studentResult\studentResult.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="admin\view\themdehoantoan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="admin\view\themdekieukhac.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -215,15 +246,31 @@
     </Compile>
     <Compile Include="admin\view\AddU.xaml.cs">
       <DependentUpon>AddU.xaml</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="admin\view\changePassWord.xaml.cs">
       <DependentUpon>changePassWord.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="admin\view\contro\a.xaml.cs">
+      <DependentUpon>a.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="admin\view\contro\b.xaml.cs">
+      <DependentUpon>b.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="admin\view\contro\filecauhoi.xaml.cs">
+      <DependentUpon>filecauhoi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="admin\view\contro\txtcauhoi.xaml.cs">
+      <DependentUpon>txtcauhoi.xaml</DependentUpon>
     </Compile>
     <Compile Include="admin\view\diaLog\Chinhsuangdung.xaml.cs">
       <DependentUpon>Chinhsuangdung.xaml</DependentUpon>
     </Compile>
     <Compile Include="admin\view\diaLog\help.xaml.cs">
       <DependentUpon>help.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="admin\view\diaLog\nhapcauhoi.xaml.cs">
+      <DependentUpon>nhapcauhoi.xaml</DependentUpon>
     </Compile>
     <Compile Include="admin\view\diaLog\selectAddExam.xaml.cs">
       <DependentUpon>selectAddExam.xaml</DependentUpon>
@@ -248,6 +295,12 @@
     </Compile>
     <Compile Include="admin\view\studentResult\studentResult.xaml.cs">
       <DependentUpon>studentResult.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="admin\view\themdehoantoan.xaml.cs">
+      <DependentUpon>themdehoantoan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="admin\view\themdekieukhac.xaml.cs">
+      <DependentUpon>themdekieukhac.xaml</DependentUpon>
     </Compile>
     <Compile Include="admin\view\usercontrol.xaml.cs">
       <DependentUpon>usercontrol.xaml</DependentUpon>

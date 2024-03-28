@@ -89,7 +89,7 @@ namespace ManageExam.admin.view.viewExam
                                 deleteKetQuaCommand.ExecuteNonQuery();
 
                                 // Xóa từ bảng dapan
-                                string deleteDapAnQuery = "DELETE FROM dapan WHERE IDDETHI = @MaDeThi";
+                                string deleteDapAnQuery = "DELETE FROM dapan WHERE idCAUHOI IN (SELECT idCAUHOI FROM cauhoi WHERE IDDETHI = @MaDeThi)";
                                 MySqlCommand deleteDapAnCommand = new MySqlCommand(deleteDapAnQuery, conn.connection);
                                 deleteDapAnCommand.Parameters.AddWithValue("@MaDeThi", maDeThi);
                                 deleteDapAnCommand.ExecuteNonQuery();
@@ -99,7 +99,6 @@ namespace ManageExam.admin.view.viewExam
                                 MySqlCommand deleteCauHoiCommand = new MySqlCommand(deleteCauHoiQuery, conn.connection);
                                 deleteCauHoiCommand.Parameters.AddWithValue("@MaDeThi", maDeThi);
                                 deleteCauHoiCommand.ExecuteNonQuery();
-
 
                                 // Xóa từ bảng dethi
                                 string deleteDeThiQuery = "DELETE FROM dethi WHERE IDDETHI = @MaDeThi";
@@ -134,9 +133,11 @@ namespace ManageExam.admin.view.viewExam
                 catch (Exception ex)
                 {
                     MessageBox.Show("Đã xảy ra lỗi khi xóa đề thi: " + ex.Message, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                    Console.WriteLine(ex.Message);
                 }
             }
         }
+
 
 
         private void timkiem_Click(object sender, RoutedEventArgs e)

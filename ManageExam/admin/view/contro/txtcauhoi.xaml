@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="ManageExam.admin.view.contro.txtcauhoi"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ManageExam.admin.view.contro"
+             mc:Ignorable="d" 
+             Height="334" Width="600">
+    <Grid Background="#FF578080">
+        <Button Click="load" Content="◓" HorizontalAlignment="Right" Margin="0,16,39,0" VerticalAlignment="Top" Height="36" Width="51" FontSize="20" Background="#4CAF50" Foreground="White" BorderBrush="#388E3C" BorderThickness="2" FontFamily="Segoe UI" FontWeight="Bold"/>
+
+        <TextBox x:Name="text" TextWrapping="Wrap" Margin="32,53,40,73" FontSize="18">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0.633"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0.989"/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Button Click="suacauhoi_Click" Content="Sửa Câu Hỏi" HorizontalAlignment="Right" Margin="0,276,36,0" VerticalAlignment="Top" Height="48" Width="144" FontSize="20" Background="#4CAF50" Foreground="White" BorderBrush="#388E3C" BorderThickness="2" FontFamily="Segoe UI" FontWeight="Bold" Padding="10"/>
+        <Label x:Name="cauhoi" Content="Câu Hỏi" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="24" Margin="33,10,0,0" FontWeight="Bold" Foreground="White"/>
+
+    </Grid>
+</UserControl>

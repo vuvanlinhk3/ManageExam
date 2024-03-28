@@ -1,46 +1,69 @@
-﻿<Window x:Class="ManageExam.admin.view.viewExam.SingerExam"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ManageExam.admin.view.viewExam"
+        xmlns:contro="clr-namespace:ManageExam.admin.view.contro" x:Class="ManageExam.admin.view.viewExam.SingerExam"
         mc:Ignorable="d"
-        Title="SingerExam" Height="800" Width="1200">
+        Title="SingerExam" Height="800" Width="1400">
     <Grid>
-        <Label Content="Đề Thi :" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <Button Click="xemDe_Click" Content="XEM FILE ĐỀ" HorizontalAlignment="Right" Margin="0,0,988,558" VerticalAlignment="Bottom" FontSize="18" Height="46" Width="202"/>
-        <TextBox x:Name="txtTenDeThi" HorizontalAlignment="Left" Margin="10,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" FontSize="18" Height="32"/>
-        <Label Content="Các Câu hỏi: " HorizontalAlignment="Left" Margin="10,133,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Border HorizontalAlignment="Left" Height="228" Margin="868,432,0,0" VerticalAlignment="Top" Width="522" Background="#99247965" CornerRadius="20">
+            <ComboBox Name="dapandung" Margin="54,136,162,49" FontSize="18"/>
+            <!-- Nội dung bên trong Border -->
+        </Border>
+        <Label Content="Đề Thi :" HorizontalAlignment="Left" Margin="10,37,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Button Click="xemDe_Click" Content="XEM FILE ĐỀ" HorizontalAlignment="Right" Margin="0,0,10,744" VerticalAlignment="Bottom" FontSize="14" Height="30" Width="118"/>
+        <TextBox x:Name="txtTenDeThi" HorizontalAlignment="Left" Margin="10,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" FontSize="18" Height="43"/>
+        <Label Content="Các Câu hỏi: " HorizontalAlignment="Left" Margin="294,47,0,0" VerticalAlignment="Top" FontSize="18"/>
 
         <Grid HorizontalAlignment="Left" VerticalAlignment="Center" Margin="1016,0,0,0"/>
-        <Label Content="Thời Gian Thi" HorizontalAlignment="Left" Margin="901,208,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <Label Content="Số Câu Hỏi" HorizontalAlignment="Left" Margin="379,169,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <ListView x:Name="listViewQuestions" Margin="379,208,402,-1">
+        <Label Content="Thời Gian Thi" HorizontalAlignment="Left" Margin="10,169,0,0" VerticalAlignment="Top" FontSize="18"/>
+
+
+        <ListView x:Name="bangcauhoi" d:ItemsSource="{d:SampleData ItemCount=0}" Margin="282,80,544,29" FontSize="18" RenderTransformOrigin="0.5,0.5" SelectionChanged="ListView_SelectionChanged">
+            <ListView.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-0.336"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="1.494"/>
+                </TransformGroup>
+            </ListView.RenderTransform>
             <ListView.View>
                 <GridView>
-                    <!-- Cột cho số thứ tự của câu hỏi -->
-                    <GridViewColumn Header="Số thứ tự câu">
+                    <!-- Cột 1: Số thứ tự -->
+                    <GridViewColumn Header="Số thứ tự" Width="100">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding QuestionNumber}" />
+                                <TextBlock Text="{Binding Path=Number}" HorizontalAlignment="Center"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
 
-                    <!-- Cột cho ô hiển thị nội dung câu hỏi -->
-                    <GridViewColumn Header="Nội dung câu hỏi">
+                    <!-- Cột 2: Tên câu hỏi -->
+                    <GridViewColumn Header="Tên câu hỏi" Width="100">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding QuestionContent}" />
+                                <TextBlock Text="{Binding Path=TenCauHoi}" HorizontalAlignment="Left"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
 
-                    <!-- Cột cho ô hiển thị đáp án đúng -->
-                    <GridViewColumn Header="Đáp án đúng">
+                    <!-- Cột 3: Nội dung -->
+                    <GridViewColumn Header="Nội dung" Width="220">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding CorrectAnswer}" />
+                                <TextBlock Text="{Binding Path=NoiDung}" HorizontalAlignment="Left"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <!-- Cột 4: Đáp án đúng -->
+                    <GridViewColumn Header="Đáp án đúng" Width="150">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=DapAnDung}" HorizontalAlignment="Center"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
@@ -48,11 +71,19 @@
             </ListView.View>
         </ListView>
 
-        <TextBox x:Name="txtMonHoc" HorizontalAlignment="Left" Margin="901,342,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" FontSize="18" Height="45"/>
-        <Label Content="Môn Thi" HorizontalAlignment="Left" Margin="901,308,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <TextBox x:Name="txtThoiGianThi" HorizontalAlignment="Left" Margin="901,247,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" FontSize="18" Height="45"/>
-        <Label x:Name="tenfile" Content="" HorizontalAlignment="Left" Margin="10,232,0,0" VerticalAlignment="Top" FontSize="18" Width="364" Height="100"/>
+        <TextBox x:Name="txtMonHoc" HorizontalAlignment="Left" Margin="29,329,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" FontSize="18" Height="45"/>
+        <Label Content="Môn Thi" HorizontalAlignment="Left" Margin="11,278,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox x:Name="txtThoiGianThi" HorizontalAlignment="Left" Margin="28,208,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116" FontSize="18" Height="45"/>
+        <Label x:Name="tenfile" Content="" HorizontalAlignment="Left" Margin="294,494,0,0" VerticalAlignment="Top" FontSize="18" Width="364" Height="60"/>
+        <Button Click="chinhdethi" Content="Chỉnh" HorizontalAlignment="Left" Margin="185,89,0,0" VerticalAlignment="Top" FontSize="18" Height="43" Width="69"/>
+        <Button Click="chinhtime" Content="Chỉnh" HorizontalAlignment="Left" Margin="185,210,0,0" VerticalAlignment="Top" FontSize="18" Height="43" Width="69"/>
+        <Button Click="chinhmon" Content="Chỉnh" HorizontalAlignment="Left" Margin="185,331,0,0" VerticalAlignment="Top" FontSize="18" Height="43" Width="69"/>
+        <Button Content="Lưu" HorizontalAlignment="Left" Margin="1321,731,0,0" VerticalAlignment="Top" FontSize="18" Height="43" Width="69"/>
+        <contro:a x:Name="FILE" HorizontalAlignment="Left" Margin="876,77,0,0" VerticalAlignment="Top" Width="514"/>
+        <contro:b x:Name="TXT" HorizontalAlignment="Left" Margin="868,77,0,0" VerticalAlignment="Top" Width="522"/>
 
+        <Button Click="setdapan_Click" Content="Set Đáp án" HorizontalAlignment="Left" Margin="1242,568,0,0" VerticalAlignment="Top" Height="44" Width="132" FontSize="20" Background="#4CAF50" Foreground="White" BorderBrush="#388E3C" BorderThickness="2" FontFamily="Segoe UI" FontWeight="Bold" />
+        <Button Content="◓◓◓" HorizontalAlignment="Left" Margin="824,58,0,0" VerticalAlignment="Top" Click="Button_Click"/>
 
     </Grid>
 </Window>

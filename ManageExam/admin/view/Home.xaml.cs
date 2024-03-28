@@ -158,7 +158,7 @@ namespace ManageExam.admin.view
 
         private void addExam(object sender, RoutedEventArgs e)
         {
-            nameaddexam dialog = new nameaddexam();
+            themdehoantoan dialog = new themdehoantoan();
             bool? result = dialog.ShowDialog();
             if (result.HasValue && result.Value)
             {

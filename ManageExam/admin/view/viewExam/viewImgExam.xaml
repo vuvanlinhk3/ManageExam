@@ -6,11 +6,11 @@
         xmlns:local="clr-namespace:ManageExam.admin.view.viewExam"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="viewImgExam" Height="750" Width="1200">
+        Title="viewImgExam" Height="750" Width="1300">
     <Grid>
         <DataGrid x:Name="dataGrid" Margin="0,77,0,0" FontSize="18" Width="1170">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Mã đề thi" Width="150" Binding="{Binding MaDeThi}" />
+                <DataGridTextColumn Header="Mã đề thi" Width="140" Binding="{Binding MaDeThi}" />
                 <DataGridTextColumn Header="Tên đề thi" Width="400" Binding="{Binding TenDeThi}" />
                 <DataGridTextColumn Header="Môn thi" Width="200" Binding="{Binding MonThi}" />
                 <DataGridTextColumn Header="Số lượng câu hỏi" Width="170" Binding="{Binding SoLuongCauHoi}" />
